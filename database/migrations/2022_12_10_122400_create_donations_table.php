@@ -12,7 +12,7 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email', 255)->nullable();
             $table->integer('amount', 10);
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
