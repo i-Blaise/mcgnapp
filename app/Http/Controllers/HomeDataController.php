@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Causes;
 use App\Models\ContactPage;
 use App\Models\DonateNow;
+use App\Models\Donations;
 use App\Models\Event;
 use App\Models\Home;
 use App\Models\Team;
@@ -144,7 +145,7 @@ class HomeDataController extends Controller
 
         $mailData = $request->all();
 
-        Mail::send('home.mail', $mailData, function($message) {
+        Mail::send('mails.volunteers-mail', $mailData, function($message) {
             $message->to('menniablaise@yahoo.com', 'Mr. Blaise')->subject('Volunteer Applicants');
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
@@ -158,12 +159,55 @@ class HomeDataController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'momo_number' => 'digits:10|starts_with:024,027,020,026,054,055,059,050,029,057',
+            'momo_number' => 'required|string|max:10|starts_with:024,027,020,026,054,055,059,050,029,057',
             'email' => 'email:rfc,dns|nullable',
             'amount' => 'required|in:50,100,200'
         ]);
 
-        dd($request->all());
+        Donations::create([
+            'name' => $request->name,
+            'phone_num' => $request->momo_number,
+            'email' => $request->email,
+            'amount' => $request->amount
+        ]);
+
+        $mailData = $request->all();
+
+        Mail::send('mails.donations-mail', $mailData, function($message) {
+            $message->to('menniablaise@yahoo.com', 'Mr. Blaise')->subject('New Donation');
+            $message->from('volunteer@mcgn.org', 'Cheerful Giver');
+        });
+
+        return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+    }
+
+
+    function contactUsForm(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'phone_number' => 'nullable|max:10|starts_with:024,027,020,026,054,055,059,050,029,057',
+            'email' => 'email:rfc,dns|nullable',
+            'subject' => 'required',
+            'user_message' => 'required'
+        ]);
+
+        // Donations::create([
+        //     'name' => $request->name,
+        //     'phone_number' => $request->momo_number,
+        //     'email' => $request->email,
+        //     'subject' => $request->amount,
+        //     'message' => $request->message
+        // ]);
+
+        $mailData = $request->all();
+
+        Mail::send('mails.contactus-mail', $mailData, function($message) {
+            $message->to('menniablaise@yahoo.com', 'Mr. Blaise')->subject('New Donation');
+            $message->from('volunteer@mcgn.org', 'Cheerful Giver');
+        });
+
+        return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
     }
 
     /**

@@ -40,7 +40,14 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="{{ route('home') }}" class="nav-item nav-link" id="header">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link" id="about">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="{{ route('about') }}" class="nav-link dropdown-toggle" data-toggle="dropdown">About</a>
+                            <div class="dropdown-menu">
+                                <a href="team.html" class="dropdown-item">Meet The Team</a>
+                                <a href="donate.html" class="dropdown-item">Volunteers</a>
+                            </div>
+                        </div>
+                        {{-- <a href="{{ route('about') }}" class="nav-item nav-link" id="about">About</a> --}}
                         <a href="{{ route('causes') }}" class="nav-item nav-link" id="causes">Causes</a>
                         <a href="event.html" class="nav-item nav-link" id="eventa">Events</a>
                         <a href="{{ route('blog') }}" class="nav-item nav-link" id="blog">Blog</a>

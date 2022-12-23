@@ -575,21 +575,31 @@
                 @endforeach
                 <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form 
+                        
+                        action="{{ route('contactUsForm') }}"
+                        method="POST"
+                        enctype="multipart/form-data"
+                        name="sentMessage" id="contactForm" novalidate="novalidate">
+                        @csrf
                             <div class="control-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name*" required="required" data-validation-required-message="Please enter your name" value="{{ old('name') }}" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Your Phone Number" data-validation-required-message="Please enter your phone number" value="{{ old('phone_number') }}" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" data-validation-required-message="Please enter your email" value="{{ old('email') }}" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject*" value="{{ old('subject') }}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" id="message" name="user_message" placeholder="Message*" required="required" data-validation-required-message="Please enter your message">{{ old('user_message') }}</textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
@@ -618,7 +628,7 @@
                                 <img src="{{ $blogData->preview_img == null ? $blogData->preview_img : $blogData->blog_img }}" alt="Image">
                             </div>
                             <div class="blog-text">
-                                <h3><a href="#">{{ $blogData->caption }}</a></h3>
+                                <h3><a href="{{ route('blog.single', ['id' => $blogData->id]) }}">{{ $blogData->caption }}</a></h3>
                                 <p>
                                     {{ $blogData->excerpt }}
                                 </p>
