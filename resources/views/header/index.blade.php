@@ -43,7 +43,7 @@
                         <div class="nav-item dropdown">
                             <a href="{{ route('about') }}" class="nav-link dropdown-toggle" data-toggle="dropdown">About</a>
                             <div class="dropdown-menu">
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
+                                <a href="{{ route('about') }}" class="dropdown-item">Meet The Team</a>
                                 <a href="donate.html" class="dropdown-item">Volunteers</a>
                             </div>
                         </div>
