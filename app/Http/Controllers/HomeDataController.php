@@ -155,7 +155,35 @@ class HomeDataController extends Controller
     }
 
 
+
+    function donatePage ($id = null)
+    {
+
+        if(!empty($id))
+        {
+            $causesData = Causes::where('id', $id)->get();
+            $donateNowData = DonateNow::where('id', 1)->get();
+
+            return view('donate.index', [
+                'donatenow' => $donateNowData,
+                'causes' => $causesData,
+                'causeID' => true
+            ]);
+        }else{
+            $donateNowData = DonateNow::where('id', 1)->get();
+
+            return view('donate.index', [
+                'donatenow' =>$donateNowData,
+                'causeID' => false
+            ]);
+        }
+
+
+    }
+
+
     function donateNow(Request $request){
+
 
         $request->validate([
             'name' => 'required',
@@ -178,7 +206,13 @@ class HomeDataController extends Controller
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
 
-        return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+
+        if($request->request_page == 'donate'){
+            return redirect()->route('donatePage')->with('success', 'Your Request Was Sent Successfully');
+        }elseif($request->request_page == 'home'){
+            return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+        }
+
     }
 
 

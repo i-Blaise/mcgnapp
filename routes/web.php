@@ -31,5 +31,6 @@ Route::get('/causes/{id}', [HomeDataController::class, 'causesSingle'])->name('c
 Route::post('/becomeVolunteer', [HomeDataController::class, 'becomeVolunteerMail'])->name('blog.becomeVolunteer');
 Route::post('/donateNow', [HomeDataController::class, 'donateNow'])->name('blog.donateNow');
 Route::post('/contactUsForm', [HomeDataController::class, 'contactUsForm'])->name('contactUsForm');
+Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name('donatePage');
 
 Route::get('/mail', [MailController::class, 'becomeVolunteerMail']);

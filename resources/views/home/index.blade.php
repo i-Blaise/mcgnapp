@@ -62,7 +62,7 @@
                                 {{ $homeData->home_slider_text }}
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn btn-custom" href="">Donate Now</a>
+                                <a class="btn btn-custom" href="{{ route('donatePage') }}">Donate Now</a>
                                 <a class="btn btn-custom btn-play" data-toggle="modal" data-src="{{ $homeData->video_link }}" data-target="#videoModal">Watch Video</a>
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                         </div>
                         <div class="causes-btn">
                             <a href="{{ route('causes.single', ['id' => $cause->id]) }}" class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                            <a href="{{ route('donatePage', ['id' => $cause->id]) }}" class="btn btn-custom">Donate Now</a>
                         </div>
                     </div>
                     @endforeach
@@ -344,6 +344,9 @@
                             enctype="multipart/form-data">
                             @csrf
                                 <div class="control-group">
+                                    <input type="hidden" class="form-control" name="request_page" value="home" placeholder="Name*" required="required" />
+
+
                                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name*" required="required" />
                                 </div>
                                 <div class="control-group">
