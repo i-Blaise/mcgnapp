@@ -133,14 +133,16 @@ class HomeDataController extends Controller
             'full_name' => 'required',
             'phone_number' => 'digits:10|starts_with:024,027,020,026,054,055,059,050,029,057',
             'email' => 'email:rfc,dns|nullable',
-            'reason' => 'string|max:1000'
+            'reason' => 'string|max:1000',
+            'event_name' => 'string'
         ]);
 
         Volunteers::create([
             'full_name' => $request->full_name,
             'phone_num' => $request->phone_number,
             'email' => $request->email,
-            'reason' => $request->reason
+            'reason' => $request->reason,
+            'event_name' => $request->event_name
         ]);
 
         $mailData = $request->all();
@@ -150,8 +152,69 @@ class HomeDataController extends Controller
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
 
-        return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+        if(!empty($request->event_name))
+        {
+            return redirect()->route('eventsPage')->with('success', 'We have recieved your request');
+        }else{
+            return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+        }
+
         
+    }
+
+    function volunteerEvent ($id = null)
+    {
+
+        if(!empty($id))
+        {
+            $event = Event::where('id', $id)->get();
+            $donateNowData = DonateNow::where('id', 1)->get();
+
+            foreach($event as $key => $value){
+                $value->begin_time = substr($value->begin_time, 0, -3);
+                $value->end_time = substr($value->end_time, 0, -3);
+            }
+
+            return view('events.volunteer-event', [
+                'donatenow' => $donateNowData,
+                'eventData' => $event,
+                'causeID' => true
+            ]);
+        }else{
+            $event = Event::where('id', 68)->get();
+
+            return view('events.volunteer-event', [
+                'eventData' => $event,
+                'causeID' => false
+            ]);
+        }
+
+
+    }
+
+
+    function eventsPage ($id = null)
+    {
+
+        if(!empty($id))
+        {
+            $causesData = Causes::where('id', $id)->get();
+            $donateNowData = DonateNow::where('id', 1)->get();
+
+            return view('donate.index', [
+                'donatenow' => $donateNowData,
+                'causes' => $causesData,
+                'causeID' => true
+            ]);
+        }else{
+            $event = Event::orderBy('created_at', 'desc')->paginate(4);
+
+            return view('events.index', [
+                'eventData' => $event
+            ]);
+        }
+
+
     }
 
 

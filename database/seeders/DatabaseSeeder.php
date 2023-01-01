@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(ContactPage::class); 
+        // $this->call(ContactPage::class); 
 
-        // Blog::factory(10)->create();
+        Event::factory(10)->create();
     }
 }

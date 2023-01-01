@@ -405,9 +405,9 @@
                                 <div class="event-text">
                                     <h3>{{ $eventData->caption }}</h3>
                                     <p>
-                                        {{ $eventData->body }}
+                                        {{ $eventData->excerpt }}
                                     </p>
-                                    <a class="btn btn-custom" href="">Join Now</a>
+                                    <a class="btn btn-custom" href="{{ route('volunteerEvent', ['id' => $eventData->id]) }}">Join Now</a>
                                 </div>
                             </div>
                         </div>

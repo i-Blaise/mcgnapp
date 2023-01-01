@@ -22,7 +22,8 @@ class EventFactory extends Factory
         return [
             'main_img' => $faker->imageUrl($width = 600, $height = 400),
             'caption' => $faker->realText($maxNbchars = 25),
-            'body' => $faker->realText($maxNbchars = 150),
+            'excerpt' => $faker->realText($maxNbchars = 200),
+            'body' => $faker->realText($maxNbchars = 600),
             'date' => $faker->date($format = 'd-M-Y', $max = 'now'),
             'begin_time' => $faker->time($format = 'H:i', $max = '11:00'),
             'end_time' => $faker->time($format = 'H:i', $max = '20:00'),

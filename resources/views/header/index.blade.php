@@ -32,7 +32,7 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">MCGN</a>
+                <a href="{{ route('home') }}" class="navbar-brand">MCGN</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,7 +49,7 @@
                         </div>
                         {{-- <a href="{{ route('about') }}" class="nav-item nav-link" id="about">About</a> --}}
                         <a href="{{ route('causes') }}" class="nav-item nav-link" id="causes">Causes</a>
-                        <a href="event.html" class="nav-item nav-link" id="eventa">Events</a>
+                        <a href="{{ route('eventsPage') }}" class="nav-item nav-link" id="events">Events</a>
                         <a href="{{ route('blog') }}" class="nav-item nav-link" id="blog">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
