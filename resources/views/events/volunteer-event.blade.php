@@ -50,11 +50,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Donate Now</h2>
+                        <h2>Join this Event</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Donate</a>
+                        <a href="{{ route('eventsPage') }}">Events</a>
+                        <a href="#">Join Events</a>
                     </div>
                 </div>
             </div>

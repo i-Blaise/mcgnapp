@@ -38,8 +38,8 @@
                         <h2>Upcoming Events</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Events</a>
+                        <a href="{{ route('home') }}">Home</a>
+                        <a href="#">Events</a>
                     </div>
                 </div>
             </div>
