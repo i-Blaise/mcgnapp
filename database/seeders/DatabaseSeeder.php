@@ -12,6 +12,7 @@ use App\Models\Event;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\VolunteerPage;
+use App\Models\Volunteers;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -32,6 +33,6 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(ContactPage::class); 
 
-        Event::factory(10)->create();
+        Volunteers::factory(20)->create();
     }
 }

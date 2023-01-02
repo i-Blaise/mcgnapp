@@ -144,78 +144,81 @@
                     <h2>Awesome guys behind our charity activities</h2>
                 </div>
                 <div class="row">
+                    @foreach ($team as $teamData )
                     <div class="col-lg-3 col-md-6">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Team Image">
+                                <img src="{{ $teamData->team_img }}" alt="Team Image">
                             </div>
                             <div class="team-text">
-                                <h2>Donald John</h2>
-                                <p>Founder & CEO</p>
+                                <h2>{{ $teamData->name }}</h2>
+                                <p>{{ $teamData->position }}</p>
                                 <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    @if ($teamData->linkedin != null)
+                                    <a href="{{ $teamData->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                    @endif
+                                    @if ($teamData->facebook != null)
+                                    <a href="{{ $teamData->linkedin }}"><i class="fab fa-facebook-f"></i></a>
+                                    @endif
+                                    @if ($teamData->instagram != null)
+                                    <a href="{{ $teamData->instagram }}"><i class="fab fa-instagram"></i></a>
+                                    @endif
+                                    @if ($teamData->twitter != null)
+                                    <a href="{{ $teamData->twitter }}"><i class="fab fa-twitter"></i></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Adam Phillips</h2>
-                                <p>Chef Executive</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Thomas Olsen</h2>
-                                <p>Chef Advisor</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>James Alien</h2>
-                                <p>Advisor</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
         <!-- Team End -->
+
+
+
+        <!-- Volunteers Start -->
+        <div class="team">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Our Amazing Volunteers</p>
+                    <h2>Awesome guys behind our charity activities</h2>
+                </div>
+                <div class="row">
+                    @foreach ($team as $teamData )
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="{{ $teamData->team_img }}" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>{{ $teamData->name }}</h2>
+                                <p>{{ $teamData->position }}</p>
+                                <div class="team-social">
+                                    @if ($teamData->linkedin != null)
+                                    <a href="{{ $teamData->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                    @endif
+                                    @if ($teamData->facebook != null)
+                                    <a href="{{ $teamData->linkedin }}"><i class="fab fa-facebook-f"></i></a>
+                                    @endif
+                                    @if ($teamData->instagram != null)
+                                    <a href="{{ $teamData->instagram }}"><i class="fab fa-instagram"></i></a>
+                                    @endif
+                                    @if ($teamData->twitter != null)
+                                    <a href="{{ $teamData->twitter }}"><i class="fab fa-twitter"></i></a>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+        <!-- Volunteers End -->
         
         
         <!-- Testimonial Start -->

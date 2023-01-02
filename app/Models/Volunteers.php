@@ -12,6 +12,6 @@ class Volunteers extends Model
     public $table = 'volunteers';
 
     protected $fillable = [
-        'full_name', 'phone_num', 'email', 'reason'
+        'full_name', 'phone_num', 'email', 'reason', 'event_name'
     ];
 }

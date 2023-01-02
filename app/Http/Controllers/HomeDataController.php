@@ -129,6 +129,7 @@ class HomeDataController extends Controller
 
     public function becomeVolunteerMail(Request $request)
     {
+
         $request->validate([
             'full_name' => 'required',
             'phone_number' => 'digits:10|starts_with:024,027,020,026,054,055,059,050,029,057',
@@ -342,9 +343,11 @@ class HomeDataController extends Controller
     public function aboutPage()
     {
         $about = AboutUs::where('id', 1)->get();
+        $team = Team::orderBy('created_at', 'desc')->paginate(8);
 
         return view('about.index', [
-            'aboutus' => $about
+            'aboutus' => $about,
+            'team' => $team
         ]);
     }
 

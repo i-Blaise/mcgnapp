@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
 use App\Http\Controllers\MailController;
 use App\Models\Event;
+use App\Models\Team;
+use App\Models\Volunteers;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +38,10 @@ Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name
 Route::get('/eventsPage', [HomeDataController::class, 'eventsPage'])->name('eventsPage');
 Route::get('/volunteerEvent/{id?}', [HomeDataController::class, 'volunteerEvent'])->name('volunteerEvent');
 
-// Route::get('/delete-event', function () {
-//     Event::truncate();
+// Route::get('/delete-vol', function () {
+//     Volunteers::truncate();
+
+//     return 'done!';
 
 //   });
 
