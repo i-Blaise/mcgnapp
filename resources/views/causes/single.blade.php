@@ -37,8 +37,8 @@
                         <h2>Cause Page</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Cause</a>
+                        <a href="{{ route('home') }}">Home</a>
+                        <a href="#">Cause</a>
                     </div>
                 </div>
             </div>

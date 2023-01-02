@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>HELPZ - Free Charity Website Template</title>
+        <title>MCGN</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -37,8 +37,8 @@
                         <h2>About Us</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">About Us</a>
+                        <a href="{{ route('home') }}">Home</a>
+                        <a href="#">About Us</a>
                     </div>
                 </div>
             </div>
@@ -50,13 +50,17 @@
         <div class="about">
             <div class="container">
                 <div class="row align-items-center">
+
+                    @foreach ($aboutus as $aboutData )
                     <div class="col-lg-6">
-                        <div class="about-img" data-parallax="scroll" data-image-src="img/about.jpg"></div>
+                        <div class="about-img" data-parallax="scroll" data-image-src="{{ $aboutData->aboutus_desc_img }}"></div>
                     </div>
+
+                    
                     <div class="col-lg-6">
                         <div class="section-header">
                             <p>Learn About Us</p>
-                            <h2>Worldwide non-profit charity organization</h2>
+                            <h2>{{ $aboutData->aboutus_caption }}</h2>
                         </div>
                         <div class="about-tab">
                             <ul class="nav nav-pills nav-justified">
@@ -73,17 +77,19 @@
 
                             <div class="tab-content">
                                 <div id="tab-content-1" class="container tab-pane active">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae pellentesque turpis. Donec in hendrerit dui, vel blandit massa. Ut vestibulum suscipit cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum. Phasellus et felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque. Vivamus fermentum nisi vel dapibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    {{ $aboutData->about }}
                                 </div>
                                 <div id="tab-content-2" class="container tab-pane fade">
-                                    Sed tincidunt, magna ut vehicula volutpat, turpis diam condimentum justo, posuere congue turpis massa in mi. Proin ornare at massa at fermentum. Nunc aliquet sed nisi iaculis ornare. Nam semper tortor eget est egestas, eu sagittis nunc sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent bibendum sapien sed purus molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    {{ $aboutData->mission }}
                                 </div>
                                 <div id="tab-content-3" class="container tab-pane fade">
-                                    Aliquam dolor odio, mollis sed feugiat sit amet, feugiat ut sapien. Nunc eu dignissim lorem. Suspendisse at hendrerit enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed condimentum semper turpis vel facilisis. Nunc vel faucibus orci. Mauris ut mauris rhoncus, efficitur nisi at, venenatis quam. Praesent egestas pretium enim sit amet finibus. Curabitur at erat molestie, tincidunt lorem eget, consequat ligula.
+                                    {{ $aboutData->vision }}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -175,19 +181,27 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="pagination justify-content-center">
+
+                    {{ $team->links() }}
+                </ul> 
+            </div>
+        </div>
         <!-- Team End -->
 
 
 
         <!-- Volunteers Start -->
-        <div class="team">
+        {{-- <div class="team">
             <div class="container">
                 <div class="section-header text-center">
                     <p>Our Amazing Volunteers</p>
                     <h2>Awesome guys behind our charity activities</h2>
                 </div>
                 <div class="row">
-                    @foreach ($team as $teamData )
+                    @foreach ($volunteers as $volData )
                     <div class="col-lg-3 col-md-6">
                         <div class="team-item">
                             <div class="team-img">
@@ -217,7 +231,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Volunteers End -->
         
         
@@ -229,62 +243,22 @@
                     <h2>What people are talking about our charity activities</h2>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
+                    @foreach ($testimonial as $testimonialData)
                     <div class="testimonial-item">
                         <div class="testimonial-profile">
-                            <img src="img/testimonial-1.jpg" alt="Image">
+                            <img src="{{ $testimonialData->img }}" alt="Image">
                             <div class="testimonial-name">
-                                <h3>Person Name</h3>
-                                <p>Profession</p>
+                                <h3>{{ $testimonialData->name }}</h3>
+                                <p>{{ $testimonialData->profession }} - {{ $testimonialData->company }}</p>
                             </div>
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                                {{ $testimonialData->body }}
                             </p>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-profile">
-                            <img src="img/testimonial-2.jpg" alt="Image">
-                            <div class="testimonial-name">
-                                <h3>Person Name</h3>
-                                <p>Profession</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
-                            </p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-profile">
-                            <img src="img/testimonial-3.jpg" alt="Image">
-                            <div class="testimonial-name">
-                                <h3>Person Name</h3>
-                                <p>Profession</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
-                            </p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-profile">
-                            <img src="img/testimonial-4.jpg" alt="Image">
-                            <div class="testimonial-name">
-                                <h3>Person Name</h3>
-                                <p>Profession</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

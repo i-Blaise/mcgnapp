@@ -344,11 +344,17 @@ class HomeDataController extends Controller
     {
         $about = AboutUs::where('id', 1)->get();
         $team = Team::orderBy('created_at', 'desc')->paginate(8);
+        $volunteers = Volunteers::orderBy('created_at', 'desc')->paginate(4);
+        $testimonialData = Testimonial::get();
+        $aboutData = AboutUs::where('id', 1)->get();
 
         return view('about.index', [
             'aboutus' => $about,
-            'team' => $team
-        ]);
+            'team' => $team,
+            'volunteer' => $volunteers,
+            'testimonial' => $testimonialData,
+            'aboutus' => $aboutData
+        ]); 
     }
 
 

@@ -37,8 +37,8 @@
                         <h2>Popular Causes</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Causes</a>
+                        <a href="{{ route('home') }}">Home</a>
+                        <a href="#">Causes</a>
                     </div>
                 </div>
             </div>
