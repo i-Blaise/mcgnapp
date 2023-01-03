@@ -37,6 +37,7 @@ Route::post('/contactUsForm', [HomeDataController::class, 'contactUsForm'])->nam
 Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name('donatePage');
 Route::get('/eventsPage', [HomeDataController::class, 'eventsPage'])->name('eventsPage');
 Route::get('/volunteerEvent/{id?}', [HomeDataController::class, 'volunteerEvent'])->name('volunteerEvent');
+Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contactPage');
 
 // Route::get('/delete-vol', function () {
 //     Volunteers::truncate();

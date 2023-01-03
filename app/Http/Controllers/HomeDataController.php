@@ -284,6 +284,7 @@ class HomeDataController extends Controller
 
     function contactUsForm(Request $request){
 
+ 
         $request->validate([
             'name' => 'required',
             'phone_number' => 'nullable|max:10|starts_with:024,027,020,026,054,055,059,050,029,057',
@@ -291,6 +292,11 @@ class HomeDataController extends Controller
             'subject' => 'required',
             'user_message' => 'required'
         ]);
+
+        // dd('hi');
+        
+
+        
 
         // Donations::create([
         //     'name' => $request->name,
@@ -306,6 +312,7 @@ class HomeDataController extends Controller
             $message->to('menniablaise@yahoo.com', 'Mr. Blaise')->subject('New Donation');
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
+
 
         return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
     }
@@ -386,6 +393,24 @@ class HomeDataController extends Controller
 
         return view('causes.single', [
             'causes' => $causesSingle
+        ]);
+    }
+
+
+
+
+
+
+
+    // Contact 
+
+    public function contactPage()
+    {
+
+        $contactData = ContactPage::where('id', 1)->get();
+
+        return view('contact.index', [
+            'contactform' => $contactData
         ]);
     }
 

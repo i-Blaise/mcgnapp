@@ -55,7 +55,7 @@
                                 <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ route('contactPage') }}" id="contact" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </div>
