@@ -253,14 +253,16 @@ class HomeDataController extends Controller
             'name' => 'required',
             'momo_number' => 'required|string|max:10|starts_with:024,027,020,026,054,055,059,050,029,057',
             'email' => 'email:rfc,dns|nullable',
-            'amount' => 'required|in:50,100,200'
+            'amount' => 'required|in:50,100,200',
+            'cause_name' => 'string'
         ]);
 
         Donations::create([
             'name' => $request->name,
             'phone_num' => $request->momo_number,
             'email' => $request->email,
-            'amount' => $request->amount
+            'amount' => $request->amount,
+            'cause_name' => $request->cause_name
         ]);
 
         $mailData = $request->all();
@@ -272,7 +274,7 @@ class HomeDataController extends Controller
 
 
         if($request->request_page == 'donate'){
-            return redirect()->route('donatePage')->with('success', 'Your Request Was Sent Successfully');
+            return redirect()->route('donatePage', ['id' => $request->id])->with('success', 'Your Request Was Sent Successfully');
         }elseif($request->request_page == 'home'){
             return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
         }

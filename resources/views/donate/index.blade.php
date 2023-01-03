@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>HELPZ - Free Charity Website Template</title>
+        <title>MCGN - Donate Now</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -39,8 +39,8 @@
                         <h2>Donate Now</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Donate</a>
+                        <a href="{{ url()->previous() }}">Previous</a>
+                        <a href="#">Donate Now</a>
                     </div>
                 </div>
             </div>
@@ -100,6 +100,18 @@
                             @csrf
                                 <div class="control-group">
                                     <input type="hidden" class="form-control" name="request_page" value="donate" placeholder="Name*" required="required" />
+
+                                    <input type="hidden" class="form-control" name="cause_name"
+                                    @foreach ($causes as $causesData ) 
+                                    value="{{ $causesData->caption }}" 
+                                    @endforeach
+                                    required="required" />
+
+                                    <input type="hidden" class="form-control" name="id"
+                                    @foreach ($causes as $causesData ) 
+                                    value="{{ $causesData->id }}" 
+                                    @endforeach
+                                    required="required" />
 
                                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name*" required="required" />
                                 </div>
