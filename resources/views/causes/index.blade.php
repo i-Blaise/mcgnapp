@@ -85,7 +85,7 @@
                         </div>
                         <div class="causes-btn">
                             <a href="{{ route('causes.single', ['id' => $causeData->id]) }}" class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                            <a href="{{ route('donatePage', ['id' => $causeData->id]) }}" class="btn btn-custom">Donate Now</a>
                         </div>
                     </div>
                 </div>
