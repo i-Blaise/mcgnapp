@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>HMCGN - Contact</title>
+        <title>MCGN - Contact</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -22,6 +22,18 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        {{-- Notification  --}}
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
+        alpha/css/bootstrap.css" rel="stylesheet">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <link rel="stylesheet" type="text/css" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </head>
 
     <body onload="activeTab()">
@@ -67,6 +79,10 @@
                         enctype="multipart/form-data"
                         name="sentMessage" id="contactForm" novalidate="novalidate">
                         @csrf
+
+                        <input type="hidden" class="form-control" id="name" name="pageID" value="true" />
+
+
                             <div class="control-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name*" required="required" data-validation-required-message="Please enter your name" value="{{ old('name') }}" />
                                 <p class="help-block text-danger"></p>

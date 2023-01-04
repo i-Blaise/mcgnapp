@@ -313,8 +313,13 @@ class HomeDataController extends Controller
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
 
-
-        return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+        if(!$request->pageID)
+        {
+            return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
+        }else{
+            return redirect()->route('contactPage')->with('success', 'Your Request Was Sent Successfully');
+        }
+        
     }
 
     /**
