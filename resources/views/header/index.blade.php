@@ -21,6 +21,8 @@
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
                                 <a href=""><i class="fab fa-linkedin-in"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href=""><i class="fab fa-snapchat-ghost"></i></a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +47,7 @@
                         <a href="{{ route('causes') }}" class="nav-item nav-link" id="causes">Causes</a>
                         <a href="{{ route('eventsPage') }}" class="nav-item nav-link" id="events">Events</a>
                         <a href="{{ route('blog') }}" class="nav-item nav-link" id="blog">Blog</a>
-                        <div class="nav-item dropdown">
+                        {{-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
                                 <a href="single.html" class="dropdown-item">Detail Page</a>
@@ -54,7 +56,7 @@
                                 <a href="donate.html" class="dropdown-item">Donate Now</a>
                                 <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
                             </div>
-                        </div>
+                        </div> --}}
                         <a href="{{ route('contactPage') }}" id="contact" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
