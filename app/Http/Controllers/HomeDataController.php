@@ -18,6 +18,7 @@ use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class HomeDataController extends Controller
 {
@@ -34,12 +35,23 @@ class HomeDataController extends Controller
         $aboutData = AboutUs::where('id', 1)->get();
         $causesData = Causes::orderBy('money_raised', 'desc')->take(4)->get();
         $donateNowData = DonateNow::where('id', 1)->get();
-        $eventData = Event::orderBy('date', 'desc')->take(2)->get();
+        // $eventData = Event::orderBy('date', 'desc')->take(2)->get();
+        $eventData = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->take(2)->get();
         $teamData = Team::take(4)->get();
         $testimonialData = Testimonial::get();
         $blogData = Blog::take(3)->get();
         $volunteerData = VolunteerPage::where('id', 1)->get();
         $contactData = ContactPage::where('id', 1)->get();
+
+        foreach($eventData as $key => $value){
+            $month = $this->changeMonthToWord(substr($value->date, 5, -12));
+            $year = substr($value->date, 0, -15);
+            $day = substr($value->date, 8, -9);
+
+            $processedDate = $day.'-'.$month.'-'.$year;
+            $value->processedDate = $processedDate;
+        }
+
 
         foreach($causesData as $key => $value){
             $percentage = $value->money_raised/$value->goal * 100;
@@ -66,6 +78,52 @@ class HomeDataController extends Controller
     }
 
 
+    public function changeMonthToWord($month)
+    {
+        switch ($month){
+            case '01':
+                return 'Jan';
+                break;
+            case '02':
+                return 'Feb';
+                break;
+            case '03':
+                return 'Mar';
+                break;
+            case '04':
+                return 'Apr';
+                break;
+            case '05':
+                return 'May';
+                break;
+            case '06':
+                return 'Jun';
+                break;
+            case '07':
+                return 'Jul';
+                break;
+            case '08':
+                return 'Aug';
+                break;
+            case '09':
+                return 'Sep';
+                break;
+            case '10':
+                return 'Oct';
+                break;
+            case '11':
+                return 'Nov';
+                break;
+            case '12':
+                return 'Dec';
+                break;
+            default:
+            return 'error';
+
+        }
+    }
+
+
     public function home()
     {
         // $homeData = DB::table('home')->get();
@@ -74,7 +132,8 @@ class HomeDataController extends Controller
         $aboutData = AboutUs::where('id', 1)->get();
         $causesData = Causes::orderBy('money_raised', 'desc')->take(4)->get();
         $donateNowData = DonateNow::where('id', 1)->get();
-        $eventData = Event::orderBy('date', 'desc')->take(2)->get();
+        // $eventData = Event::orderBy('date', 'desc')->take(2)->get();
+        $eventData = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->take(2)->get();
         $teamData = Team::take(4)->get();
         $testimonialData = Testimonial::get();
         $blogData = Blog::take(3)->get();
@@ -208,7 +267,24 @@ class HomeDataController extends Controller
                 'causeID' => true
             ]);
         }else{
-            $event = Event::orderBy('created_at', 'desc')->paginate(4);
+            $event = Event::orderBy('date', 'desc')->paginate(4);
+            // $eventData = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->take(2)->get();
+
+            foreach($event as $key => $value){
+                $month = $this->changeMonthToWord(substr($value->date, 5, -12));
+                $year = substr($value->date, 0, -15);
+                $day = substr($value->date, 8, -9);
+    
+                $processedDate = $day.'-'.$month.'-'.$year;
+                $value->processedDate = $processedDate;
+
+                if($value->date <= Carbon::now())
+                {
+                    $value->is_over = true;
+                }else{
+                    $value->is_over = false;
+                }
+            }
 
             return view('events.index', [
                 'eventData' => $event

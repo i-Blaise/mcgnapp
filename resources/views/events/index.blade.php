@@ -22,6 +22,27 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+
+        {{-- Notification  --}}
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
+        alpha/css/bootstrap.css" rel="stylesheet">
+    
+        <link rel="stylesheet" type="text/css" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+        <script>
+            function info() {
+                alert('done');
+                die();
+            }
+        </script>
     </head>
 
     <body onload="activeTab()">
@@ -61,7 +82,7 @@
                             <img src="{{ $events->main_img }}" alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
-                                    <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
+                                    <p><i class="fa fa-calendar-alt"></i>{{ $events->processedDate }}</p>
                                     <p><i class="far fa-clock"></i>8:00 - 10:00</p>
                                     <p><i class="fa fa-map-marker-alt"></i>New York</p>
                                 </div>
@@ -70,7 +91,11 @@
                                     <p>
                                         {{ $events->body }}
                                     </p>
+                                    @if(!$events->is_over)
                                     <a class="btn btn-custom" href="{{ route('volunteerEvent', ['id' => $events->id]) }}">Join Now</a>
+                                    @else
+                                    <button class="btn btn-custom" @disabled(true) id="hellobutton" onclick="info()">Join Now</button>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -119,6 +144,24 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <script>
+            function infoss() {
+                alert('done');
+                die();
+            toastr.options.timeOut = 10000;
+            //     toastr.options =
+            // {
+            //     "closeButton" : true,
+            //     "progressBar" : true,
+            //     "showDuration": "300",
+            //     "timeOut": "20000"
+            // }
+            toastr.info("Date has passed");
+            }
+
+            document.getElementById("hellobutton").addEventListener("click", notifInfo);
+        </script>
 
         <script>
             function activeTab() {

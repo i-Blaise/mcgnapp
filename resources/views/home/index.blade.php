@@ -398,7 +398,7 @@
                             <img src="{{ $eventData->main_img }}" alt="Image">
                             <div class="event-content">
                                 <div class="event-meta">
-                                    <p><i class="fa fa-calendar-alt"></i>{{ $eventData->date }}</p>
+                                    <p><i class="fa fa-calendar-alt"></i>{{ $eventData->processedDate }}</p>
                                     <p><i class="far fa-clock"></i>{{ $eventData->begin_time }} - {{ $eventData->end_time }}</p>
                                     <p><i class="fa fa-map-marker-alt"></i>{{ $eventData->location }}</p>
                                 </div>

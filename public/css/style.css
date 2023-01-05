@@ -22,6 +22,13 @@ a {
     transition: .3s;
 }
 
+/* a:disabled,
+a[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+} */
+
 a:hover,
 a:active,
 a:focus {

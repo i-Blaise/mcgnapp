@@ -39,8 +39,8 @@ Route::get('/eventsPage', [HomeDataController::class, 'eventsPage'])->name('even
 Route::get('/volunteerEvent/{id?}', [HomeDataController::class, 'volunteerEvent'])->name('volunteerEvent');
 Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contactPage');
 
-// Route::get('/delete-vol', function () {
-//     Volunteers::truncate();
+// Route::get('/delete-event', function () {
+//     Event::truncate();
 
 //     return 'done!';
 
