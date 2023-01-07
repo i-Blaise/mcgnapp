@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <meta charset="utf-8">
         <title>MCGN - Events</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">

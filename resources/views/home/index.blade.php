@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <meta charset="utf-8">
         <title>MCGN</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -224,7 +225,7 @@
         
         
         <!-- Facts Start -->
-        <div class="facts" data-parallax="scroll" data-image-src="img/facts.jpg">
+        <div class="facts" data-parallax="scroll" data-image-src="img/logo.jpeg">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -457,16 +458,16 @@
                                 <p>{{ $teamData->position }}</p>
                                 <div class="team-social">
                                     @if ($teamData->linkedin != null)
-                                    <a href="{{ $teamData->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="{{ $teamData->linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                     @endif
                                     @if ($teamData->facebook != null)
-                                    <a href="{{ $teamData->linkedin }}"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{ $teamData->linkedin }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                     @endif
                                     @if ($teamData->instagram != null)
-                                    <a href="{{ $teamData->instagram }}"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $teamData->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
                                     @endif
                                     @if ($teamData->twitter != null)
-                                    <a href="{{ $teamData->twitter }}"><i class="fab fa-twitter"></i></a>
+                                    <a href="{{ $teamData->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
                                     @endif
                                 </div>
                             </div>
