@@ -20,7 +20,7 @@ class EventFactory extends Factory
         $faker = Faker::create();
 
         return [
-            'main_img' => $faker->imageUrl($width = 600, $height = 400),
+            'main_img' => $faker->imageUrl($width = 600, $height = 400, true, 'Faker'),
             'caption' => $faker->realText($maxNbchars = 25),
             'excerpt' => $faker->realText($maxNbchars = 200),
             'body' => $faker->realText($maxNbchars = 600),

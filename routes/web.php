@@ -38,12 +38,13 @@ Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name
 Route::get('/eventsPage', [HomeDataController::class, 'eventsPage'])->name('eventsPage');
 Route::get('/volunteerEvent/{id?}', [HomeDataController::class, 'volunteerEvent'])->name('volunteerEvent');
 Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contactPage');
+Route::get('/gallery', [HomeDataController::class, 'galleryPage'])->name('galleryPage');
 
-// Route::get('/delete-event', function () {
-//     Event::truncate();
+Route::get('/delete-event', function () {
+    Event::truncate();
 
-//     return 'done!';
+    return 'done!';
 
-//   });
+  });
 
 Route::get('/mail', [MailController::class, 'becomeVolunteerMail']);

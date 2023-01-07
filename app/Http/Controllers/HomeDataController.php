@@ -449,6 +449,15 @@ class HomeDataController extends Controller
 
 
 
+    // GALLERY PAGE 
+    public function galleryPage()
+    {
+        // $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
+
+        return view('gallery.index');
+    }
+
+
     // CAUSES PAGE 
 
     public function causesPage()

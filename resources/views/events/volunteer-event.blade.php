@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>HELPZ - Free Charity Website Template</title>
+        <title>MCGN - Event</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-12">
                         <a href="{{ route('eventsPage') }}">Events</a>
-                        <a href="#">Join Events</a>
+                        <a href="#">Join Event</a>
                     </div>
                 </div>
             </div>
