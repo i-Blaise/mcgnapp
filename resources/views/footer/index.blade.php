@@ -54,7 +54,7 @@
                 <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
             </div>
             <div class="col-md-6">
-                <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                <p>Designed By <a href="http://cv.sonzie.online/">Sonzie</a></p>
             </div>
         </div>
     </div>
