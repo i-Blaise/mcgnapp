@@ -60,8 +60,12 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-newsletter">
                     <h2>Newsletter</h2>
-                    <form>
-                        <input class="form-control" placeholder="Email goes here">
+                    <form
+                    action="{{ route('newsletter-subs') }}"
+                    method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                        <input class="form-control" name="email" value="{{ old('email') }}" placeholder="Email goes here">
                         <button class="btn btn-custom">Submit</button>
                         <label>Don't worry, we don't spam!</label>
                     </form>

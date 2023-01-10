@@ -42,6 +42,7 @@ Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contac
 Route::get('/gallery', [HomeDataController::class, 'galleryPage'])->name('galleryPage');
 Route::get('/donate-latest-cause', [HomeDataController::class, 'donateLatestCause'])->name('donate-latest-cause');
 Route::get('/latest-blog', [HomeDataController::class, 'latestBlog'])->name('latest-blog');
+Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription'])->name('newsletter-subs');
 
 // Route::get('/donate-latest-cause', function () {
 //   $data = Causes::orderBy('created_at', 'desc')->first();

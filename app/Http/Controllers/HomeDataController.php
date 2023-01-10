@@ -9,8 +9,10 @@ use App\Models\ContactPage;
 use App\Models\ContactUs;
 use App\Models\DonateNow;
 use App\Models\Donations;
+use App\Models\Enquiries;
 use App\Models\Event;
 use App\Models\Home;
+use App\Models\NewsletterSubs;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\VolunteerPage;
@@ -388,13 +390,13 @@ class HomeDataController extends Controller
 
         
 
-        // Donations::create([
-        //     'name' => $request->name,
-        //     'phone_number' => $request->momo_number,
-        //     'email' => $request->email,
-        //     'subject' => $request->amount,
-        //     'message' => $request->message
-        // ]);
+        Enquiries::create([
+            'name' => $request->name,
+            'phone_number' => $request->momo_number,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->user_message
+        ]);
 
         $mailData = $request->all();
 
@@ -447,6 +449,21 @@ class HomeDataController extends Controller
     }
 
 
+
+    function newsLetterSubscription(Request $request){
+
+ 
+        $request->validate([
+            'email' => 'email:rfc,dns',
+        ]);
+
+        NewsletterSubs::create([
+            'email' => $request->email
+        ]);
+
+        return back()->with('success', 'Your Request Was Sent Successfully');
+        
+    }
 
     // ABOUT PAGE 
 

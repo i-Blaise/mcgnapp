@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContactUs extends Model
+class NewsletterSubs extends Model
 {
     use HasFactory;
 
-    public $table = 'contactus';
+    public $table = 'newslettersubs';
+
+    protected $fillable = [
+        'email'
+    ];
 }
