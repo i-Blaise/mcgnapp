@@ -2,31 +2,48 @@
         <div class="top-bar d-none d-md-block">
             <div class="container-fluid">
                 <div class="row">
+                    @foreach ($contactus as $contactData)
                     <div class="col-md-8">
                         <div class="top-bar-left">
                             <div class="text">
                                 <i class="fa fa-phone-alt"></i>
-                                <p>+233 57 165 9610</p>
+                                <p>{{ $contactData->phone_num1 }}</p>
                             </div>
                             <div class="text">
                                 <i class="fa fa-envelope"></i>
-                                <p>info@example.com</p>
+                                <p>{{ $contactData->email }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="top-bar-right">
                             <div class="social">
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
-                                <a href=""><i class="fab fa-snapchat-ghost"></i></a>
+                                @if ($contactData->sm_twitter_status)
+                                <a href="{{ $contactData->sm_twitter_link }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                @endif
+                                @if ($contactData->sm_facebook_status)
+                                <a href="{{ $contactData->sm_facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                @endif
+                                @if ($contactData->sm_youtube_status)
+                                <a href="{{ $contactData->sm_youtube_link }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                                @endif
+                                @if ($contactData->sm_instagram_status)
+                                <a href="{{ $contactData->sm_instagram_link }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                @endif
+                                @if ($contactData->sm_linkedin_status)
+                                <a href="{{ $contactData->sm_linkedin_link }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                @endif
+                                @if ($contactData->sm_whatsapp_status)
+                                <a href="{{ $contactData->sm_whatsapp_link }}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                @endif
+                                @if ($contactData->sm_snapchat_status)
+                                <a href="{{ $contactData->sm_snapchat_link }}" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <!-- Top Bar End -->
