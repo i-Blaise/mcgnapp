@@ -32,7 +32,7 @@ Route::get('/blog', [HomeDataController::class, 'blogPage'])->name('blog');
 Route::get('/about', [HomeDataController::class, 'aboutPage'])->name('about');
 Route::get('/causes', [HomeDataController::class, 'causesPage'])->name('causes');
 Route::get('/causes/{id}', [HomeDataController::class, 'causesSingle'])->name('causes.single');
-Route::post('/becomeVolunteer', [HomeDataController::class, 'becomeVolunteerMail'])->name('blog.becomeVolunteer');
+Route::post('/becomeVolunteer', [HomeDataController::class, 'becomeVolunteer'])->name('blog.becomeVolunteer');
 Route::post('/donateNow', [HomeDataController::class, 'donateNow'])->name('blog.donateNow');
 Route::post('/contactUsForm', [HomeDataController::class, 'contactUsForm'])->name('contactUsForm');
 Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name('donatePage');

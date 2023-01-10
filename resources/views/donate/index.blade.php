@@ -112,7 +112,6 @@
                             enctype="multipart/form-data">
                             @csrf
                                 <div class="control-group">
-                                    <input type="hidden" class="form-control" name="request_page" value="donate" placeholder="Name*" required="required" />
 
                                     <input type="hidden" class="form-control" name="cause_name"
                                     @foreach ($causes as $causesData ) 

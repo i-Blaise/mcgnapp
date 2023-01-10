@@ -189,7 +189,7 @@ class HomeDataController extends Controller
     }
 
 
-    public function becomeVolunteerMail(Request $request)
+    public function becomeVolunteer(Request $request)
     {
 
         $request->validate([
@@ -215,12 +215,7 @@ class HomeDataController extends Controller
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
 
-        if(!empty($request->event_name))
-        {
-            return redirect()->route('eventsPage')->with('success', 'We have recieved your request');
-        }else{
-            return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
-        }
+        return back()->with('success', 'Your Request Was Sent Successfully');
 
         
     }
@@ -364,12 +359,7 @@ class HomeDataController extends Controller
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
 
-
-        if($request->request_page == 'donate'){
-            return redirect()->route('donatePage', ['id' => $request->id])->with('success', 'Your Request Was Sent Successfully');
-        }elseif($request->request_page == 'home'){
-            return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
-        }
+        return back()->with('success', 'Your Request Was Sent Successfully');
 
     }
 
@@ -405,12 +395,7 @@ class HomeDataController extends Controller
             $message->from('volunteer@mcgn.org', 'Cheerful Giver');
         });
 
-        if(!$request->pageID)
-        {
-            return redirect()->route('home')->with('success', 'Your Request Was Sent Successfully');
-        }else{
-            return redirect()->route('contactPage')->with('success', 'Your Request Was Sent Successfully');
-        }
+        return back()->with('success', 'Your Request Was Sent Successfully');
         
     }
 

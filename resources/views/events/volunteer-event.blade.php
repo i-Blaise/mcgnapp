@@ -84,9 +84,6 @@
                             enctype="multipart/form-data">
                             @csrf
 
-                            <div class="control-group">
-                                <input type="hidden" name="event_name" class="form-control" value="{{ $event_name }}" />
-                            </div>
                             
                                 <div class="control-group">
                                     <input type="text" name="full_name" class="form-control" placeholder="Full Name" required="required" value="{{ old('full_name') }}" />

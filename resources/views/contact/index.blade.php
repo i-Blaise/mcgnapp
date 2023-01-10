@@ -80,10 +80,7 @@
                         enctype="multipart/form-data"
                         name="sentMessage" id="contactForm" novalidate="novalidate">
                         @csrf
-
-                        <input type="hidden" class="form-control" id="name" name="pageID" value="true" />
-
-
+                        
                             <div class="control-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name*" required="required" data-validation-required-message="Please enter your name" value="{{ old('name') }}" />
                                 <p class="help-block text-danger"></p>

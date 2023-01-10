@@ -346,9 +346,7 @@
                             enctype="multipart/form-data">
                             @csrf
                                 <div class="control-group">
-                                    <input type="hidden" class="form-control" name="request_page" value="home" placeholder="Name*" required="required" />
-
-
+                                    
                                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name*" required="required" />
                                 </div>
                                 <div class="control-group">
