@@ -4,16 +4,37 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-contact">
                     <h2>Our Head Office</h2>
-                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope"></i>info@example.com</p>
+                    @foreach ($contactus as $contactData )
+                    <p><i class="fa fa-map-marker-alt"></i>{{ $contactData->location }}</p>
+                    <p><i class="fa fa-phone-alt"></i>{{ $contactData->phone_num1 }}</p>
+                    @if ($contactData->phone_num2)
+                    <p><i class="fa fa-phone-alt"></i>{{ $contactData->phone_num2 }}</p> 
+                    @endif
+                    <p><i class="fa fa-envelope"></i>{{ $contactData->email }}</p>
                     <div class="footer-social">
-                        <a class="btn btn-custom" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-custom" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-custom" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-custom" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-custom" href=""><i class="fab fa-linkedin-in"></i></a>
+                        @if ($contactData->sm_twitter_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_twitter_link }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if ($contactData->sm_facebook_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        @endif
+                        @if ($contactData->sm_youtube_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_youtube_link }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                        @endif
+                        @if ($contactData->sm_instagram_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_instagram_link }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                        @endif
+                        @if ($contactData->sm_linkedin_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_linkedin_link }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
+                        @if ($contactData->sm_whatsapp_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_whatsapp_link }}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        @endif
+                        @if ($contactData->sm_snapchat_status)
+                        <a class="btn btn-custom" href="{{ $contactData->sm_snapchat_link }}" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
+                        @endif
                     </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">

@@ -6,6 +6,7 @@ use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\Causes;
 use App\Models\ContactPage;
+use App\Models\ContactUs;
 use App\Models\DonateNow;
 use App\Models\Donations;
 use App\Models\Event;
@@ -42,6 +43,7 @@ class HomeDataController extends Controller
         $blogData = Blog::take(3)->get();
         $volunteerData = VolunteerPage::where('id', 1)->get();
         $contactData = ContactPage::where('id', 1)->get();
+        $contactusData = ContactUs::where('id', 1)->get();
 
         foreach($eventData as $key => $value){
             $month = $this->changeMonthToWord(substr($value->date, 5, -12));
@@ -73,7 +75,8 @@ class HomeDataController extends Controller
             'testimonial' => $testimonialData,
             'blog' => $blogData,
             'volunteerform' => $volunteerData,
-            'contactform' => $contactData
+            'contactform' => $contactData,
+            'contactus' => $contactusData
         ]);
     }
 

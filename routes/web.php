@@ -41,9 +41,11 @@ Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contac
 Route::get('/gallery', [HomeDataController::class, 'galleryPage'])->name('galleryPage');
 
 Route::get('/delete-event', function () {
-    Event::truncate();
+    // Event::truncate();
 
-    return 'done!';
+    // return 'done!';
+
+    return '3' . (print '5') + 7;
 
   });
 
