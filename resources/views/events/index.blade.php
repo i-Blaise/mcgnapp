@@ -22,7 +22,7 @@
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
         {{-- Notification  --}}
@@ -144,7 +144,7 @@
         <script src="mail/contact.js"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
 
         <script>
             function info() {

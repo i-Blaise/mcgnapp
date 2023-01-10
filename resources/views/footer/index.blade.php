@@ -40,11 +40,11 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-link">
                     <h2>Popular Links</h2>
-                    <a href="">About Us</a>
-                    <a href="">Contact Us</a>
-                    <a href="">Popular Causes</a>
-                    <a href="">Upcoming Events</a>
-                    <a href="">Latest Blog</a>
+                    <a href="{{ route('about') }}">About Us</a>
+                    <a href="{{ route('contactPage') }}">Contact Us</a>
+                    <a href="{{ route('donate-latest-cause') }}">Donate to Latest Cause</a>
+                    <a href="{{ route('eventsPage', ['is_over' => true]) }}">Upcoming Events</a>
+                    <a href="{{ route('latest-blog') }}">Latest Blog</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">

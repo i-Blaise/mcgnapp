@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
 use App\Http\Controllers\MailController;
+use App\Models\Causes;
 use App\Models\Event;
 use App\Models\Team;
 use App\Models\Volunteers;
@@ -35,10 +36,20 @@ Route::post('/becomeVolunteer', [HomeDataController::class, 'becomeVolunteerMail
 Route::post('/donateNow', [HomeDataController::class, 'donateNow'])->name('blog.donateNow');
 Route::post('/contactUsForm', [HomeDataController::class, 'contactUsForm'])->name('contactUsForm');
 Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name('donatePage');
-Route::get('/eventsPage', [HomeDataController::class, 'eventsPage'])->name('eventsPage');
+Route::get('/eventsPage/{is_over?}', [HomeDataController::class, 'eventsPage'])->name('eventsPage');
 Route::get('/volunteerEvent/{id?}', [HomeDataController::class, 'volunteerEvent'])->name('volunteerEvent');
 Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contactPage');
 Route::get('/gallery', [HomeDataController::class, 'galleryPage'])->name('galleryPage');
+Route::get('/donate-latest-cause', [HomeDataController::class, 'donateLatestCause'])->name('donate-latest-cause');
+Route::get('/latest-blog', [HomeDataController::class, 'latestBlog'])->name('latest-blog');
+
+// Route::get('/donate-latest-cause', function () {
+//   $data = Causes::orderBy('created_at', 'desc')->first();
+
+//   return route('donatePage', ['id' => $data->id]);
+// //  return view('donate.index', ['id' => $data->id]);
+//   // view('donate.index')
+// })->name('donate-latest-cause');
 
 Route::get('/delete-event', function () {
     // Event::truncate();

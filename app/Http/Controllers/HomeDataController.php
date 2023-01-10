@@ -43,7 +43,6 @@ class HomeDataController extends Controller
         $blogData = Blog::take(3)->get();
         $volunteerData = VolunteerPage::where('id', 1)->get();
         $contactData = ContactPage::where('id', 1)->get();
-        $contactusData = ContactUs::where('id', 1)->get();
 
         foreach($eventData as $key => $value){
             $month = $this->changeMonthToWord(substr($value->date, 5, -12));
@@ -75,8 +74,7 @@ class HomeDataController extends Controller
             'testimonial' => $testimonialData,
             'blog' => $blogData,
             'volunteerform' => $volunteerData,
-            'contactform' => $contactData,
-            'contactus' => $contactusData
+            'contactform' => $contactData
         ]);
     }
 
@@ -256,22 +254,30 @@ class HomeDataController extends Controller
     }
 
 
-    function eventsPage ($id = null)
+    function eventsPage ($is_over = null)
     {
 
-        if(!empty($id))
-        {
-            $causesData = Causes::where('id', $id)->get();
-            $donateNowData = DonateNow::where('id', 1)->get();
+        // $is_over = true;
 
-            return view('donate.index', [
-                'donatenow' => $donateNowData,
-                'causes' => $causesData,
-                'causeID' => true
-            ]);
-        }else{
-            $event = Event::orderBy('date', 'desc')->paginate(4);
-            // $eventData = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->take(2)->get();
+        // if(!empty($id))
+        // {
+        //     $causesData = Causes::where('id', $id)->get();
+        //     $donateNowData = DonateNow::where('id', 1)->get();
+
+        //     return view('donate.index', [
+        //         'donatenow' => $donateNowData,
+        //         'causes' => $causesData,
+        //         'causeID' => true
+        //     ]);
+        // }else{
+
+
+            if(!$is_over)
+            {
+                $event = Event::orderBy('date', 'desc')->simplePaginate(4);
+            }else{
+                $event = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->simplePaginate(4);
+            }
 
             foreach($event as $key => $value){
                 $month = $this->changeMonthToWord(substr($value->date, 5, -12));
@@ -292,10 +298,9 @@ class HomeDataController extends Controller
             return view('events.index', [
                 'eventData' => $event
             ]);
-        }
-
-
     }
+
+
 
 
 
@@ -322,6 +327,12 @@ class HomeDataController extends Controller
         }
 
 
+    }
+
+    function donateLatestCause()
+    {
+        $data = Causes::orderBy('updated_at', 'desc')->first();
+        return $this->donatePage($data->id);
     }
 
 
@@ -420,9 +431,15 @@ class HomeDataController extends Controller
         ]);
     }
 
+    function latestBlog()
+    {
+        $data = Blog::orderBy('updated_at', 'desc')->first();
+        return $this->blogSingle($data->id);
+    }
+
     public function blogPage()
     {
-        $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
+        $blogs = Blog::orderBy('created_at', 'desc')->simplePaginate(6);
 
         return view('blog.index', [
             'blogs' => $blogs
@@ -436,8 +453,8 @@ class HomeDataController extends Controller
     public function aboutPage()
     {
         $about = AboutUs::where('id', 1)->get();
-        $team = Team::orderBy('created_at', 'desc')->paginate(8);
-        $volunteers = Volunteers::orderBy('created_at', 'desc')->paginate(4);
+        $team = Team::orderBy('created_at', 'desc')->simplePaginate(8);
+        $volunteers = Volunteers::orderBy('created_at', 'desc')->simplePaginate(4);
         $testimonialData = Testimonial::get();
         $aboutData = AboutUs::where('id', 1)->get();
 
@@ -455,7 +472,7 @@ class HomeDataController extends Controller
     // GALLERY PAGE 
     public function galleryPage()
     {
-        // $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
+        // $blogs = Blog::orderBy('created_at', 'desc')->simplePaginate(6);
 
         return view('gallery.index');
     }
@@ -465,7 +482,7 @@ class HomeDataController extends Controller
 
     public function causesPage()
     {
-        $causes = Causes::orderBy('created_at', 'desc')->paginate(6);
+        $causes = Causes::orderBy('created_at', 'desc')->simplePaginate(6);
 
         foreach($causes as $key => $value){
             $percentage = $value->money_raised/$value->goal * 100;
