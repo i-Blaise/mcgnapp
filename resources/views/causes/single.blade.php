@@ -21,6 +21,10 @@
         <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
         <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
+        <!-- Progress Bar Template Stylesheet -->
+        <link href="{{ asset('css/progress-bar.css') }}" rel="stylesheet">
+        {{-- <link href="css/progress-bar.css" rel="stylesheet"> --}}
+
         <!-- Template Stylesheet -->
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     </head>
@@ -54,7 +58,8 @@
                     <div class="col-lg-8">
                         <div class="single-content">
                             <img src="{{ $causes->main_img }}" />
-                            <div class="causes-progress">
+
+                            {{-- <div class="causes-progress">
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="{{ $causes->percentage }}" aria-valuemin="0" aria-valuemax="100">
                                         <span>{{ $causes->percentage }}%</span>
@@ -64,8 +69,77 @@
                                     <p><strong>Raised:</strong> ${{ $causes->money_raised }}</p>
                                     <p><strong>Goal:</strong> ${{ $causes->goal }}</p>
                                 </div>
-                            </div>
+                            </div> --}}
+
+
+
+                                <!-- partial:index.partial.html PROGRESS BAR -->
+                                {{-- <ul class="multi-step-bar">
+                                    <li >GHS 100</li>
+                                    <li>GHS 400</li>
+                                    <li>GHS 1,500</li>
+                                    <li class="active">GHS 2,000</li>
+                                    <li>GHS 4,000</li>
+                                    <li>GHS 5,000</li>
+                                </ul> --}}
+                                <!-- partial -->
+
+
+
+                                {{-- <section>
+                                    <h2>Default</h2>
+                                  
+                                    <ol class="progress-bar">
+                                      <li class="is-active"><span>Objective &amp; Template</span></li>  
+                                      <li><span>Options</span></li>  
+                                      <li><span>Step</span></li>
+                                      <li><span>In a Nutshell</span></li>  
+                                      <li><span>Step</span></li>
+                                      <li><span>Step</span></li>
+                                      <li><span>Launch Date</span></li>  
+                                      <li><span>Step</span></li>
+                                      <li><span>Step</span></li>
+                                      <li><span>Agreement</span></li>  
+                                    </ol>
+                                  </section> --}}
+
+
+
+
+
+
+
                             <h2>{{ $causes->caption }}</h2>
+
+                            <br>
+                            <br>
+                                                              <!-- partial:index.partial.html -->
+                                                              <div id=countdown-wrap>
+                                                                <div id="goal">$5,000</div>
+                                                                <div id="glass">
+                                                                <div id="progress">
+                                                                </div>
+                                                                </div>
+                                                                <div class="goal-stat">
+                                                                <span class="goal-number">32.8%</span>
+                                                                <span class="goal-label">Funded</span>
+                                                                </div>
+                                                                <div class="goal-stat">
+                                                                <span class="goal-number">$1,640</span>
+                                                                <span class="goal-label">Raised</span>
+                                                                </div>
+                                                                <div class="goal-stat">
+                                                                <span class="goal-number"><div id="countdown"></div></span>
+                                                                <span class="goal-label">Days to Go</span>
+                                                                </div>
+                                                                <div class="goal-stat">
+                                                                <span class="goal-number">82</span>
+                                                                <span class="goal-label">Products Sold</span>
+                                                                </div>
+                                                            </div>
+                                                            <!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
+                                                            <!-- partial -->  
+                                                            
                             {{ $causes->body }}
                         </div>
                         <div class="single-tags">
@@ -223,14 +297,14 @@
 
                     <div class="col-lg-4">
                         <div class="sidebar">
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <div class="search-widget">
                                     <form>
                                         <input class="form-control" type="text" placeholder="Search Keyword">
                                         <button class="btn"><i class="fa fa-search"></i></button>
                                     </form>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="sidebar-widget">
                                 <h2 class="widget-title">Recent Post</h2>
@@ -298,13 +372,13 @@
                                 </div>
                             </div>
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <div class="image-widget">
                                     <a href="#"><img src="img/blog-1.jpg" alt="Image"></a>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <div class="tab-post">
                                     <ul class="nav nav-pills nav-justified">
                                         <li class="nav-item">
@@ -507,15 +581,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <div class="image-widget">
                                     <a href="#"><img src="img/blog-2.jpg" alt="Image"></a>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <h2 class="widget-title">Categories</h2>
                                 <div class="category-widget">
                                     <ul>
@@ -528,15 +602,15 @@
                                         <li><a href="">Trades</a><span>(32)</span></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <div class="image-widget">
                                     <a href="#"><img src="img/blog-3.jpg" alt="Image"></a>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <h2 class="widget-title">Tags Cloud</h2>
                                 <div class="tag-widget">
                                     <a href="">National</a>
@@ -547,16 +621,16 @@
                                     <a href="">Technology</a>
                                     <a href="">Trades</a>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="sidebar-widget">
+                            {{-- <div class="sidebar-widget">
                                 <h2 class="widget-title">Text Widget</h2>
                                 <div class="text-widget">
                                     <p>
                                         Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea nec eros. Nunc eu enim non turpis id augue.
                                     </p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -652,6 +726,9 @@
 
         <!-- Template Javascript -->
         <script src="{{ asset('js/main.js') }}"></script>
+
+        <!-- Progress Bar Template Javascript -->
+        <script src="{{ asset('js/progress-bar.js') }}"></script>
     </body>
 
     <script>
