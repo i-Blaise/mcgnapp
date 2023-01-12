@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Admin;
 use App\Models\Blog;
 use App\Models\Causes;
 use App\Models\ContactPage;
@@ -33,6 +34,6 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(ContactPage::class); 
 
-        Causes::factory(2)->create();
+        Admin::factory(5)->create();
     }
 }
