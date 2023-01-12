@@ -113,32 +113,32 @@
 
                             <br>
                             <br>
-                                                              <!-- partial:index.partial.html -->
-                                                              <div id=countdown-wrap>
-                                                                <div id="goal">$5,000</div>
-                                                                <div id="glass">
-                                                                <div id="progress">
-                                                                </div>
-                                                                </div>
-                                                                <div class="goal-stat">
-                                                                <span class="goal-number">32.8%</span>
-                                                                <span class="goal-label">Funded</span>
-                                                                </div>
-                                                                <div class="goal-stat">
-                                                                <span class="goal-number">$1,640</span>
-                                                                <span class="goal-label">Raised</span>
-                                                                </div>
-                                                                <div class="goal-stat">
-                                                                <span class="goal-number"><div id="countdown"></div></span>
-                                                                <span class="goal-label">Days to Go</span>
-                                                                </div>
-                                                                <div class="goal-stat">
-                                                                <span class="goal-number">82</span>
-                                                                <span class="goal-label">Products Sold</span>
-                                                                </div>
-                                                            </div>
-                                                            <!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
-                                                            <!-- partial -->  
+                                    <!-- partial:index.partial.html -->
+                                    <div id=countdown-wrap>
+                                    <div id="goal">$5,000</div>
+                                    <div id="glass">
+                                    <div id="progress">
+                                    </div>
+                                    </div>
+                                    <div class="goal-stat">
+                                    <span class="goal-number">32.8%</span>
+                                    <span class="goal-label">Funded</span>
+                                    </div>
+                                    <div class="goal-stat">
+                                    <span class="goal-number">$1,640</span>
+                                    <span class="goal-label">Raised</span>
+                                    </div>
+                                    <div class="goal-stat">
+                                    <span class="goal-number"><div id="countdown"></div></span>
+                                    <span class="goal-label">Days to Go</span>
+                                    </div>
+                                    <div class="goal-stat">
+                                    <span class="goal-number">82</span>
+                                    <span class="goal-label">Products Sold</span>
+                                    </div>
+                                    </div>
+                                    <!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
+                                    <!-- partial -->  
                                                             
                             {{ $causes->body }}
                         </div>
@@ -216,7 +216,7 @@
                             </div>
                         </div>
 
-                        <div class="single-comment">
+                        {{-- <div class="single-comment">
                             <h2>3 Comments</h2>
                             <ul class="comment-list">
                                 <li class="comment-item">
@@ -267,7 +267,10 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
+
+
+                        
                         <div class="comment-form">
                             <h2>Leave a comment</h2>
                             <form>
