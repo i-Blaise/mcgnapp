@@ -271,4 +271,9 @@
         <script src="js/gallery.js"></script>
         <script src="js/main.js"></script>
     </body>
+    <script>
+        function activeTab() {
+        $("#gallery").addClass("active");
+             }
+    </script>
 </html>

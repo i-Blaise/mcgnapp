@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}"/>
         <meta charset="utf-8">
         <title>MCGN</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -58,56 +58,6 @@
                     <div class="col-lg-8">
                         <div class="single-content">
                             <img src="{{ $causes->main_img }}" />
-
-                            {{-- <div class="causes-progress">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ $causes->percentage }}" aria-valuemin="0" aria-valuemax="100">
-                                        <span>{{ $causes->percentage }}%</span>
-                                    </div>
-                                </div>
-                                <div class="progress-text">
-                                    <p><strong>Raised:</strong> ${{ $causes->money_raised }}</p>
-                                    <p><strong>Goal:</strong> ${{ $causes->goal }}</p>
-                                </div>
-                            </div> --}}
-
-
-
-                                <!-- partial:index.partial.html PROGRESS BAR -->
-                                {{-- <ul class="multi-step-bar">
-                                    <li >GHS 100</li>
-                                    <li>GHS 400</li>
-                                    <li>GHS 1,500</li>
-                                    <li class="active">GHS 2,000</li>
-                                    <li>GHS 4,000</li>
-                                    <li>GHS 5,000</li>
-                                </ul> --}}
-                                <!-- partial -->
-
-
-
-                                {{-- <section>
-                                    <h2>Default</h2>
-                                  
-                                    <ol class="progress-bar">
-                                      <li class="is-active"><span>Objective &amp; Template</span></li>  
-                                      <li><span>Options</span></li>  
-                                      <li><span>Step</span></li>
-                                      <li><span>In a Nutshell</span></li>  
-                                      <li><span>Step</span></li>
-                                      <li><span>Step</span></li>
-                                      <li><span>Launch Date</span></li>  
-                                      <li><span>Step</span></li>
-                                      <li><span>Step</span></li>
-                                      <li><span>Agreement</span></li>  
-                                    </ol>
-                                  </section> --}}
-
-
-
-
-
-
 
                             <h2>{{ $causes->caption }}</h2>
 
@@ -270,7 +220,7 @@
                         </div> --}}
 
 
-                        
+
                         <div class="comment-form">
                             <h2>Leave a comment</h2>
                             <form>
