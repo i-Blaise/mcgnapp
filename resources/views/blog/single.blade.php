@@ -187,7 +187,7 @@
                         </div> --}}
 
 
-                        <div class="comment-form">
+                        {{-- <div class="comment-form">
                             <h2>Leave a comment</h2>
                             <form>
                                 <div class="form-group">
@@ -211,7 +211,7 @@
                                     <input type="submit" value="Post Comment" class="btn btn-custom">
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="col-lg-4">
