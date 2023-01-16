@@ -40,11 +40,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Contact Us</h2>
+                        <h2>Gallery</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Contact</a>
+                        <a href="{{ route('home') }}">Home</a>
+                        <a href="#">Gallery</a>
                     </div>
                 </div>
             </div>
