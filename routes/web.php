@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
 use App\Http\Controllers\MailController;
+use App\Models\Admin;
+use App\Models\Blog;
 use App\Models\Causes;
 use App\Models\Event;
 use App\Models\Team;
@@ -55,9 +57,10 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 Route::get('/delete-event', function () {
     // Event::truncate();
 
+    return Admin::find(1);
     // return 'done!';
 
-    return '3' . (print '5') + 7;
+    // return '3' . (print '5') + 7;
 
   });
 

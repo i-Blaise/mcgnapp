@@ -10,4 +10,8 @@ class Admin extends Model
     use HasFactory;
 
     public $table = 'admin';
+
+    protected $hidden = [
+        'email', 'password'
+    ];
 }
