@@ -271,9 +271,9 @@ class HomeDataController extends Controller
 
             if(!$is_over)
             {
-                $event = Event::orderBy('date', 'desc')->simplePaginate(4);
+                $event = Event::orderBy('date', 'desc')->paginate(4);
             }else{
-                $event = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->simplePaginate(4);
+                $event = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->paginate(4);
             }
 
             foreach($event as $key => $value){
@@ -426,7 +426,7 @@ class HomeDataController extends Controller
 
     public function blogPage()
     {
-        $blogs = Blog::orderBy('created_at', 'desc')->simplePaginate(6);
+        $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
 
         return view('blog.index', [
             'blogs' => $blogs
@@ -455,8 +455,8 @@ class HomeDataController extends Controller
     public function aboutPage()
     {
         $about = AboutUs::where('id', 1)->get();
-        $team = Team::orderBy('created_at', 'desc')->simplePaginate(8);
-        $volunteers = Volunteers::orderBy('created_at', 'desc')->simplePaginate(4);
+        $team = Team::orderBy('created_at', 'desc')->paginate(8);
+        $volunteers = Volunteers::orderBy('created_at', 'desc')->paginate(4);
         $testimonialData = Testimonial::get();
         $aboutData = AboutUs::where('id', 1)->get();
 
@@ -474,7 +474,7 @@ class HomeDataController extends Controller
     // GALLERY PAGE 
     public function galleryPage()
     {
-        // $blogs = Blog::orderBy('created_at', 'desc')->simplePaginate(6);
+        // $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
 
         return view('gallery.index');
     }
@@ -484,7 +484,7 @@ class HomeDataController extends Controller
 
     public function causesPage()
     {
-        $causes = Causes::orderBy('created_at', 'desc')->simplePaginate(6);
+        $causes = Causes::orderBy('created_at', 'desc')->paginate(6);
 
         foreach($causes as $key => $value){
             $percentage = $value->money_raised/$value->goal * 100;

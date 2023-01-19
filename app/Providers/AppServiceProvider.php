@@ -29,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
         $contactusData = ContactUs::where('id', 1)->get();
 
         View::share('contactus', $contactusData);
+
+        Paginator::useBootstrap();
         // Paginator::useBootstrap();
     }
 }

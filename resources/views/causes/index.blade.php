@@ -100,6 +100,13 @@
                         </ul> 
                     </div>
                 </div>
+                {{-- <div class="row">
+                    <div class="col-12">
+                        <ul class="pagination justify-content-center">
+                            {{ $causes->links() }}
+                        </ul> 
+                    </div>
+                </div> --}}
 
             </div>
         </div>
