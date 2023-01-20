@@ -181,15 +181,16 @@
 
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <ul class="pagination justify-content-center">
-
-                    {{ $team->links() }}
-                </ul> 
+            <div class="row">
+                <div class="col-12">
+                    <ul class="pagination justify-content-center">
+    
+                        {{ $team->links() }}
+                    </ul> 
+                </div>
             </div>
         </div>
+
         <!-- Team End -->
 
 

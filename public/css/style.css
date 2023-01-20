@@ -1028,6 +1028,26 @@ a:focus {
     color: #ffffff;
 }
 
+.causes .pagination {
+    margin-bottom: 15px;
+}
+
+.causes .pagination .page-link {
+    color: #4a4c70;
+    border-radius: 0;
+    border-color: #4a4c70;
+}
+
+.causes .pagination .page-link:hover,
+.causes .pagination .page-item.active .page-link {
+    color: #FDBE33;
+    background: #4a4c70;
+}
+
+.causes .pagination .disabled .page-link {
+    color: #999999;
+}
+
 
 
 /*******************************/
@@ -1173,6 +1193,26 @@ a:focus {
 
 .team .team-item:hover .team-text {
     height: 160px;
+}
+
+.team .pagination {
+    margin-bottom: 15px;
+}
+
+.team .pagination .page-link {
+    color: #4a4c70;
+    border-radius: 0;
+    border-color: #4a4c70;
+}
+
+.team .pagination .page-link:hover,
+.team .pagination .page-item.active .page-link {
+    color: #FDBE33;
+    background: #4a4c70;
+}
+
+.team .pagination .disabled .page-link {
+    color: #999999;
 }
 
 
@@ -1379,6 +1419,26 @@ a:focus {
 .event .event-meta i {
     color: #4a4c70;
     width: 25px;
+}
+
+.event .pagination {
+    margin-bottom: 15px;
+}
+
+.event .pagination .page-link {
+    color: #4a4c70;
+    border-radius: 0;
+    border-color: #4a4c70;
+}
+
+.event .pagination .page-link:hover,
+.event .pagination .page-item.active .page-link {
+    color: #FDBE33;
+    background: #4a4c70;
+}
+
+.event .pagination .disabled .page-link {
+    color: #999999;
 }
 
 .event .event-text {
