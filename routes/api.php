@@ -20,5 +20,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
+// Route::apiResource('/admin', [AuthController::class, 'getData'])->middleware('auth:sanctum');
 Route::post('/register', [AuthController::class, 'createUser']);
 Route::post('/login', [AuthController::class, 'loginUser']);
+Route::get('/admin', [AuthController::class, 'getData']);

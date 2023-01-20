@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\CMS;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -98,5 +99,15 @@ class AuthController extends Controller
                 'message' => $th->getMessage()
             ], 500);
         }
+    }
+
+    public function getData(){
+        $check = Auth::id();
+        $data = Admin::get();
+
+        return response()->json([
+            'status' => true,
+            'data' => $check
+        ]);
     }
 }
