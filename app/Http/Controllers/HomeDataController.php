@@ -47,9 +47,9 @@ class HomeDataController extends Controller
         $contactData = ContactPage::where('id', 1)->get();
 
         foreach($eventData as $key => $value){
-            $month = $this->changeMonthToWord(substr($value->date, 5, -12));
-            $year = substr($value->date, 0, -15);
-            $day = substr($value->date, 8, -9);
+            $month = $this->changeMonthToWord(substr($value->date, 5, -3));
+            $year = substr($value->date, 0, -6);
+            $day = substr($value->date, 8);
 
             $processedDate = $day.'-'.$month.'-'.$year;
             $value->processedDate = $processedDate;
@@ -66,6 +66,7 @@ class HomeDataController extends Controller
             $value->end_time = substr($value->end_time, 0, -3);
         }
         
+        // dd($eventData);
         return view('home.index', [
             'aboutus' => $aboutData,
             'data' => $homeData,
@@ -277,9 +278,9 @@ class HomeDataController extends Controller
             }
 
             foreach($event as $key => $value){
-                $month = $this->changeMonthToWord(substr($value->date, 5, -12));
-                $year = substr($value->date, 0, -15);
-                $day = substr($value->date, 8, -9);
+                $month = $this->changeMonthToWord(substr($value->date, 5, -3));
+                $year = substr($value->date, 0, -6);
+                $day = substr($value->date, 8);
     
                 $processedDate = $day.'-'.$month.'-'.$year;
                 $value->processedDate = $processedDate;

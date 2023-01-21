@@ -24,7 +24,7 @@ class EventFactory extends Factory
             'caption' => $faker->realText($maxNbchars = 25),
             'excerpt' => $faker->realText($maxNbchars = 200),
             'body' => $faker->realText($maxNbchars = 600),
-            'date' => $faker->date($format = 'Y-m-d', $max = '1 year'),
+            'date' => $faker->date($format = 'Y-m-d', $max = '2025-01-01'),
             // 'date' => $faker->dateTimeBetween($startDate = '-3 years', $endDate = '2 year', $timezone = null),
             'begin_time' => $faker->time($format = 'H:i', $max = '11:00'),
             'end_time' => $faker->time($format = 'H:i', $max = '20:00'),
