@@ -34,6 +34,6 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(ContactPage::class); 
 
-        Admin::factory(5)->create();
+        Event::factory(20)->create();
     }
 }

@@ -56,10 +56,10 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 // })->name('donate-latest-cause');
 
 Route::get('/delete-event', function () {
-    // Event::truncate();
+    Event::truncate();
 
     // return Admin::find(1);
-   return DB::table('admin')->select('id', 'name as profile_img');
+  //  return DB::table('admin')->select('id', 'name as profile_img');
     // return 'done!';
 
     // return '3' . (print '5') + 7;
