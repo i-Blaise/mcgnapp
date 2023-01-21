@@ -366,6 +366,7 @@ class HomeDataController extends Controller
 
     function contactUsForm(Request $request){
 
+        dd($request->input('name', 'sal'));
  
         $request->validate([
             'name' => 'required',
@@ -382,7 +383,7 @@ class HomeDataController extends Controller
 
         Enquiries::create([
             'name' => $request->name,
-            'phone_number' => $request->momo_number,
+            'phone_num' => $request->phone_number,
             'email' => $request->email,
             'subject' => $request->subject,
             'message' => $request->user_message
@@ -560,4 +561,7 @@ class HomeDataController extends Controller
     {
         //
     }
+
+
 }
+

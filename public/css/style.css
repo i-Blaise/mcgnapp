@@ -521,6 +521,10 @@ a:focus {
         font-size: 15px;
         letter-spacing: 0;
     }
+
+    .logo-img{
+        display: none !important;
+    }
 }
 
 @media (max-width: 767.98px) {

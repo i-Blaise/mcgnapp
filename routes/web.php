@@ -10,6 +10,7 @@ use App\Models\Causes;
 use App\Models\Event;
 use App\Models\Team;
 use App\Models\Volunteers;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 Route::get('/delete-event', function () {
     // Event::truncate();
 
-    return Admin::find(1);
+    // return Admin::find(1);
+   return DB::table('admin')->select('id', 'name as profile_img');
     // return 'done!';
 
     // return '3' . (print '5') + 7;
