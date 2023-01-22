@@ -51,6 +51,9 @@ class HomeDataController extends Controller
             $year = substr($value->date, 0, -6);
             $day = substr($value->date, 8);
 
+            $value->begin_time = substr($value->begin_time, 0, -3);
+            $value->end_time = substr($value->end_time, 0, -3);
+
             $processedDate = $day.'-'.$month.'-'.$year;
             $value->processedDate = $processedDate;
         }
@@ -61,10 +64,10 @@ class HomeDataController extends Controller
             $value->percentage = round($percentage, 0);
         }
 
-        foreach($eventData as $key => $value){
-            $value->begin_time = substr($value->begin_time, 0, -3);
-            $value->end_time = substr($value->end_time, 0, -3);
-        }
+        // foreach($eventData as $key => $value){
+        //     $value->begin_time = substr($value->begin_time, 0, -3);
+        //     $value->end_time = substr($value->end_time, 0, -3);
+        // }
         
         // dd($eventData);
         return view('home.index', [
@@ -284,6 +287,9 @@ class HomeDataController extends Controller
     
                 $processedDate = $day.'-'.$month.'-'.$year;
                 $value->processedDate = $processedDate;
+                
+                $value->begin_time = substr($value->begin_time, 0, -3);
+                $value->end_time = substr($value->end_time, 0, -3);
 
                 if($value->date <= Carbon::now())
                 {

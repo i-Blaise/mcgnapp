@@ -84,8 +84,8 @@
                             <div class="event-content">
                                 <div class="event-meta">
                                     <p><i class="fa fa-calendar-alt"></i>{{ $events->processedDate }}</p>
-                                    <p><i class="far fa-clock"></i>8:00 - 10:00</p>
-                                    <p><i class="fa fa-map-marker-alt"></i>New York</p>
+                                    <p><i class="far fa-clock"></i>{{ $events->begin_time }} - {{ $events->end_time }}</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>{{ $events->location }}</p>
                                 </div>
                                 <div class="event-text">
                                     <h3>{{ $events->caption }}</h3>
