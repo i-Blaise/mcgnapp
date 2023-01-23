@@ -76,10 +76,10 @@
     <div class="container copyright">
         <div class="row">
             <div class="col-md-6">
-                <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                <p>&copy; <a href="#">Massive Cheerful Giving Network</a>, All Right Reserved.</p>
             </div>
             <div class="col-md-6">
-                <p>Designed By <a href="http://cv.sonzie.online/">Sonzie</a></p>
+                <p>Designed By <a href="http://cv.sonzie.online/">Blaise S. Mennia</a></p>
             </div>
         </div>
     </div>
