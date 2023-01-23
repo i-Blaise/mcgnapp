@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-12">
                         <a href="{{ route('home') }}">Home</a>
-                        <a href="#">Contact</a>
+                        <a href="#">Contact Us</a>
                     </div>
                 </div>
             </div>
