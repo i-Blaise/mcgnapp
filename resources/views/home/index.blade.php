@@ -226,7 +226,7 @@
         
         
         <!-- Facts Start -->
-        <div class="facts" data-parallax="scroll" data-image-src="img/logo.jpeg">
+        <div class="facts" data-parallax="scroll" data-image-src="img/facts.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
