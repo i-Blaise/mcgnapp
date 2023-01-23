@@ -1,13 +1,16 @@
-body{
-  		padding-top: 3rem;
-  		padding-bottom: 0rem;
+	body{
+  		/* padding-top: 3rem; */
+  		/* padding-bottom: 0rem; */
+		display: flex;
+		flex-direction: column;
   	}
   	img{
   		margin-bottom: 25px;
   	}
-  	.container{
+  	.container-gallery{
   		padding-left: 20px;
   		padding-right: 20px;
+		flex: 1 1 auto;
   	}
   	.gallery_control_option{
   		cursor: pointer;
