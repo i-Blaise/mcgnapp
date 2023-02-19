@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CMS\AuthController;
+use App\Http\Controllers\Api\CMS\HeadersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'createUser']);
 // Route::post('/login', [AuthController::class, 'loginUser']);
 Route::get('/admin', [AuthController::class, 'getData']);
+Route::get('/homeHeaders', [HeadersController::class, 'getHomeHeaders']);
 
 // Route::group(['prefix' => 'api', 'middleware' => 'throttle:3,10'], function () {
 //     Route::post('/login', [AuthController::class, 'loginUser']);
