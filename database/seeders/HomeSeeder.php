@@ -16,25 +16,28 @@ class HomeSeeder extends Seeder
      */
     public function run()
     {
-        $this->faker = Faker::create();
+        $faker = Faker::create();
         $homeData = [
             [
                 'home_slider_img' => 'img/carousel-1.jpg',
-                'home_slider_caption' => $this->faker->realText($maxNbChars = 50),
-                'home_slider_text' => $this->faker->realText($maxNbChars = 150),
-                'video_link' => 'https://www.youtube.com/watch?v=2mqsVzgsV_c&list=PLN4ZYs0zvvGngkRZyAQhg-nYuXOfD6HMF&index=3&t=15017s'
+                'home_slider_caption' => $faker->realText($maxNbChars = 50),
+                'home_slider_text' => $faker->realText($maxNbChars = 150),
+                'video_link' => 'https://www.youtube.com/watch?v=2mqsVzgsV_c&list=PLN4ZYs0zvvGngkRZyAQhg-nYuXOfD6HMF&index=3&t=15017s',
+                'donation_cause' => $faker->randomDigitNotZero()
             ],
             [
                 'home_slider_img' => 'img/carousel-2.jpg',
-                'home_slider_caption' => $this->faker->realText($maxNbChars = 50),
-                'home_slider_text' => $this->faker->realText($maxNbChars = 150),
-                'video_link' => 'https://www.youtube.com/watch?v=2mqsVzgsV_c&list=PLN4ZYs0zvvGngkRZyAQhg-nYuXOfD6HMF&index=3&t=15017s'
+                'home_slider_caption' => $faker->realText($maxNbChars = 50),
+                'home_slider_text' => $faker->realText($maxNbChars = 150),
+                'video_link' => 'https://www.youtube.com/watch?v=2mqsVzgsV_c&list=PLN4ZYs0zvvGngkRZyAQhg-nYuXOfD6HMF&index=3&t=15017s',
+                'donation_cause' => $faker->randomDigitNotZero()
             ],
             [
                 'home_slider_img' => 'img/carousel-3.jpg',
-                'home_slider_caption' => $this->faker->realText($maxNbChars = 50),
-                'home_slider_text' => $this->faker->realText($maxNbChars = 150),
-                'video_link' => 'https://www.youtube.com/watch?v=2mqsVzgsV_c&list=PLN4ZYs0zvvGngkRZyAQhg-nYuXOfD6HMF&index=3&t=15017s'
+                'home_slider_caption' => $faker->realText($maxNbChars = 50),
+                'home_slider_text' => $faker->realText($maxNbChars = 150),
+                'video_link' => 'https://www.youtube.com/watch?v=2mqsVzgsV_c&list=PLN4ZYs0zvvGngkRZyAQhg-nYuXOfD6HMF&index=3&t=15017s',
+                'donation_cause' => $faker->randomDigitNotZero()
             ]
         ];
 

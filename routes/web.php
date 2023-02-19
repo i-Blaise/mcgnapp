@@ -8,6 +8,7 @@ use App\Models\Admin;
 use App\Models\Blog;
 use App\Models\Causes;
 use App\Models\Event;
+use App\Models\Home;
 use App\Models\Team;
 use App\Models\Volunteers;
 use Illuminate\Support\Facades\DB;
@@ -55,8 +56,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //   // view('donate.index')
 // })->name('donate-latest-cause');
 
-Route::get('/delete-event', function () {
-    Event::truncate();
+Route::get('/delete-home', function () {
+    Home::truncate();
 
     // return Admin::find(1);
   //  return DB::table('admin')->select('id', 'name as profile_img');
