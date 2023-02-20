@@ -26,6 +26,7 @@ Route::post('/register', [AuthController::class, 'createUser']);
 // Route::post('/login', [AuthController::class, 'loginUser']);
 Route::get('/admin', [AuthController::class, 'getData']);
 Route::get('/homeHeaders', [HeadersController::class, 'getHomeHeaders']);
+Route::post('/addSlider', [HeadersController::class, 'addHeaderSlide']);
 
 // Route::group(['prefix' => 'api', 'middleware' => 'throttle:3,10'], function () {
 //     Route::post('/login', [AuthController::class, 'loginUser']);

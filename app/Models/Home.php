@@ -10,4 +10,8 @@ class Home extends Model
     use HasFactory;
 
     public $table = 'home';
+
+    protected $fillable = [
+        'slider_img', 'caption', 'desc', 'donation_cause', 'video_linl'
+    ];
 }
