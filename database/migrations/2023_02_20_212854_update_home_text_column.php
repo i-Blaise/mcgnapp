@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('home', function (Blueprint $table) {
-            $table->string('home_slider_img', 255)->nullable()->change();
+            $table->string('home_slider_text', 255)->nullable()->change();
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('donation_cause');
+        //
     }
 };

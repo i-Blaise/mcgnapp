@@ -25,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('donation_cause');
+        Schema::table('home', function (Blueprint $table) {
+            $table->string('home_slider_img', 255)->change();
+        });
     }
 };

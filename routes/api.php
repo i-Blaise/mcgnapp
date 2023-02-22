@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'createUser']);
 // Route::post('/login', [AuthController::class, 'loginUser']);
 Route::get('/admin', [AuthController::class, 'getData']);
+Route::get('/causes-btn', [HeadersController::class, 'getCasusesForDonateButton']);
 Route::get('/homeHeaders', [HeadersController::class, 'getHomeHeaders']);
 Route::post('/addSlider', [HeadersController::class, 'addHeaderSlide']);
 
