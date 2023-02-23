@@ -33,16 +33,18 @@ class HeadersController extends Controller
 
 
     public function addHeaderSlide(Request $request){
-        dd($request);
+        dd($request->slider_image);
         // dd($this->storeImage($request));
-        // return $this->storeImage($request);
+        // dd($request->file);
         $request->validate([
-            // 'slider_img' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'slider_img' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
             'caption' => 'required|string|max:50',
             'desc' => 'required|string|max:150',
             'donation_cause' => 'nullable',
             'video_link' => 'url|nullable'
         ]);
+
+        // $image_path = $request->file('home_slider_img')->store('image', 'public');
 
 
         $home_header = new Home;
