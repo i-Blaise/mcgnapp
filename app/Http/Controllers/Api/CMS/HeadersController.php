@@ -33,11 +33,11 @@ class HeadersController extends Controller
 
 
     public function addHeaderSlide(Request $request){
-        dd($request->slider_image);
+        // dd($request);
         // dd($this->storeImage($request));
         // dd($request->file);
         $request->validate([
-            'slider_img' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'imageLink' => 'required|string',
             'caption' => 'required|string|max:50',
             'desc' => 'required|string|max:150',
             'donation_cause' => 'nullable',
@@ -49,7 +49,7 @@ class HeadersController extends Controller
 
         $home_header = new Home;
 
-        // $home_header->home_slider_img = $this->storeImage($request);
+        $home_header->home_slider_img = $request->imageLink;;
         $home_header->home_slider_caption = $request->caption;
         $home_header->home_slider_text = $request->desc;
         $home_header->video_link = $request->video_link;
