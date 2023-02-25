@@ -59,12 +59,6 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 Route::get('/delete-home', function () {
     Home::truncate();
 
-    // return Admin::find(1);
-  //  return DB::table('admin')->select('id', 'name as profile_img');
-    // return 'done!';
-
-    // return '3' . (print '5') + 7;
-
   });
 
 Route::get('/mail', [MailController::class, 'becomeVolunteerMail']);
