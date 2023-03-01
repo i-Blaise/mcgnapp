@@ -60,11 +60,15 @@
                             <img src="img/logo.png" class="logo-img" alt="Image">
                             <h1>{{ $homeData->home_slider_caption }}</h1>
                             <p>
-                                {{ $homeData->home_slider_text }}
+                                {!! $homeData->home_slider_text !!}
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn btn-custom" href="{{ route('donatePage') }}">Donate Now</a>
+                                @if (isset($homeData->donation_cause))
+                                <a class="btn btn-custom" href="{{ route('donatePage', ['id' => $homeData->donation_cause]) }}">Donate Now</a>
+                                @endif
+                                @if (isset($homeData->video_link))
                                 <a class="btn btn-custom btn-play" data-toggle="modal" data-src="{{ $homeData->video_link }}" data-target="#videoModal">Watch Video</a>
+                                @endif
                             </div>
                         </div>
                     </div>
