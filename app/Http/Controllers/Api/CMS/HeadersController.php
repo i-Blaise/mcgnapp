@@ -58,6 +58,19 @@ class HeadersController extends Controller
     }
 
 
+    public function deleteHeader($id){
+        $header = Home::destroy($id);
+
+        $response = ([
+            'status' => true,
+            'message' => 'Header Deleted'
+        ]);
+        $status = json_encode($response);
+        return response($status);
+        
+    }
+
+
 
     public function storeImage($request)
     {
