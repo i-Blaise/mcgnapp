@@ -63,7 +63,7 @@ class HeadersController extends Controller
 
         $response = ([
             'status' => true,
-            'message' => 'Header Deleted'
+            'message' => 'Header Deleted.'
         ]);
         $status = json_encode($response);
         return response($status);
