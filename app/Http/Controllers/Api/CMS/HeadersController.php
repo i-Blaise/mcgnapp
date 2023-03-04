@@ -87,12 +87,12 @@ class HeadersController extends Controller
 
 
 
-    public function storeImage($request)
-    {
-        $newImageName = uniqid(). '-' .$request->caption . '.' .$request->slider_img->extension();
-        $append = 'https://mcgnapp.test/home-header-image/';
-        $img_final_path = $append.$newImageName;
-        $request->slider_img->move('home-header-image', $img_final_path);
-        return $img_final_path;
-    }
+    // public function storeImage($request)
+    // {
+    //     $newImageName = uniqid(). '-' .$request->caption . '.' .$request->slider_img->extension();
+    //     $append = 'https://mcgnapp.test/home-header-image/';
+    //     $img_final_path = $append.$newImageName;
+    //     $request->slider_img->move('home-header-image', $img_final_path);
+    //     return $img_final_path;
+    // }
 }
