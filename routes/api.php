@@ -29,6 +29,7 @@ Route::get('/causes-btn', [HeadersController::class, 'getCasusesForDonateButton'
 Route::get('/homeHeaders', [HeadersController::class, 'getHomeHeaders']);
 Route::post('/addSlider', [HeadersController::class, 'addHeaderSlide']);
 Route::delete('/deleteHeader/{id}', [HeadersController::class, 'deleteHeader']);
+Route::get('/allheaders', [HeadersController::class, 'fetchAllPageHeaders']);
 
 // Route::group(['prefix' => 'api', 'middleware' => 'throttle:3,10'], function () {
 //     Route::post('/login', [AuthController::class, 'loginUser']);

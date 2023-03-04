@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\CMS;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HeadersRequest;
+use App\Models\AboutUs;
 use App\Models\Causes;
 use App\Models\Home;
 use Illuminate\Http\Request;
@@ -19,6 +20,20 @@ class HeadersController extends Controller
             'data' => $header
         ]);
     }
+    
+
+    // public function fetchAllPageHeaders(){
+    //     $aboutus = AboutUs::get('header_img');
+    //     $causes = Causes::get('main_img');
+
+    //     $about_header = $aboutus[0]->header_img;
+
+
+    //     return response()->json([
+    //         'status' => true,
+    //         'about' => $about_header
+    //     ]);
+    // }
 
 
     public function getCasusesForDonateButton(){

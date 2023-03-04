@@ -59,7 +59,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="{{ route('home') }}" class="nav-item nav-link" id="header">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link" id="header">About Us</a>
+                        <a href="{{ route('about') }}" class="nav-item nav-link" id="about">About Us</a>
                         {{-- <a href="{{ route('about') }}" class="nav-item nav-link" id="about">About</a> --}}
                         <a href="{{ route('causes') }}" class="nav-item nav-link" id="causes">Causes</a>
                         <a href="{{ route('eventsPage') }}" class="nav-item nav-link" id="events">Events</a>
