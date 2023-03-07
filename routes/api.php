@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CMS\AboutController;
 use App\Http\Controllers\Api\CMS\AuthController;
 use App\Http\Controllers\Api\CMS\HeadersController;
 use Illuminate\Http\Request;
@@ -22,14 +23,22 @@ use Illuminate\Support\Facades\Route;
 
 // Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 // Route::apiResource('/admin', [AuthController::class, 'getData'])->middleware('auth:sanctum');
-Route::post('/register', [AuthController::class, 'createUser']);
-// Route::post('/login', [AuthController::class, 'loginUser']);
-Route::get('/admin', [AuthController::class, 'getData']);
-Route::get('/causes-btn', [HeadersController::class, 'getCasusesForDonateButton']);
-Route::get('/homeHeaders', [HeadersController::class, 'getHomeHeaders']);
-Route::post('/addSlider', [HeadersController::class, 'addHeaderSlide']);
-Route::delete('/deleteHeader/{id}', [HeadersController::class, 'deleteHeader']);
-Route::get('/allheaders', [HeadersController::class, 'fetchAllPageHeaders']);
+
+Route::prefix('header')->group(function () {
+    Route::post('/register', [AuthController::class, 'createUser']);
+    // Route::post('/login', [AuthController::class, 'loginUser']);
+    Route::get('/admin', [AuthController::class, 'getData']);
+    Route::get('/causes-btn', [HeadersController::class, 'getCasusesForDonateButton']);
+    Route::get('/homeHeaders', [HeadersController::class, 'getHomeHeaders']);
+    Route::post('/addSlider', [HeadersController::class, 'addHeaderSlide']);
+    Route::delete('/deleteHeader/{id}', [HeadersController::class, 'deleteHeader']);
+    Route::get('/allheaders', [HeadersController::class, 'fetchAllPageHeaders']);
+});
+
+
+Route::prefix('about')->group(function () {
+    Route::get('/aboutData', [AboutController::class, 'fetchAboutData']);
+});
 
 // Route::group(['prefix' => 'api', 'middleware' => 'throttle:3,10'], function () {
 //     Route::post('/login', [AuthController::class, 'loginUser']);

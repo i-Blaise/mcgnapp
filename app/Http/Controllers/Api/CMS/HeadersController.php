@@ -39,8 +39,6 @@ class HeadersController extends Controller
     public function getCasusesForDonateButton(){
         $header = Causes::select('id', 'caption')->get();
 
-        // return $header;
-
         return response()->json([
             'status' => true,
             'data' => $header
