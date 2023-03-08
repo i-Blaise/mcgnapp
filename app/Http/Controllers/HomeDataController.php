@@ -359,12 +359,12 @@ class HomeDataController extends Controller
             'cause_name' => $request->cause_name
         ]);
 
-        // $mailData = $request->all();
+        $mailData = $request->all();
 
-        // Mail::send('mails.donations-mail', $mailData, function($message) {
-        //     $message->to('menniablaise@yahoo.com', 'Mr. Blaise')->subject('New Donation');
-        //     $message->from('volunteer@mcgn.org', 'Cheerful Giver');
-        // });
+        Mail::send('mails.donations-mail', $mailData, function($message) {
+            $message->to('menniablaise@yahoo.com', 'Mr. Blaise')->subject('New Donation');
+            $message->from('volunteer@mcgn.org', 'Cheerful Giver');
+        });
 
         return back()->with('success', 'Your Request Was Sent Successfully');
 
