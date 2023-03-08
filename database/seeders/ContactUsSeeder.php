@@ -22,7 +22,6 @@ class ContactUsSeeder extends Seeder
             [
                 'location' => $faker->streetAddress().', '.$faker->city().', '.$faker->country(),
                 'phone_num1' => $faker->phoneNumber(),
-                'phone_num1' => $faker->optional($weight = 0.5)->phoneNumber(),
                 'email' => 'info@mcgn.org',
                 'sm_facebook_status' => 1,
                 'sm_facebook_link' => $faker->url(),
