@@ -56,8 +56,9 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //   // view('donate.index')
 // })->name('donate-latest-cause');
 
-Route::get('/delete-home', function () {
-    Home::truncate();
+Route::get('/delete-blog', function () {
+    Blog::truncate();
+    return 'done';
 
   });
 
