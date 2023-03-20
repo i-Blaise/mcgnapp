@@ -34,10 +34,10 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(ContactPage::class); 
 
-        Causes::factory(11)->create();
+        // Causes::factory(11)->create();
         Blog::factory(4)->create();
-        Team::factory(6)->create();
-        Testimonial::factory(8)->create();
-        Volunteers::factory(10)->create();
+        // Team::factory(6)->create();
+        // Testimonial::factory(8)->create();
+        // Volunteers::factory(10)->create();
     }
 }
