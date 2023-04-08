@@ -48,6 +48,11 @@ Route::get('/donate-latest-cause', [HomeDataController::class, 'donateLatestCaus
 Route::get('/latest-blog', [HomeDataController::class, 'latestBlog'])->name('latest-blog');
 Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription'])->name('newsletter-subs');
 
+
+
+
+Route::get('admin/header', [HomeDataController::class, 'adminHeader'])->name('header');
+
 // Route::get('/donate-latest-cause', function () {
 //   $data = Causes::orderBy('created_at', 'desc')->first();
 

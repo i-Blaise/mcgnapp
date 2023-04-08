@@ -30,6 +30,11 @@ class HomeDataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function adminHeader(){
+        return view('admin.pages.headers.index');
+    }
     public function index()
     {
         // $homeData = DB::table('home')->get();
