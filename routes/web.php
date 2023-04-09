@@ -12,6 +12,7 @@ use App\Models\Home;
 use App\Models\Team;
 use App\Models\Volunteers;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,8 @@ Route::get('admin/header', [HomeDataController::class, 'adminHeader'])->name('he
 Route::get('/delete-blog', function () {
     Blog::truncate();
     return 'done';
+
+    // return Carbon::now();
 
   });
 

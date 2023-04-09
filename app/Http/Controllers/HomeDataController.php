@@ -263,21 +263,6 @@ class HomeDataController extends Controller
     function eventsPage ($is_over = null)
     {
 
-        // $is_over = true;
-
-        // if(!empty($id))
-        // {
-        //     $causesData = Causes::where('id', $id)->get();
-        //     $donateNowData = DonateNow::where('id', 1)->get();
-
-        //     return view('donate.index', [
-        //         'donatenow' => $donateNowData,
-        //         'causes' => $causesData,
-        //         'causeID' => true
-        //     ]);
-        // }else{
-
-
             if(!$is_over)
             {
                 $event = Event::orderBy('date', 'desc')->paginate(4);
