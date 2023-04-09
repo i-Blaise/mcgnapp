@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
+use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\MailController;
 use App\Models\Admin;
 use App\Models\Blog;
@@ -52,7 +53,11 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
 
 
-Route::get('admin/header', [HomeDataController::class, 'adminHeader'])->name('header');
+// Route::get('admin/home', [AdminHomeController::class, 'indexPage'])->name('home');
+
+// Route::domain('admin.' . env('APP_URL'))->group(function () {
+//   Route::get('admin/home', [AdminHomeController::class, 'indexPage'])->name('home');
+// });
 
 // Route::get('/donate-latest-cause', function () {
 //   $data = Causes::orderBy('created_at', 'desc')->first();

@@ -149,6 +149,9 @@
                     <div class="form-group">
                     <label for="exampleFormControlSelect1">Donation Cause</label>
                     <select class="form-control form-control-lg" name="donation_cause" id="donate_btn" disabled>
+                      @foreach ($causesData as $causes)
+                    <option value="{{ $causes->id }}">{{ $causes->caption }}</option>
+                    @endforeach
                     </select>
                   </div>
 

@@ -32,9 +32,7 @@ class HomeDataController extends Controller
      */
 
 
-    public function adminHeader(){
-        return view('admin.pages.headers.index');
-    }
+
     public function index()
     {
         // $homeData = DB::table('home')->get();
