@@ -64,6 +64,7 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
 Route::prefix('admin')->group(function () {
   Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
+  Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
 });
 
 

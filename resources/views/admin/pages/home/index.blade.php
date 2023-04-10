@@ -96,7 +96,12 @@
                   <p class="card-description">
                     Basic form layout
                   </p>
-                  <form method="POST" action="" enctype="multipart/form-data" class="forms-sample">
+                  <form 
+                  action="{{ route('home.UploadHeader') }}"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  class="forms-sample">
+                  @csrf
                     <div class="form-group">
                       <label>File upload</label>
                       <input type="file" name="slider_img" class="file-upload-default" value="">
@@ -183,13 +188,24 @@
                           <th>Action</th>
                         </tr>
                       </thead>
+                      @foreach ($headersData as $header)
                       <tbody>
-                          <tr id="">
+                          <tr id="{{ $header->id }}">
                           <td class="py-1">
-                            <img src="" alt="image"/>
+                            <img src="{{ $header->home_slider_img }}" alt="image"/>
                           </td>
+                          @if ($header->video_link == null)
+                            <td class="text-danger"><i class="mdi mdi-close"></i></td>
+                            @else
+                            <td class="text-success"><i class="mdi mdi-check"></i></td>
+                          @endif
+
+                          @if ($header->donation_cause == null)
                           <td class="text-danger"><i class="mdi mdi-close"></i></td>
+                          @else
                           <td class="text-success"><i class="mdi mdi-check"></i></td>
+                          @endif
+                          
 
 
                           <td>
@@ -199,6 +215,7 @@
                           </td>
                         </tr>
                       </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>
@@ -237,6 +254,35 @@
   <script src="../../admin_assets/js/typeahead.js"></script>
   <script src="../../admin_assets/js/select2.js"></script>
   <!-- End custom js for this page-->
+
+
+  <script>
+    @if($errors->any())
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true,
+        "showDuration": "300",
+        "timeOut": "20000"
+    }
+    @foreach ( $errors->all() as $error)
+            toastr.error("{{ $error }}");
+    @endforeach
+    @endif
+
+    @if(session()->has('success'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true,
+        "showDuration": "300",
+        "timeOut": "20000"
+    }
+    toastr.error("{{ $success }}");
+    @elseif (session()->has('failed'))
+    toastr.error("{{ $failed }}");
+    @endif
+  </script>
 
   <script>
   function disableDonateBtn() {
