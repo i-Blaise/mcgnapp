@@ -21,18 +21,19 @@ class AdminHomeController extends Controller
 
 
     function uploadHomeHeader(AdminHomeHeaderUploadRequest $request){
-
-        // dd($request->input('name', 'sal'));
-        $imageName = time().'.'.$request->image->extension();  
+        // $slider_img = $request->safe()->only(['slider_img']);
+        // dd($slider_img['slider_img']);
+        $imageName = time().'.'.$request->slider_img->extension();   ;
+        // dd($imageName);
          
-        $request->image->move(public_path('images'), $imageName);
+        $request->slider_img->move(public_path('admin_assets/images/uploads/homeHeaders'), $imageName);
 
         Home::create([
-            'name' => $request->name,
-            'phone_num' => $request->phone_number,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'message' => $request->user_message
+            'home_slider_img' => $imageName,
+            'home_slider_caption' => $request->caption,
+            'home_slider_text' => $request->desc,
+            'donation_cause' => $request->donation_cause,
+            'video_link' => $request->video_link
         ]);
 
         return back()->with('success', 'Your Request Was Sent Successfully');

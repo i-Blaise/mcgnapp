@@ -192,7 +192,7 @@
                       <tbody>
                           <tr id="{{ $header->id }}">
                           <td class="py-1">
-                            <img src="{{ $header->home_slider_img }}" alt="image"/>
+                            <img src="../../admin_assets/images/uploads/homeHeaders/{{ $header->home_slider_img }}" alt="image"/>
                           </td>
                           @if ($header->video_link == null)
                             <td class="text-danger"><i class="mdi mdi-close"></i></td>

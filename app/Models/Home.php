@@ -11,7 +11,7 @@ class Home extends Model
 
     public $table = 'home';
 
-    // protected $fillable = [
-    //     'home_slider_img', 'home_slider_caption', 'home_slider_text', 'video_link',  'donation_cause'
-    // ];
+    protected $fillable = [
+        'home_slider_img', 'home_slider_caption', 'home_slider_text', 'video_link',  'donation_cause'
+    ];
 }
