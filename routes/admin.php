@@ -6,4 +6,4 @@ use App\Http\Controllers\Admin\AdminHomeController;
 
 
 
-Route::get('admin/home', [AdminHomeController::class, 'indexPage'])->name('home');
+// Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');

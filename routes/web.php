@@ -56,8 +56,16 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 // Route::get('admin/home', [AdminHomeController::class, 'indexPage'])->name('home');
 
 // Route::domain('admin.' . env('APP_URL'))->group(function () {
-//   Route::get('admin/home', [AdminHomeController::class, 'indexPage'])->name('home');
+// //   Route::get('/', function () {
+// //     return 'Second subdomain landing page';
+// // });
+//   // Route::get('/', [AdminHomeController::class, 'indexPage'])->name('home');
 // });
+
+Route::prefix('admin')->group(function () {
+  Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
+});
+
 
 // Route::get('/donate-latest-cause', function () {
 //   $data = Causes::orderBy('created_at', 'desc')->first();
