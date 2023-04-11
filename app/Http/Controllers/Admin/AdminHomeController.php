@@ -31,7 +31,7 @@ class AdminHomeController extends Controller
         Home::create([
             'home_slider_img' => $imageName,
             'home_slider_caption' => $request->caption,
-            'home_slider_text' => $request->desc,
+            'home_slider_text' => $request->description,
             'donation_cause' => $request->donation_cause,
             'video_link' => $request->video_link
         ]);

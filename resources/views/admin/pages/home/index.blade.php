@@ -116,13 +116,13 @@
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="" placeholder="Caption" maxlength="50">
+                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="{{ old('caption') }}" placeholder="Caption" maxlength="50">
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Description</label>
-                      <textarea id='edit' name="desc" style="margin-top: 30px;"  placeholder="Type some text">
-                      Placehoder
+                      <textarea id='edit' name="description" style="margin-top: 30px;"  placeholder="Type some text">
+                      {{ old('description') }}
                     </textarea>
                     <p class="form-info">For best result, keep description under 600 characters</p>
                     </div>
@@ -133,7 +133,10 @@
                         <div class="form-group">
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input type="checkbox" id="donate_checkbox" class="form-check-input" onclick="disableDonateBtn()"> 
+                              <input type="checkbox" name="donate" value="donate"
+                              id="donate_checkbox" class="form-check-input" 
+                              @checked(old('donate'))
+                              onclick="disableDonateBtn()"> 
                               Donate Button
                             </label>
                           </div>
@@ -143,7 +146,8 @@
                       <div class="form-group">
                         <div class="form-check">
                           <label class="form-check-label">
-                              <input type="checkbox" id="video_checkbox" class="form-check-input" onclick="disableVideoLink()">
+                              <input type="checkbox" id="video_checkbox" name="video" value="donate" class="form-check-input"  @checked(old('video'))
+                              onclick="disableVideoLink()">
                             Video Button
                           </label>
                         </div>
@@ -153,16 +157,26 @@
 
                     <div class="form-group">
                     <label for="exampleFormControlSelect1">Donation Cause</label>
-                    <select class="form-control form-control-lg" name="donation_cause" id="donate_btn" disabled>
+                    <select class="form-control form-control-lg" name="donation_cause" id="donate_btn" 
+                    @if (old('donation_cause') !== null)
+                    @disabled(false)
+                    @else
+                    @disabled(true)
+                    @endif>
                       @foreach ($causesData as $causes)
-                    <option value="{{ $causes->id }}">{{ $causes->caption }}</option>
+                    <option value="{{ $causes->id }}" @selected(old('donation_cause') == $causes->id)>{{ $causes->caption }}</option>
                     @endforeach
                     </select>
                   </div>
 
                   <div class="form-group">
                       <label for="exampleInputUsername1">Youtube URL</label>
-                      <input type="text" name="video_link" class="form-control" id="video_link" placeholder="Youtube URL" disabled>
+                      <input type="text" name="video_link" class="form-control" id="video_link" placeholder="Youtube URL" value="{{ old('video_link') }}" 
+                      @if (old('video_link') !== null)
+                      @disabled(false)
+                      @else
+                      @disabled(true)
+                      @endif>
                   </div>
 
                     <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>

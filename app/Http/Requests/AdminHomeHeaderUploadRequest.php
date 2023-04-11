@@ -22,7 +22,7 @@ class AdminHomeHeaderUploadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_width=700,min_width=900',
+            'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_height=300,max_height=900,min_width=600',
             'caption' => 'required',
             'description' => 'required|max:600',
             'donation_cause' => 'nullable',
@@ -33,8 +33,9 @@ class AdminHomeHeaderUploadRequest extends FormRequest
     public function messages()
     {
         return[
-            'video_link.required' => 'Please upload an image',
-            'desc.required' => 'The description field is required'
+            'video_link.active_url' => 'Youtube link must be an active URL.',
+            'slider_img.dimensions' => 'Invalid Image Dimensions.',
+            'slider_img.required' => 'Header Image is required.'
         ];
     }
 }

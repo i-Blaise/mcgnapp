@@ -76,8 +76,8 @@ Route::prefix('admin')->group(function () {
 //   // view('donate.index')
 // })->name('donate-latest-cause');
 
-Route::get('/delete-blog', function () {
-    Blog::truncate();
+Route::get('/delete-home', function () {
+    Home::truncate();
     return 'done';
 
     // return Carbon::now();
