@@ -54,7 +54,7 @@
                     {{-- {{ dd($homeData->home_slider_caption) }} --}}
                     <div class="carousel-item">
                         <div class="carousel-img">
-                            <img src="{{ $homeData->home_slider_img }}" alt="Image">
+                            <img src="../admin_assets/images/uploads/homeHeaders/{{ $homeData->home_slider_img }}" alt="Image">
                         </div>
                         <div class="carousel-text">
                             <img src="img/logo.png" class="logo-img" alt="Image">

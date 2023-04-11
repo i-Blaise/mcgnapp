@@ -36,7 +36,7 @@ class AdminHomeController extends Controller
             'video_link' => $request->video_link
         ]);
 
-        return back()->with('success', 'Your Request Was Sent Successfully');
+        return back()->with('success', 'Header Uploaded Successfully');
         
     }
 }
