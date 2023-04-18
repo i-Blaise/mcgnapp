@@ -34,8 +34,10 @@ class AdminHomeHeaderUploadRequest extends FormRequest
     {
         return[
             'video_link.active_url' => 'Youtube link must be an active URL.',
-            'slider_img.dimensions' => 'Invalid Image Dimensions.',
-            'slider_img.required' => 'Header Image is required.'
+            'slider_img.dimensions' => 'Invalid Image Dimensions. Image should have Min Height of 300, Max height of 900 and Min Width of 600',
+            'slider_img.required' => 'Header Image is required.',
+            'slider_img.imge' => 'Header Image field must be of type image.',
+            'slider_img.mime' => 'Image must be of types: jpg, png, jpeg, svg',
         ];
     }
 }
