@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\MailController;
 use App\Models\Admin;
 use App\Models\Blog;
@@ -62,8 +63,13 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //   // Route::get('/', [AdminHomeController::class, 'indexPage'])->name('home');
 // });
 
+
+Route::get('/login', [AdminAuthController::class, 'index'])->name('login');
+Route::post('/post-login', [AdminAuthController::class, 'postLogin'])->name('post.login');
+
 Route::prefix('admin')->group(function () {
-  Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
+  // Route::get('/', [AdminAuthController::class, 'index'])->name('home');
+  Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('admin.home');
   Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
 });
 
