@@ -64,8 +64,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 // });
 
 
-Route::get('/login', [AdminAuthController::class, 'index'])->name('login');
-Route::post('/post-login', [AdminAuthController::class, 'postLogin'])->name('post.login');
+// Route::get('/login', [AdminAuthController::class, 'index'])->name('login');
+// Route::post('/post-login', [AdminAuthController::class, 'postLogin'])->name('post.login');
 
 Route::prefix('admin')->group(function () {
   // Route::get('/', [AdminAuthController::class, 'index'])->name('home');

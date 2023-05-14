@@ -46,7 +46,7 @@
               <h6 class="font-weight-light">Happy to see you again!</h6>
               <form 
               class="pt-3"
-              action="{{ route('post.login') }}"
+              action="{{ route('login') }}"
               method="POST"
               enctype="multipart/form-data">
               @csrf
