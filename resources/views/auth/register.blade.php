@@ -17,6 +17,19 @@
   <link rel="stylesheet" href="{{ asset('admin_assets/css/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('admin_assets/images/favicon.png') }}" />
+
+
+   {{-- Notification  --}}
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
+   alpha/css/bootstrap.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" 
+   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
 <body>
@@ -63,7 +76,7 @@
                         <i class="mdi mdi-code-brackets text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" name="ref_code" class="form-control form-control-lg border-left-0" placeholder="Reference Code" value="{{ old('ref_code') }}">
+                    <input type="text" name="reference" class="form-control form-control-lg border-left-0" placeholder="Reference Code" value="{{ old('ref_code') }}">
                   </div>
                 </div>
                 <div class="form-group">
@@ -97,7 +110,7 @@
                   </div>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                  <button class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" type="submit">SIGN UP</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   Already have an account? <a href="login.html" class="text-primary">Login</a>
@@ -123,6 +136,38 @@
   <script src="{{ asset('admin_assets/js/hoverable-collapse.js') }}"></script>
   <script src="{{ asset('admin_assets/js/template.js') }}"></script>
   <!-- endinject -->
+
+  <script>
+    @if($errors->any())
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true,
+        "showDuration": "300",
+        "timeOut": "20000"
+    }
+    @foreach ( $errors->all() as $error)
+            toastr.error("{{ $error }}");
+            // {{ $error }};
+            // @if($error === "The selected ref code is invalid")
+            // toastr.error("{sdafdafd");
+            // @endif
+     @endforeach
+    @endif
+
+    @if(session()->has('success'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true,
+        "showDuration": "300",
+        "timeOut": "20000"
+    }
+    toastr.error("{{ $success }}");
+    @elseif (session()->has('failed'))
+    toastr.error("{{ $failed }}");
+    @endif
+</script>
 </body>
 
 </html>

@@ -67,11 +67,26 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 // Route::get('/login', [AdminAuthController::class, 'index'])->name('login');
 // Route::post('/post-login', [AdminAuthController::class, 'postLogin'])->name('post.login');
 
-Route::prefix('admin')->group(function () {
+
+// Route::middleware(['auth'])->group(function () {
+//   Route::view('/home', 'home.index')->name('home');
+// });
+// Route::prefix('admin')->group(function () {
   // Route::get('/', [AdminAuthController::class, 'index'])->name('home');
-  Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('admin.home');
-  Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
-});
+  // Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('admin.home');
+  // Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
+// });
+
+// Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
+//     Route::view('/home', 'admin.pages.home.index')->name('home');
+//     Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
+//     });
+
+    Route::middleware(['auth'])->group(function () {
+      // Route::view('/home', 'admin.pages.home.index')->name('home');
+      Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
+      Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
+  });
 
 
 // Route::get('/donate-latest-cause', function () {

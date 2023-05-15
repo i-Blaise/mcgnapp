@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('register_ref', function (Blueprint $table) {
+        Schema::create('registeration_ref_code', function (Blueprint $table) {
             $table->id();
+            $table->string('ref_code');
             $table->timestamps();
         });
     }
