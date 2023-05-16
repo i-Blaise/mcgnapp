@@ -77,9 +77,13 @@
               <a class="dropdown-item preview-item">               
                   <i class="icon-head"></i> Profile
               </a>
-              <a class="dropdown-item preview-item">
+              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="dropdown-item preview-item">
                   <i class="icon-inbox"></i> Logout
-              </a>
+                </button>
+              </form>
+              
             </div>
           </li>
         </ul>

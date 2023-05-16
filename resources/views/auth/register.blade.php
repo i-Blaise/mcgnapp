@@ -69,6 +69,17 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label>Role</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend bg-transparent">
+                      <span class="input-group-text bg-transparent border-right-0">
+                        <i class="mdi mdi-account-outline text-primary"></i>
+                      </span>
+                    </div>
+                    <input type="role" name="role" class="form-control form-control-lg border-left-0" placeholder="Role" value="{{ old('role') }}">
+                  </div>
+                </div>
+                <div class="form-group">
                   <label>Reference Code</label>
                   <div class="input-group">
                     <div class="input-group-prepend bg-transparent">
@@ -113,7 +124,7 @@
                   <button class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" type="submit">SIGN UP</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="login.html" class="text-primary">Login</a>
+                  Already have an account? <a href="{{ route('login') }}" class="text-primary">Login</a>
                 </div>
               </form>
             </div>

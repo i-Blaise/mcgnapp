@@ -51,14 +51,14 @@
               enctype="multipart/form-data">
               @csrf
                 <div class="form-group">
-                  <label for="exampleInputEmail">Username</label>
+                  <label for="exampleInputEmail">Email</label>
                   <div class="input-group">
                     <div class="input-group-prepend bg-transparent">
                       <span class="input-group-text bg-transparent border-right-0">
                         <i class="mdi mdi-account-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="email" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Username" name="email">
+                    <input type="email" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Email" name="email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -95,7 +95,7 @@
                   </button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register-2.html" class="text-primary">Create</a>
+                  Don't have an account? <a href="{{ route('register') }}" class="text-primary">Create</a>
                 </div>
               </form>
             </div>

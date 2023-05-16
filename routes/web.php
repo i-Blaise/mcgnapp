@@ -83,10 +83,12 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //     });
 
     Route::middleware(['auth'])->group(function () {
-      // Route::view('/home', 'admin.pages.home.index')->name('home');
+      Route::prefix('admin')->group(function () {
+      // Route::view('home', 'admin.pages.home.index')->name('home');
       Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
       Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
   });
+});
 
 
 // Route::get('/donate-latest-cause', function () {

@@ -4,10 +4,14 @@
               <img src="../../admin_assets//images/faces/face28.png">
           </div>
           <div class="user-name">
-              Edward Spencer
+            @if (Auth::check()) 
+            {{ Auth::user()->name }}
+            @endif
           </div>
           <div class="user-designation">
-              Developer
+            @if (Auth::check()) 
+            {{ Auth::user()->role }}
+            @endif
           </div>
         </div>
         <ul class="nav">
