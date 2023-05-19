@@ -87,6 +87,7 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
       // Route::view('home', 'admin.pages.home.index')->name('home');
       Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
       Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
+      Route::post('/delete-home-header', [AdminHomeController::class, 'deleteHomeHeader'])->name('home.DeleteHeader');
   });
 });
 

@@ -39,4 +39,9 @@ class AdminHomeController extends Controller
         return redirect()->back()->with('success', 'Header Uploaded Successfully');
         
     }
+
+    function deleteHomeHeader(Request $request){
+       Home::where('id', $request->id)->delete();
+       return redirect()->back()->with('success', 'Header Deleted');
+    }
 }

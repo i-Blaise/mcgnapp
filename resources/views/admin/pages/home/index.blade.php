@@ -204,7 +204,7 @@
                       </thead>
                       @foreach ($headersData as $header)
                       <tbody>
-                          <tr id="{{ $header->id }}">
+                          <tr id="row{{ $header->id }}">
                           <td class="py-1">
                             <img src="../../admin_assets/images/uploads/homeHeaders/{{ $header->home_slider_img }}" alt="image"/>
                           </td>
@@ -223,9 +223,13 @@
 
 
                           <td>
-                            <button type="button" onclick="deleteHeader()" class="btn btn-inverse-danger btn-icon">
-                            <i class="mdi mdi-delete"></i>
-                            </button>
+                            <form id="logout-form" action="{{ route('home.DeleteHeader') }}" method="POST">
+                              @csrf
+                              <input type="text" name="id" value="{{ $header->id }}" hidden>
+                              <button type="submit"  class="btn btn-inverse-danger btn-icon">
+                              <i class="mdi mdi-delete"></i>
+                              </button>
+                            </form>
                           </td>
                         </tr>
                       </tbody>
@@ -325,16 +329,16 @@
 function deleteHeader(headerID){
     let text = "Are you sure you want to delete this Header? \n This action can't be undone.";
     if (confirm(text) == true) {
-    let apiName = 'header/deleteHeader';
+    // let apiName = 'header/deleteHeader';
     document.getElementById("row"+headerID).remove();
-    $.get("../../ClassLib/deleteHeader.php", {headerID: headerID, apiName: apiName}, 
-    function(){
-        toastr.options.positionClass = 'toast-top-center';
-        toastr.options.closeButton = true;
-        toastr.options.progressBar = true;
-        toastr.options.timeOut = 30000;
-        toastr.success('Header Deleted', 'Success');
-    });
+    // $.get("../../ClassLib/deleteHeader.php", {headerID: headerID, apiName: apiName}, 
+    // function(){
+    //     toastr.options.positionClass = 'toast-top-center';
+    //     toastr.options.closeButton = true;
+    //     toastr.options.progressBar = true;
+    //     toastr.options.timeOut = 30000;
+    //     toastr.success('Header Deleted', 'Success');
+    // });
   }
 }
 
