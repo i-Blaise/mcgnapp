@@ -29,8 +29,8 @@
             </a>
             <div class="collapse" id="headers">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/pages/headers/home.php">Home</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/pages/headers/other-pages.php">Other Pages</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.home') }}">Home</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Other Pages</a></li>
               </ul>
             </div>
           </li>

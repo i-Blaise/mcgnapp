@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
-use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminHeaderController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\MailController;
 use App\Models\Admin;
@@ -85,9 +85,12 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
     Route::middleware(['auth'])->group(function () {
       Route::prefix('admin')->group(function () {
       // Route::view('home', 'admin.pages.home.index')->name('home');
-      Route::get('/home', [AdminHomeController::class, 'indexPage'])->name('home');
-      Route::post('/upload-home-header', [AdminHomeController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
-      Route::post('/delete-home-header', [AdminHomeController::class, 'deleteHomeHeader'])->name('home.DeleteHeader');
+      Route::get('/home', [AdminHeaderController::class, 'indexPage'])->name('admin.home');
+      Route::post('/upload-home-header', [AdminHeaderController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
+      Route::post('/delete-home-header', [AdminHeaderController::class, 'deleteHomeHeader'])->name('home.DeleteHeader');
+
+
+      Route::get('/other-pages', [AdminHeaderController::class, 'uploadOtherPagesHeader'])->name('uploadOtherPagesHeader');
   });
 });
 

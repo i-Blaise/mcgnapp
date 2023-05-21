@@ -8,7 +8,7 @@ use App\Models\Causes;
 use App\Models\Home;
 use Illuminate\Http\Request;
 
-class AdminHomeController extends Controller
+class AdminHeaderController extends Controller
 {
     public function indexPage(){
         $causes = Causes::orderBy('id', 'desc')->get();
@@ -43,5 +43,9 @@ class AdminHomeController extends Controller
     function deleteHomeHeader(Request $request){
        Home::where('id', $request->id)->delete();
        return redirect()->back()->with('success', 'Header Deleted');
+    }
+
+    function uploadOtherPagesHeader(){
+        return view('admin.pages.home.other-pages');
     }
 }
