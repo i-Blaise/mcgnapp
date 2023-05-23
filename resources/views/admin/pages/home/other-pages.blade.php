@@ -6,23 +6,23 @@
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
   <title>Home Header</title>
-  <link href="../../vendors/froala/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../vendors/froala/froala_editor.pkgd.min.js"></script>
+  <link href="../../admin_assets/vendors/froala/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../admin_assets/vendors/froala/froala_editor.pkgd.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
   <!-- base:css -->
-  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../vendors/feather/feather.css">
-  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../../admin_assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../admin_assets/vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../admin_assets/vendors/base/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="../../admin_assets/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="../../admin_assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../admin_assets/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="../../admin_assets/images/favicon.png" />
 
 
     	<!-- Notification -->
@@ -36,7 +36,7 @@
 
 
 
-  <script src="../../vendor/tinymce/tinymce/tinymce.min.js" referrerpolicy="origin"></script>    
+  <script src="../../admin_assets/vendor/tinymce/tinymce/tinymce.min.js" referrerpolicy="origin"></script>    
   <script>
       tinymce.init({
         selector: '#edit',
@@ -80,18 +80,14 @@
 
 <body>
   <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.html -->
-    <!-- partial:../../partials/_navbar.html -->
-    <?php
-      include('../includes/topnav.php');
-    ?>
+    <!-- partial:../../admin_assets/partials/_navbar.html -->
+    <!-- partial:../../admin_assets/partials/_navbar.html -->
+    @include('admin.pages.includes.topnav')
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       
-      <!-- partial:../../partials/_sidebar.html -->
-      <?php
-      include('../includes/sidebar.php');
-      ?>
+      <!-- partial:../../admin_assets/partials/_sidebar.html -->
+    @include('admin.pages.includes.sidebar')
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -124,7 +120,7 @@
                             Henry Tom
                           </td>
                           <td>
-                            <img src="../../images/faces/face7.jpg" alt="image"/>
+                            <img src="../../admin_assets/images/faces/face7.jpg" alt="image"/>
                           </td>
                           <td>
                             <button type="button" onclick="" class="btn btn-inverse-danger btn-icon">
@@ -141,13 +137,10 @@
           </div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
-          </div>
-        </footer>
+        <!-- partial:../../admin_assets/partials/_footer.html -->
+      <!-- FOOTER STARTS HERE  -->
+
+      @include('admin.pages.includes.footer')
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -156,14 +149,14 @@
   </div>
   <!-- container-scroller -->
   <!-- base:js -->
-  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <script src="../../admin_assets/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
+  <script src="../../admin_assets/js/off-canvas.js"></script>
+  <script src="../../admin_assets/js/hoverable-collapse.js"></script>
+  <script src="../../admin_assets/js/template.js"></script>
   <!-- endinject -->
   <!-- plugin js for this page -->
   <!-- End plugin js for this page -->

@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminHomeHeaderUploadRequest;
+use App\Models\AboutUs;
 use App\Models\Causes;
+use App\Models\ContactPage;
+use App\Models\DonateNow;
 use App\Models\Home;
 use Illuminate\Http\Request;
 
@@ -46,6 +49,14 @@ class AdminHeaderController extends Controller
     }
 
     function uploadOtherPagesHeader(){
-        return view('admin.pages.home.other-pages');
+        $aboutus = AboutUs::pluck('header_img')->first();
+        $contactpage = ContactPage::pluck('header_img')->first();
+        $donatepage = DonateNow::pluck('bg_img')->first();
+
+        return view('admin.pages.home.other-pages', [
+            'aboutHeader' => $aboutus,
+            'contactHeader' => $contactpage,
+            // 'backgroundImg'
+        ]);
     }
 }

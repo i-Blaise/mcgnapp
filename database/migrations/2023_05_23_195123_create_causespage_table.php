@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('home', function (Blueprint $table) {
-            $table->string('video_link')->nullable()->change();
+        Schema::create('causespage', function (Blueprint $table) {
+            $table->id();
+            $table->string('header_img');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('home', function (Blueprint $table) {
-            Schema::dropIfExists('video_link');
-        });
+        Schema::dropIfExists('causespage');
     }
 };
