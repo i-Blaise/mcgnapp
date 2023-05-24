@@ -91,6 +91,7 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
 
       Route::get('/other-pages', [AdminHeaderController::class, 'uploadOtherPagesHeader'])->name('uploadOtherPagesHeader');
+      Route::get('/other-pages-single', [AdminHeaderController::class, 'singleHeaderUpdatePage'])->name('singleHeaderUpdatePage');
   });
 });
 

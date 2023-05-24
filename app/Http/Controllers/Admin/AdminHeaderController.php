@@ -13,6 +13,7 @@ use App\Models\EventsPage;
 use App\Models\GalleryPage;
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class AdminHeaderController extends Controller
 {
@@ -53,24 +54,31 @@ class AdminHeaderController extends Controller
 
     function uploadOtherPagesHeader(){
         $aboutus = AboutUsPage::select('header_img', 'id')
-        ->selectRaw("'About Page' as 'page'")->get()->toArray();
+        ->selectRaw("'About Page' as 'page'")->get();
         $causes = CausesPage::select('header_img', 'id')
-        ->selectRaw("'About Page' as 'page'")->get()->toArray();
-        $events = EventsPage::pluck('header_img')->first();
-        $blog = BlogPage::pluck('header_img')->first();
-        $gallery = GalleryPage::pluck('header_img')->first();
-        $contactpage = ContactPage::pluck('header_img')->first();
-        // array_push($aboutus, 'About Page');
-        // dd($aboutus);
-
-        $data = [
-            'aboutUs' => $aboutus,
-            'causes' => $causes
-        ];
+        ->selectRaw("'Causes Page' as 'page'")->get();
+        $events = EventsPage::select('header_img', 'id')
+        ->selectRaw("'Event Page' as 'page'")->get();
+        $blog = BlogPage::select('header_img', 'id')
+        ->selectRaw("'Blog Page' as 'page'")->get();
+        $gallery = GalleryPage::select('header_img', 'id')
+        ->selectRaw("'Gallery Page' as 'page'")->get();
+        $contactpage = ContactPage::select('header_img', 'id')
+        ->selectRaw("'Contact Page' as 'page'")->get();
+        
+        $combinedResults = new Collection();
+        $combinedResults = $combinedResults->merge($aboutus);
+        $combinedResults = $combinedResults->merge($causes);
+        $combinedResults = $combinedResults->merge($events);
+        $combinedResults = $combinedResults->merge($blog);
+        $combinedResults = $combinedResults->merge($contactpage);
 
         return view('admin.pages.home.other-pages', [
-            'results' => $data,
-            // 'about' => $aboutus
+            'results' => $combinedResults,
         ]);
+    }
+
+    public function singleHeaderUpdatePage(){
+        return view('admin.pages.home.other-pages-update');
     }
 }

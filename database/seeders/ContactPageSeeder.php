@@ -20,7 +20,7 @@ class ContactPageSeeder extends Seeder
 
         $contactpage = [
             [
-                'header_img' => 'img/contact.jpg',
+                'header_img' => 'img/page-header.jpg',
                 'form_img' => 'img/contact.jpg',
                 'caption' => $faker->realText($maxNbChars = 50)
             ]

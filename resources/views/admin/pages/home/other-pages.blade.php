@@ -120,15 +120,17 @@
                         <tr>
                           <td class="py-1">
                            {{-- {{ dd($data[0]['id']) }} --}}
-                           {{ $data[0]['id'] }}
+                           {{ $data['page'] }}
                           </td>
                           <td>
-                            <img src="{{ asset($data[0]['header_img']) }}" alt="image"/>
+                            <img src="{{ asset($data['header_img']) }}" alt="image"/>
                           </td>
                           <td>
-                            <button type="button" onclick="" class="btn btn-inverse-danger btn-icon">
+                            <a href="{{ route('singleHeaderUpdatePage') }}" > 
+                            <button type="button" class="btn btn-inverse-danger btn-icon">
                             <i class="icon-upload"></i>
                             </button>
+                            </a>
                           </td>
                         </tr>
                         @endforeach
