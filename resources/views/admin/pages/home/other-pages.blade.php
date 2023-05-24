@@ -115,12 +115,15 @@
                         </tr>
                       </thead>
                       <tbody>
+                        {{-- {{ dd($results['aboutUs']) }} --}}
+                        @foreach ($results as $data )
                         <tr>
                           <td class="py-1">
-                            Henry Tom
+                           {{-- {{ dd($data[0]['id']) }} --}}
+                           {{ $data[0]['id'] }}
                           </td>
                           <td>
-                            <img src="../../admin_assets/images/faces/face7.jpg" alt="image"/>
+                            <img src="{{ asset($data[0]['header_img']) }}" alt="image"/>
                           </td>
                           <td>
                             <button type="button" onclick="" class="btn btn-inverse-danger btn-icon">
@@ -128,6 +131,7 @@
                             </button>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

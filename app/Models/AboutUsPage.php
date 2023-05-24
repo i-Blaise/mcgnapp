@@ -9,5 +9,5 @@ class AboutUsPage extends Model
 {
     use HasFactory;
 
-    public $table = 'aboutuspage';
+    public $table = 'aboutpage';
 }
