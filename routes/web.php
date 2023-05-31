@@ -91,7 +91,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
 
       Route::get('/other-pages', [AdminHeaderController::class, 'uploadOtherPagesHeader'])->name('uploadOtherPagesHeader');
-      Route::get('/other-pages-single', [AdminHeaderController::class, 'singleHeaderUpdatePage'])->name('singleHeaderUpdatePage');
+      Route::get('/other-pages-single/{page}/', [AdminHeaderController::class, 'singleHeaderUpdatePage'])->name('singleHeaderUpdatePage');
+      Route::post('/save-header-update', [AdminHeaderController::class, 'updateSinglePageHeader'])->name('saveSinglePageHeader');
   });
 });
 

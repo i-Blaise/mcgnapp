@@ -20,8 +20,8 @@
   <link rel="stylesheet" href="../../admin_assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  {{-- <link rel="stylesheet" href="../../admin_assets/css/style.css"> --}}
-  <link rel="stylesheet" href="{{ asset('admin_assets/css/style.css') }}">
+  <link rel="stylesheet" href="../../admin_assets/css/style.css">
+  {{-- <link rel="stylesheet" href="{{ asset('admin_assets/css/style.css') }}"> --}}
   <!-- endinject -->
   <link rel="shortcut icon" href="../../admin_assets/images/favicon.png" />
 
@@ -50,23 +50,36 @@
             <div class="col-md-8 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Bold text</h4>
-                  <p class="card-description">
-                    Use class<code>.font-weight-bold</code>
-                  </p>
-                  <p>
-                    It is a long <span class="font-weight-bold">established fact</span> that a reader will be distracted by the readable content
-                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution
-                  </p>
+                  <h4 class="card-title">Update {{ request('page') }}</h4>
+                  <form 
+                  action="{{ route('saveSinglePageHeader') }}"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  class="forms-sample">
+                  @csrf
+                  <div class="form-group">
+                    <label>File upload</label>
+                    <input type="file" name="slider_img" class="file-upload-default" value="">
+                    <div class="input-group col-xs-12">
+                      <input type="text" name="slider_img" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
+                      <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                      </span>
+                    </div>
+                  <p class="form-info">For best result, image height should be 810px</p>
+                  </div>
+
+                    <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
+                    <button type="reset" class="btn btn-light">Cancel</button>
+                  </form>
                 </div>
               </div>
             </div>
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body image-container">
-                  <h4 class="card-title">List Ordered</h4>
-                  <img src="{{ asset('img/page-header.jpg') }}" alt="Italian Trulli">
+                  <h4 class="card-title">Current {{ request('page') }} header.</h4>
+                  <img src="{{ asset($data[0]) }}" alt="{{ request('page') }}">
                 </div>
               </div>
             </div>

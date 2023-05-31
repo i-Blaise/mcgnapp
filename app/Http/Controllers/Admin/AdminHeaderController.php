@@ -72,13 +72,40 @@ class AdminHeaderController extends Controller
         $combinedResults = $combinedResults->merge($events);
         $combinedResults = $combinedResults->merge($blog);
         $combinedResults = $combinedResults->merge($contactpage);
+        // return dd($combinedResults);
 
         return view('admin.pages.home.other-pages', [
             'results' => $combinedResults,
         ]);
     }
 
-    public function singleHeaderUpdatePage(){
-        return view('admin.pages.home.other-pages-update');
+    public function singleHeaderUpdatePage($page){
+        // dd($page);
+        switch ($page) {
+            case "About Page":
+                $aboutus = AboutUsPage::pluck('header_img');
+                return view('admin.pages.home.other-pages-update', ['data' => $aboutus]);
+                break;
+            case "Causes Page":
+                $causes = CausesPage::pluck('header_img');
+                return view('admin.pages.home.other-pages-update', ['data' => $causes]);
+                break;
+            case "Event Page":
+                $event = EventsPage::pluck('header_img');
+                return view('admin.pages.home.other-pages-update', ['data' => $event]);
+                break;
+            case "Blog Page":
+                $blog = BlogPage::pluck('header_img');
+                return view('admin.pages.home.other-pages-update', ['data' => $blog]);
+                break;
+            case "Contact Page":
+                $contact = ContactPage::pluck('header_img');
+                return view('admin.pages.home.other-pages-update', ['data' => $contact]);
+                break;
+        }
+    }
+
+    public function updateSinglePageHeader(Request $request){
+        dd($request);
     }
 }

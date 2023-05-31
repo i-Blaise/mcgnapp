@@ -32,55 +32,10 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-
-
-
-
-  <script src="../../admin_assets/vendor/tinymce/tinymce/tinymce.min.js" referrerpolicy="origin"></script>    
-  <script>
-      tinymce.init({
-        selector: '#edit',
-        plugins: 'wordcount',
-        toolbar: 'wordcount',
-        init_instance_callback: function (editor) {
-      $(editor.getContainer()).find('button.tox-statusbar__wordcount').click();  // if you use jQuery
-   }
-      });
-
-
-      tinymce.init({
-      selector: '#edit',
-      plugins: 'advlist autolink lists link image charmap preview anchor pagebreak code visualchars wordcount',
-      toolbar: 'wordcount',
-	  setup: function(editor) {
-	  	var max = 200;
-	    editor.on('submit', function(event) {
-		  var numChars = tinymce.activeEditor.plugins.wordcount.body.getCharacterCount();
-		  if (numChars > max) {
-            alert("Only a maximum " + max + " characters are allowed.");
-			event.preventDefault();
-			return false;
-		  }
-		});
-	  }
-   });
- 
-  //  function codeAddress() {
-  //       $(document).ready(function() {
-  //       toastr.options.positionClass = 'toast-top-center';
-  //       toastr.options.closeButton = true;
-  //       toastr.options.progressBar = true;
-  //       toastr.options.timeOut = 30000;
-  //       toastr.success('Footer Updated', '');
-  //   });
-  //       }
-
-  </script>
 </head>
 
 <body>
   <div class="container-scroller">
-    <!-- partial:../../admin_assets/partials/_navbar.html -->
     <!-- partial:../../admin_assets/partials/_navbar.html -->
     @include('admin.pages.includes.topnav')
     <!-- partial -->
@@ -126,7 +81,7 @@
                             <img src="{{ asset($data['header_img']) }}" alt="image"/>
                           </td>
                           <td>
-                            <a href="{{ route('singleHeaderUpdatePage') }}" > 
+                            <a href="{{ route('singleHeaderUpdatePage', ['page' => $data['page']]) }}" > 
                             <button type="button" class="btn btn-inverse-danger btn-icon">
                             <i class="icon-upload"></i>
                             </button>
