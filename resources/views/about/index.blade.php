@@ -32,6 +32,20 @@
         
         <!-- Page Header Start -->
         <div class="page-header">
+
+            <style>
+                .page-header {
+        position: relative;
+        margin-bottom: 45px;
+        padding: 210px 0 90px 0;
+        text-align: center;
+        background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url({{ $header->header_img }});
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+                           }
+        </style>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -39,7 +53,7 @@
                     </div>
                     <div class="col-12">
                         <a href="{{ route('home') }}">Home</a>
-                        <a href="#">About Us</a>
+                        <a href="#">About Us {{ $header->header_img }}</a>
                     </div>
                 </div>
             </div>

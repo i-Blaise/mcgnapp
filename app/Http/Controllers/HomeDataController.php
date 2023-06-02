@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\AboutUsPage;
 use App\Models\Blog;
 use App\Models\Causes;
+use App\Models\CausesPage;
 use App\Models\ContactPage;
 use App\Models\ContactUs;
 use App\Models\DonateNow;
@@ -455,13 +457,15 @@ class HomeDataController extends Controller
         $volunteers = Volunteers::orderBy('created_at', 'desc')->paginate(4);
         $testimonialData = Testimonial::get();
         $aboutData = AboutUs::where('id', 1)->get();
+        $aboutHeader = AboutUsPage::find(1);
 
         return view('about.index', [
             'aboutus' => $about,
             'team' => $team,
             'volunteer' => $volunteers,
             'testimonial' => $testimonialData,
-            'aboutus' => $aboutData
+            'aboutus' => $aboutData,
+            'header' => $aboutHeader
         ]); 
     }
 
@@ -481,6 +485,7 @@ class HomeDataController extends Controller
     public function causesPage()
     {
         $causes = Causes::orderBy('created_at', 'desc')->paginate(6);
+        $causesHeader = CausesPage::find(1);
 
         foreach($causes as $key => $value){
             $percentage = $value->money_raised/$value->goal * 100;
@@ -488,19 +493,22 @@ class HomeDataController extends Controller
         }
 
         return view('causes.index', [
-            'causes' => $causes
+            'causes' => $causes,
+            'header' => $causesHeader
         ]);
     }
 
     public function causesSingle($id)
     {
         $causesSingle = Causes::find($id);
+        $causesHeader = CausesPage::find(1);
 
             $percentage = $causesSingle->money_raised/$causesSingle->goal * 100;
             $causesSingle->percentage = round($percentage, 0);
 
         return view('causes.single', [
-            'causes' => $causesSingle
+            'causes' => $causesSingle,
+            'header' => $causesHeader
         ]);
     }
 
