@@ -64,17 +64,6 @@
 		});
 	  }
    });
- 
-  //  function codeAddress() {
-  //       $(document).ready(function() {
-  //       toastr.options.positionClass = 'toast-top-center';
-  //       toastr.options.closeButton = true;
-  //       toastr.options.progressBar = true;
-  //       toastr.options.timeOut = 30000;
-  //       toastr.success('Footer Updated', '');
-  //   });
-  //       }
-
   </script>
 </head>
 <body>

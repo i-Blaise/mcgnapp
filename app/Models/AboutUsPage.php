@@ -10,4 +10,7 @@ class AboutUsPage extends Model
     use HasFactory;
 
     public $table = 'aboutpage';
+    protected $fillable = [
+        'header_img'
+    ];
 }

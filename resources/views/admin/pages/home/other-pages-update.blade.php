@@ -59,14 +59,15 @@
                   @csrf
                   <div class="form-group">
                     <label>File upload</label>
-                    <input type="file" name="slider_img" class="file-upload-default" value="">
+                    <input type="file" name="header" class="file-upload-default">
                     <div class="input-group col-xs-12">
-                      <input type="text" name="slider_img" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
+                      <input type="text" name="header" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
                       <span class="input-group-append">
                         <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                       </span>
                     </div>
-                  <p class="form-info">For best result, image height should be 810px</p>
+                  <p class="form-info">For best result, image height should be 810px.</p>
+                  <input type="text" name="page"  value="{{ request('page') }}" hidden>
                   </div>
 
                     <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
@@ -87,12 +88,9 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
-          </div>
-        </footer>
+      <!-- FOOTER STARTS HERE  -->
+
+      @include('admin.pages.includes.footer')
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -101,19 +99,50 @@
   </div>
   <!-- container-scroller -->
   <!-- base:js -->
-  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <script src="../../admin_assets/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
+  <script src="../../admin_assets/js/off-canvas.js"></script>
+  <script src="../../admin_assets/js/hoverable-collapse.js"></script>
+  <script src="../../admin_assets/js/template.js"></script>
   <!-- endinject -->
   <!-- plugin js for this page -->
+  <script src="../../admin_assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="../../admin_assets/vendors/select2/select2.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- Custom js for this page-->
+  <script src="../../admin_assets/js/file-upload.js"></script>
+  <script src="../../admin_assets/js/typeahead.js"></script>
+  <script src="../../admin_assets/js/select2.js"></script>
   <!-- End custom js for this page-->
+
+  <script>
+    @if($errors->any())
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true,
+        "showDuration": "300",
+        "timeOut": "20000"
+    }
+    @foreach ( $errors->all() as $error)
+            toastr.error("{{ $error }}");
+    @endforeach
+    @endif
+
+    @if(session()->has('success'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true,
+        "showDuration": "300",
+        "timeOut": "20000"
+    }
+    toastr.error("{{ $success }}");
+    @elseif (session()->has('failed'))
+    toastr.error("{{ $failed }}");
+    @endif
+  </script>
 </body>
 
 </html>
