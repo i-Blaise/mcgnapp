@@ -98,6 +98,10 @@ class AdminHeaderController extends Controller
                 $blog = BlogPage::pluck('header_img');
                 return view('admin.pages.home.other-pages-update', ['data' => $blog]);
                 break;
+                case "Gallery Page":
+                    $gallery = GalleryPage::pluck('header_img');
+                    return view('admin.pages.home.other-pages-update', ['data' => $gallery]);
+                    break;
             case "Contact Page":
                 $contact = ContactPage::pluck('header_img');
                 return view('admin.pages.home.other-pages-update', ['data' => $contact]);
@@ -108,7 +112,7 @@ class AdminHeaderController extends Controller
     public function updateSinglePageHeader(Request $request){
         // dd($request->header);
         $request->validate([
-            'header' => 'required|image|dimensions:max_height=700'
+            'header' => 'required|image'
         ]);
         $imageName = time().'.'.$request->header->extension();
         // dd($imageName);
@@ -134,6 +138,11 @@ class AdminHeaderController extends Controller
                 $blog->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $blog->save();
                 break;
+                case "Gallery Page":
+                    $gallery = GalleryPage::find(1);
+                    $gallery->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
+                    $gallery->save();
+                    break;
             case "Contact Page":
                 $contact = ContactPage::find(1);
                 $contact->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;

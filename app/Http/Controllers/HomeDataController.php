@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AboutUs;
 use App\Models\AboutUsPage;
 use App\Models\Blog;
+use App\Models\BlogPage;
 use App\Models\Causes;
 use App\Models\CausesPage;
 use App\Models\ContactPage;
@@ -14,6 +15,7 @@ use App\Models\Donations;
 use App\Models\Enquiries;
 use App\Models\Event;
 use App\Models\EventsPage;
+use App\Models\GalleryPage;
 use App\Models\Home;
 use App\Models\NewsletterSubs;
 use App\Models\Team;
@@ -272,7 +274,6 @@ class HomeDataController extends Controller
                 $event = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->paginate(4);
                 $eventHeader = EventsPage::find(1);
             }
-            // dd($eventHeader);
 
             foreach($event as $key => $value){
                 $month = $this->changeMonthToWord(substr($value->date, 5, -3));
@@ -430,9 +431,11 @@ class HomeDataController extends Controller
     public function blogPage()
     {
         $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
+        $blogHeader = BlogPage::find(1); 
 
         return view('blog.index', [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'header' => $blogHeader
         ]);
     }
 
@@ -480,8 +483,11 @@ class HomeDataController extends Controller
     public function galleryPage()
     {
         // $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
+        $galleryHeader = GalleryPage::find(1);
 
-        return view('gallery.index');
+        return view('gallery.index', [
+            'header' => $galleryHeader
+        ]);
     }
 
 
