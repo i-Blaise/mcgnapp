@@ -13,6 +13,7 @@ use App\Models\DonateNow;
 use App\Models\Donations;
 use App\Models\Enquiries;
 use App\Models\Event;
+use App\Models\EventsPage;
 use App\Models\Home;
 use App\Models\NewsletterSubs;
 use App\Models\Team;
@@ -266,9 +267,12 @@ class HomeDataController extends Controller
             if(!$is_over)
             {
                 $event = Event::orderBy('date', 'desc')->paginate(4);
+                $eventHeader = EventsPage::find(1);
             }else{
                 $event = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->paginate(4);
+                $eventHeader = EventsPage::find(1);
             }
+            // dd($eventHeader);
 
             foreach($event as $key => $value){
                 $month = $this->changeMonthToWord(substr($value->date, 5, -3));
@@ -290,7 +294,8 @@ class HomeDataController extends Controller
             }
 
             return view('events.index', [
-                'eventData' => $event
+                'eventData' => $event,
+                'header' => $eventHeader
             ]);
     }
 
