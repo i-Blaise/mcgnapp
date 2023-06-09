@@ -71,6 +71,7 @@ class AdminHeaderController extends Controller
         $combinedResults = $combinedResults->merge($causes);
         $combinedResults = $combinedResults->merge($events);
         $combinedResults = $combinedResults->merge($blog);
+        $combinedResults = $combinedResults->merge($gallery);
         $combinedResults = $combinedResults->merge($contactpage);
         // return dd($combinedResults);
 

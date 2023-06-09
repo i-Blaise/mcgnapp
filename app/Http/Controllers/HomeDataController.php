@@ -535,9 +535,12 @@ class HomeDataController extends Controller
     {
 
         $contactData = ContactPage::where('id', 1)->get();
+        $contactHeader = ContactPage::find(1);
+        // dd($contactData);
 
         return view('contact.index', [
-            'contactform' => $contactData
+            'contactform' => $contactData,
+            'header' => $contactHeader
         ]);
     }
 

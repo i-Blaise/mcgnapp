@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-12">
                         <a href="{{ route('home') }}">Home</a>
-                        <a href="#">About Us {{ $header->header_img }}</a>
+                        <a href="#">About Us</a>
                     </div>
                 </div>
             </div>
