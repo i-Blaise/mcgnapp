@@ -50,6 +50,9 @@
             <div class="col-md-8 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                  <a href="{{ url()->previous() }}"> 
+                   <button style="margin-bottom:5%;" class="btn btn-primary mr-2"><i class="icon-arrow-left"></i> Back</button>
+                  </a>
                   <h4 class="card-title">Update {{ request('page') }}</h4>
                   <form 
                   action="{{ route('saveSinglePageHeader') }}"

@@ -39,8 +39,8 @@
         <div class="row flex-grow">
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="auth-form-transparent text-left p-3">
-              <div class="brand-logo">
-                <img src="../admin_assets/images/logo-dark.svg" alt="logo">
+              <div class="brand-logo" style="text-align: center">
+                <img src="{{ asset('admin_assets/images/logo1.png') }}" width="20" alt="mcgn logo">
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
