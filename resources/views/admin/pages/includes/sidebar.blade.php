@@ -34,11 +34,21 @@
               </ul>
             </div>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="/pages/aboutus/">
+            <a class="nav-link" data-toggle="collapse" href="#about" aria-expanded="false" aria-controls="about">
               <i class="icon-file menu-icon"></i>
               <span class="menu-title">About Us</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="about">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('aboutus.About') }}">About</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Stats</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Meet Team</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Testimonials</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">

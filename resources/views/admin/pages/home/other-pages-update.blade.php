@@ -83,7 +83,9 @@
               <div class="card">
                 <div class="card-body image-container">
                   <h4 class="card-title">Current {{ request('page') }} header.</h4>
+                  <a href="{{ asset($data[0]) }}" target="_block">
                   <img src="{{ asset($data[0]) }}" alt="{{ request('page') }}">
+                  </a>
                 </div>
               </div>
             </div>

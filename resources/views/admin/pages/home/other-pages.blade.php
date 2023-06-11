@@ -78,7 +78,7 @@
                            {{ $data['page'] }}
                           </td>
                           <td>
-                            <img src="{{ asset($data['header_img']) }}" alt="image"/>
+                            <a href="{{ asset($data['header_img']) }}" target="_block"> <img src="{{ asset($data['header_img']) }}" alt="image"/> </a>
                           </td>
                           <td>
                             <a href="{{ route('singleHeaderUpdatePage', ['page' => $data['page']]) }}" > 

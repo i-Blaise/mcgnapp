@@ -195,7 +195,7 @@
                       <tbody>
                           <tr id="row{{ $header->id }}">
                           <td class="py-1">
-                            <img src="../../admin_assets/images/uploads/homeHeaders/{{ $header->home_slider_img }}" alt="image"/>
+                            <a href="../../admin_assets/images/uploads/homeHeaders/{{ $header->home_slider_img }}" target="_block"> <img src="../../admin_assets/images/uploads/homeHeaders/{{ $header->home_slider_img }}" alt="image"/> </a>
                           </td>
                           @if ($header->video_link == null)
                             <td class="text-danger"><i class="mdi mdi-close"></i></td>

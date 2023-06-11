@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAboutUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
@@ -85,14 +86,19 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
     Route::middleware(['auth'])->group(function () {
       Route::prefix('admin')->group(function () {
       // Route::view('home', 'admin.pages.home.index')->name('home');
+      // HEADER 
       Route::get('/home', [AdminHeaderController::class, 'indexPage'])->name('admin.home');
       Route::post('/upload-home-header', [AdminHeaderController::class, 'uploadHomeHeader'])->name('home.UploadHeader');
       Route::post('/delete-home-header', [AdminHeaderController::class, 'deleteHomeHeader'])->name('home.DeleteHeader');
 
-
       Route::get('/other-pages', [AdminHeaderController::class, 'uploadOtherPagesHeader'])->name('uploadOtherPagesHeader');
       Route::get('/other-pages-single/{page}/', [AdminHeaderController::class, 'singleHeaderUpdatePage'])->name('singleHeaderUpdatePage');
       Route::post('/save-header-update', [AdminHeaderController::class, 'updateSinglePageHeader'])->name('saveSinglePageHeader');
+
+
+      // ABOUT US 
+      Route::get('/aboutus-about', [AdminAboutUsController::class, 'aboutPage'])->name('aboutus.About');
+      Route::post('/aboutus-about-update-desc-img', [AdminAboutUsController::class, 'updateAboutDescImage'])->name('aboutus.UpdateDescImg');
   });
 });
 
