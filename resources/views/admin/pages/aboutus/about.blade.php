@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-  <title>Home Header</title>
+  <title>About Us - About</title>
   <link href="../../admin_assets/vendors/froala/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../admin_assets/vendors/froala/froala_editor.pkgd.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -125,31 +125,27 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Default form</h4>
+                  <h4 class="card-title">About - MCGN</h4>
                   <p class="card-description">
-                    Basic form layout
+                    About
                   </p>
                   <form 
-                  action="{{ route('home.UploadHeader') }}"
+                  action="{{ route('aboutus.UpdateAdboutDesc') }}"
                   method="POST"
                   enctype="multipart/form-data"
                   class="forms-sample">
                   @csrf
 
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="" placeholder="Caption" maxlength="50">
-                    </div>
-
-                    <div class="form-group">
                       <label for="exampleInputUsername1">Description</label>
-                      <textarea id='edit' name="description" style="margin-top: 30px;"  placeholder="Type some text">
+                      <textarea id='edit' name="about" style="margin-top: 30px;"  placeholder="Type some text">
+                        {{ $aboutus[0]->about }}
                     </textarea>
                     <p class="form-info">For best result, keep description under 600 characters</p>
                     </div>
 
 
-                    <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" name="submit" value="about" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
                   </form>
                 </div>
@@ -160,31 +156,27 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Default form</h4>
+                  <h4 class="card-title">Mission - MCGN</h4>
                   <p class="card-description">
-                    Basic form layout
+                    Mission
                   </p>
                   <form 
-                  action="{{ route('home.UploadHeader') }}"
+                  action="{{ route('aboutus.UpdateAdboutDesc') }}"
                   method="POST"
                   enctype="multipart/form-data"
                   class="forms-sample">
                   @csrf
 
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="" placeholder="Caption" maxlength="50">
-                    </div>
-
-                    <div class="form-group">
                       <label for="exampleInputUsername1">Description</label>
-                      <textarea id='edit' name="description" style="margin-top: 30px;"  placeholder="Type some text">
+                      <textarea id='edit' name="mission" style="margin-top: 30px;"  placeholder="Type some text">
+                        {{ $aboutus[0]->mission }}
                     </textarea>
                     <p class="form-info">For best result, keep description under 600 characters</p>
                     </div>
 
 
-                    <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" name="submit" value="mission" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
                   </form>
                 </div>
@@ -195,38 +187,32 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Default form</h4>
+                  <h4 class="card-title">Vision - MCGN</h4>
                   <p class="card-description">
-                    Basic form layout
+                    Vision
                   </p>
                   <form 
-                  action="{{ route('home.UploadHeader') }}"
+                  action="{{ route('aboutus.UpdateAdboutDesc') }}"
                   method="POST"
                   enctype="multipart/form-data"
                   class="forms-sample">
                   @csrf
 
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="" placeholder="Caption" maxlength="50">
-                    </div>
-
-                    <div class="form-group">
                       <label for="exampleInputUsername1">Description</label>
-                      <textarea id='edit' name="description" style="margin-top: 30px;"  placeholder="Type some text">
+                      <textarea id='edit' name="vision" style="margin-top: 30px;"  placeholder="Type some text">
+                        {{ $aboutus[0]->vision }}
                     </textarea>
                     <p class="form-info">For best result, keep description under 600 characters</p>
                     </div>
 
 
-                    <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" name="submit" value="vision" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
                   </form>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
       <!-- FOOTER STARTS HERE  -->

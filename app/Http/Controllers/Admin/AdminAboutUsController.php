@@ -36,6 +36,27 @@ class AdminAboutUsController extends Controller
         return redirect()->back()->with('success', 'Header Uploaded Successfully');
     }
 
+
+    public function updateAboutMissionVision(Request $request){
+
+        $about = AboutUs::find(1);
+
+        switch ($request->submit){
+            case 'about':
+                $about->about = $request->about;
+                break;
+            case 'mission':
+                $about->mission = $request->mission;
+                break;
+            case 'vision':
+                $about->vision = $request->vision;
+                break;
+        }
+        $about->save();
+        return redirect()->back()->with('success', ucfirst($request->submit).' Desc Updated Successfully');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
