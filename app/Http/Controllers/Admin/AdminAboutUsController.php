@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UploadTeamRequest;
 use App\Models\AboutUs;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -61,11 +62,32 @@ class AdminAboutUsController extends Controller
 
 
     public function meetTeamPage(){
-        $team = Team::all();
+        $team = Team::orderBy('created_at', 'desc')->get();
 
         return view('admin.pages.aboutus.meet-team', [
             'teams' => $team
         ]);
+    }
+
+
+
+    public function uploadTeam(UploadTeamRequest $request){
+        // dd($request);
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('admin_assets/images/uploads/team'), $imageName);
+
+
+        Team::create([
+            'team_img' => 'admin_assets/images/uploads/aboutus/'.$imageName,
+            'name' => $request->full_name,
+            'position' => $request->job_title,
+            'facebook' => $request->facebook,
+            'linkedin' => $request->linkedin,
+            'instagram' => $request->instagram,
+            'twitter' => $request->twitter
+        ]);
+
+        return redirect()->back()->with('success', 'Header Uploaded Successfully');
     }
 
     /**

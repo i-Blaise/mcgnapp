@@ -10,4 +10,14 @@ class Team extends Model
     use HasFactory;
 
     public $table = 'team';
+
+    protected $fillable = [
+        'team_img',
+        'name',
+        'position',
+        'facebook',
+        'linkedin',
+        'instagram',
+        'twiiter'
+    ];
 }

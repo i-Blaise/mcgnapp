@@ -28,11 +28,7 @@ class AdminHeaderController extends Controller
 
 
     function uploadHomeHeader(AdminHomeHeaderUploadRequest $request){
-        // $slider_img = $request->safe()->only(['slider_img']);
-        // dd($slider_img['slider_img']);
-        $imageName = time().'.'.$request->slider_img->extension();   ;
-        // dd($imageName);
-         
+        $imageName = time().'.'.$request->slider_img->extension();
         $request->slider_img->move(public_path('admin_assets/images/uploads/homeHeaders'), $imageName);
 
         Home::create([

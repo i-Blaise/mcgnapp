@@ -86,7 +86,7 @@
                     New Team Member
                   </p>
                   <form 
-                  action="{{ route('home.UploadHeader') }}"
+                  action="{{ route('aboutus.uploadTeam') }}"
                   method="POST"
                   enctype="multipart/form-data"
                   class="forms-sample">
@@ -105,12 +105,12 @@
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Full Name</label>
-                      <input type="text" name="fullname" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Full Name">
+                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Full Name">
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Job Title</label>
-                      <input type="text" name="title" class="form-control" id="exampleInputUsername1" value="{{ old('caption') }}" placeholder="Job Title">
+                      <input type="text" name="job_title" class="form-control" id="exampleInputUsername1" value="{{ old('caption') }}" placeholder="Job Title">
                     </div>
 
                     <div class="form-group row">
@@ -164,7 +164,7 @@
                       <input type="text" name="title" class="form-control" id="tw-link" value="{{ old('caption') }}" disabled>
                     </div>
 
-                    <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
                   </form>
                 </div>
@@ -173,7 +173,7 @@
             <div class="col-lg-7 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Homepage Slides</h4>
+                  <h4 class="card-title">Team</h4>
                   <p class="card-description">
                     <!-- Add class <code>.table-hover</code> -->
                   </p>
@@ -193,7 +193,8 @@
                       <tbody>
                           <tr id="row{{ $team->id }}">
                           <td class="py-1">
-                            <a href="{{ $team->team_img }}" target="_block"> <img src="{{ $team->team_img }}" alt="image"/> </a>
+                            {{ $team->team_img }}
+                            <a href="{{ asset($team->team_img) }}" target="_block"> <img src="{{ asset($team->team_img) }}" alt="image"/> </a>
                           </td>
                           @if ($team->facebook == null)
                             <td class="text-danger"><i class="mdi mdi-close"></i></td>
