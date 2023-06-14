@@ -78,12 +78,12 @@
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
+            <div class="col-md-5 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Default form</h4>
+                  <h4 class="card-title">Upload Team form</h4>
                   <p class="card-description">
-                    Basic form layout
+                    New Team Member
                   </p>
                   <form 
                   action="{{ route('home.UploadHeader') }}"
@@ -92,10 +92,10 @@
                   class="forms-sample">
                   @csrf
                     <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="slider_img" class="file-upload-default" value="">
+                      <label>Image</label>
+                      <input type="file" name="image" class="file-upload-default" value="">
                       <div class="input-group col-xs-12">
-                        <input type="text" name="slider_img" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
+                        <input type="text" name="image" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                         </span>
@@ -104,69 +104,65 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="{{ old('caption') }}" placeholder="Caption" maxlength="50">
+                      <label for="exampleInputUsername1">Full Name</label>
+                      <input type="text" name="fullname" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Full Name">
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Description</label>
-                      <textarea id='edit' name="description" style="margin-top: 30px;"  placeholder="Type some text">
-                      {{ old('description') }}
-                    </textarea>
-                    <p class="form-info">For best result, keep description under 600 characters</p>
+                      <label for="exampleInputUsername1">Job Title</label>
+                      <input type="text" name="title" class="form-control" id="exampleInputUsername1" value="{{ old('caption') }}" placeholder="Job Title">
                     </div>
 
-
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" name="donate" value="donate"
-                              id="donate_checkbox" class="form-check-input" 
-                              @checked(old('donate'))
-                              onclick="disableDonateBtn()"> 
-                              Donate Button
-                            </label>
-                          </div>
-                        </div>
+                    <div class="form-group row">
+                      <div class="col">
+                          <p class="mb-2"><img src="{{ asset('img/fb-24.png') }}"></p>
+                        <label class="toggle-switch toggle-switch-success">
+                          <input name="sm_facebook" type="checkbox" id="fb-toggle">
+                          <span class="toggle-slider round"></span>
+                        </label>                      
                       </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input type="checkbox" id="video_checkbox" name="video" value="donate" class="form-check-input"  @checked(old('video'))
-                              onclick="disableVideoLink()">
-                            Video Button
-                          </label>
-                        </div>
+                      <div class="col">
+                          <p class="mb-2"><img src="{{ asset('img/li-24.png') }}"></p>
+                        <label class="toggle-switch toggle-switch-success">
+                          <input name="sm_twitter" type="checkbox" id="li-toggle">
+                          <span class="toggle-slider round"></span>
+                        </label>                      
                       </div>
+                      <div class="col">
+                          <p class="mb-2"><img src="{{ asset('img/in-24.png') }}"></p>
+                        <label class="toggle-switch toggle-switch-success">
+                          <input name="sm_linkedin" type="checkbox" id="in-toggle">
+                          <span class="toggle-slider round"></span>
+                        </label>                      
+                      </div>
+                      <div class="col">
+                        <p class="mb-2"><img src="{{ asset('img/tw-24.png') }}"></p>
+                      <label class="toggle-switch toggle-switch-success">
+                        <input name="instagram" type="checkbox" id="tw-toggle">
+                        <span class="toggle-slider round"></span>
+                      </label>                      
                     </div>
                     </div>
 
-                    {{-- <div class="form-group">
-                    <label for="exampleFormControlSelect1">Donation Cause</label>
-                    <select class="form-control form-control-lg" name="donation_cause" id="donate_btn" 
-                    @if (old('donation_cause') !== null)
-                    @disabled(false)
-                    @else
-                    @disabled(true)
-                    @endif>
-                      @foreach ($causesData as $causes)
-                    <option value="{{ $causes->id }}" @selected(old('donation_cause') == $causes->id)>{{ $causes->caption }}</option>
-                    @endforeach
-                    </select>
-                  </div> --}}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Facebook Link</label>
+                      <input type="text" name="facebook" class="form-control" id="fb-link" value="{{ old('facebook') }}" disabled>
+                    </div>
 
-                  <div class="form-group">
-                      <label for="exampleInputUsername1">Youtube URL</label>
-                      <input type="text" name="video_link" class="form-control" id="video_link" placeholder="Youtube URL" value="{{ old('video_link') }}" 
-                      @if (old('video_link') !== null)
-                      @disabled(false)
-                      @else
-                      @disabled(true)
-                      @endif>
-                  </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">LinkedIn Link</label>
+                      <input type="text" name="title" class="form-control" id="li-link" value="{{ old('caption') }}" disabled>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Instagram Link</label>
+                      <input type="text" name="title" class="form-control" id="in-link" value="{{ old('caption') }}" disabled>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Twitter Link</label>
+                      <input type="text" name="title" class="form-control" id="tw-link" value="{{ old('caption') }}" disabled>
+                    </div>
 
                     <button type="submit" name="submit" value="submit_home_header" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
@@ -174,7 +170,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="col-lg-7 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Homepage Slides</h4>
@@ -185,37 +181,50 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>Image Link</th>
-                          <th>Donate Button</th>
-                          <th>Video Button</th>
-                          <th>Action</th>
+                          <th>Image</th>
+                          <th>Facebook</th>
+                          <th>LinkedIn</th>
+                          <th>Instagram</th>
+                          <th>Twitter</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       @foreach ($teams as $team)
                       <tbody>
                           <tr id="row{{ $team->id }}">
                           <td class="py-1">
-                            <a href="../../admin_assets/images/uploads/homeHeaders/{{ $team->team_img }}" target="_block"> <img src="../../admin_assets/images/uploads/homeHeaders/{{ $team->team_img }}" alt="image"/> </a>
+                            <a href="{{ $team->team_img }}" target="_block"> <img src="{{ $team->team_img }}" alt="image"/> </a>
                           </td>
-                          {{-- @if ($header->video_link == null)
+                          @if ($team->facebook == null)
                             <td class="text-danger"><i class="mdi mdi-close"></i></td>
                             @else
                             <td class="text-success"><i class="mdi mdi-check"></i></td>
                           @endif
 
-                          @if ($header->donation_cause == null)
+                          @if ($team->linkedin == null)
                           <td class="text-danger"><i class="mdi mdi-close"></i></td>
                           @else
                           <td class="text-success"><i class="mdi mdi-check"></i></td>
-                          @endif --}}
+                          @endif
+
+                          @if ($team->instagram == null)
+                          <td class="text-danger"><i class="mdi mdi-close"></i></td>
+                          @else
+                          <td class="text-success"><i class="mdi mdi-check"></i></td>
+                          @endif
+
+                          @if ($team->twitter == null)
+                          <td class="text-danger"><i class="mdi mdi-close"></i></td>
+                          @else
+                          <td class="text-success"><i class="mdi mdi-check"></i></td>
+                          @endif
                           
 
 
                           <td>
                             <form id="logout-form" action="{{ route('home.DeleteHeader') }}" method="POST">
                               @csrf
-                              <input type="text" name="id" value="{{ $team
-                              \\\\\\\\\\->id }}" hidden>
+                              <input type="text" name="id" value="{{ $team->id }}" hidden>
                               <button type="submit"  class="btn btn-inverse-danger btn-icon">
                               <i class="mdi mdi-delete"></i>
                               </button>
@@ -335,5 +344,72 @@ function deleteHeader(headerID){
   </script>
 
 </body>
+
+<script>
+  // var fbToggle = false;
+$("#fb-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("fb-link").disabled = false;
+    }
+    else {
+       document.getElementById("fb-link").disabled = true;
+    }
+});
+
+
+$("#tw-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("tw-link").disabled = false;
+    }
+    else {
+       document.getElementById("tw-link").disabled = true;
+    }
+});
+
+$("#li-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("li-link").disabled = false;
+    }
+    else {
+       document.getElementById("li-link").disabled = true;
+    }
+});
+
+$("#in-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("in-link").disabled = false;
+    }
+    else {
+       document.getElementById("in-link").disabled = true;
+    }
+});
+
+$("#yt-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("yt-link").disabled = false;
+    }
+    else {
+       document.getElementById("yt-link").disabled = true;
+    }
+});
+
+$("#flb-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("flb-link").disabled = false;
+    }
+    else {
+       document.getElementById("flb-link").disabled = true;
+    }
+});
+
+$("#tk-toggle").on('change', function() {
+    if ($(this).is(':checked')) {
+        document.getElementById("tk-link").disabled = false;
+    }
+    else {
+       document.getElementById("tk-link").disabled = true;
+    }
+});
+</script>
 
 </html>
