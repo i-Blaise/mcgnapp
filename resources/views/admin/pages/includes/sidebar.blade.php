@@ -44,8 +44,8 @@
             <div class="collapse" id="about">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('aboutus.About') }}">About</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Stats</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Meet Team</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Stats</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('aboutus.meetTeam') }}">Meet Team</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Testimonials</a></li>
               </ul>
             </div>

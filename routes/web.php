@@ -100,6 +100,9 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
       Route::get('/aboutus-about', [AdminAboutUsController::class, 'aboutPage'])->name('aboutus.About');
       Route::post('/aboutus-about-update-desc-img', [AdminAboutUsController::class, 'updateAboutDescImage'])->name('aboutus.UpdateDescImg');
       Route::post('/about-mission-vision', [AdminAboutUsController::class, 'updateAboutMissionVision'])->name('aboutus.UpdateAdboutDesc');
+
+
+      Route::get('/aboutus-meet-team', [AdminAboutUsController::class, 'meetTeamPage'])->name('aboutus.meetTeam');
   });
 });
 

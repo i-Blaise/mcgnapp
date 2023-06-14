@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class AdminAboutUsController extends Controller
@@ -55,6 +56,16 @@ class AdminAboutUsController extends Controller
         $about->save();
         return redirect()->back()->with('success', ucfirst($request->submit).' Desc Updated Successfully');
 
+    }
+
+
+
+    public function meetTeamPage(){
+        $team = Team::all();
+
+        return view('admin.pages.aboutus.meet-team', [
+            'teams' => $team
+        ]);
     }
 
     /**
