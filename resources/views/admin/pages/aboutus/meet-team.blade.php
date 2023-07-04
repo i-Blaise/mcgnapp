@@ -100,7 +100,7 @@
                           <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                         </span>
                       </div>
-                    <p class="form-info">For best result, image height should be 810px </p>
+                    <p class="form-info">For best result, image height should be 400px </p>
                     </div>
 
                     <div class="form-group">
@@ -222,7 +222,7 @@
 
 
                           <td>
-                            <form id="logout-form" action="{{ route('home.DeleteHeader') }}" method="POST">
+                            <form id="logout-form" action="{{ route('aboutus.deleteTeam') }}" method="POST">
                               @csrf
                               <input type="text" name="id" value="{{ $team->id }}" hidden>
                               <button type="submit"  class="btn btn-inverse-danger btn-icon">

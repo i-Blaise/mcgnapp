@@ -35,7 +35,7 @@ class UploadTeamRequest extends FormRequest
     public function messages()
     {
         return[
-            'image.image' => 'should be image',
+            'image.image' => 'File must be an image',
         ];
     }
 }

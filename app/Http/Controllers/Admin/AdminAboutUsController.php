@@ -72,7 +72,6 @@ class AdminAboutUsController extends Controller
 
 
     public function uploadTeam(UploadTeamRequest $request){
-        // dd($request);
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('admin_assets/images/uploads/team'), $imageName);
 
@@ -89,6 +88,11 @@ class AdminAboutUsController extends Controller
 
         return redirect()->back()->with('success', 'Header Uploaded Successfully');
     }
+
+    function deleteTeam(Request $request){
+        Team::where('id', $request->id)->delete();
+        return redirect()->back()->with('success', 'Team Card Deleted');
+     }
 
     /**
      * Show the form for creating a new resource.

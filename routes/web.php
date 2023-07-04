@@ -104,6 +104,7 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
       Route::get('/aboutus-meet-team', [AdminAboutUsController::class, 'meetTeamPage'])->name('aboutus.meetTeam');
       Route::post('/aboutus-upload-team', [AdminAboutUsController::class, 'uploadTeam'])->name('aboutus.uploadTeam');
+      Route::post('/aboutus-delete-team', [AdminAboutUsController::class, 'deleteTeam'])->name('aboutus.deleteTeam');
   });
 });
 
