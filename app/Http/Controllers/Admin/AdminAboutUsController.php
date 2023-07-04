@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UploadTeamRequest;
 use App\Models\AboutUs;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class AdminAboutUsController extends Controller
@@ -93,6 +94,20 @@ class AdminAboutUsController extends Controller
         Team::where('id', $request->id)->delete();
         return redirect()->back()->with('success', 'Team Card Deleted');
      }
+
+
+
+
+
+
+
+     public function testimonialPage(){
+        $testimonial = Testimonial::orderBy('created_at', 'desc')->get();
+
+        return view('admin.pages.aboutus.testimonials', [
+            'testimonials' => $testimonial
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

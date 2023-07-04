@@ -46,7 +46,7 @@
                 <li class="nav-item"> <a class="nav-link" href="{{ route('aboutus.About') }}">About</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">Stats</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('aboutus.meetTeam') }}">Meet Team</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('uploadOtherPagesHeader') }}">Testimonials</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('aboutus.testimonial') }}">Testimonials</a></li>
               </ul>
             </div>
           </li>
