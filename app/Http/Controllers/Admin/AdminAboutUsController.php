@@ -78,7 +78,7 @@ class AdminAboutUsController extends Controller
 
 
         Team::create([
-            'team_img' => 'admin_assets/images/uploads/aboutus/'.$imageName,
+            'team_img' => 'admin_assets/images/uploads/team/'.$imageName,
             'name' => $request->full_name,
             'position' => $request->job_title,
             'facebook' => $request->facebook,

@@ -22,7 +22,7 @@ class UploadTeamRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_height=300,max_height=900,min_width=600',
+            'image' => 'required|image|mimes:png,jpg,jpeg,svg',
             'full_name' => 'required',
             'job_title' => 'required|max:600',
             'facebook' => 'nullable|active_url',
@@ -35,7 +35,7 @@ class UploadTeamRequest extends FormRequest
     public function messages()
     {
         return[
-            'image.dimensions' => 'Youtube link must be an active URL.',
+            'image.image' => 'should be image',
         ];
     }
 }

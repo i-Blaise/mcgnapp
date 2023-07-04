@@ -151,17 +151,17 @@
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">LinkedIn Link</label>
-                      <input type="text" name="title" class="form-control" id="li-link" value="{{ old('caption') }}" disabled>
+                      <input type="text" name="linkedin" class="form-control" id="li-link" value="{{ old('linkedin') }}" disabled>
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Instagram Link</label>
-                      <input type="text" name="title" class="form-control" id="in-link" value="{{ old('caption') }}" disabled>
+                      <input type="text" name="instagram" class="form-control" id="in-link" value="{{ old('instagram') }}" disabled>
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Twitter Link</label>
-                      <input type="text" name="title" class="form-control" id="tw-link" value="{{ old('caption') }}" disabled>
+                      <input type="text" name="twitter" class="form-control" id="tw-link" value="{{ old('twitter') }}" disabled>
                     </div>
 
                     <button type="submit" name="submit" value="submit" class="btn btn-primary mr-2">Submit</button>
@@ -193,7 +193,6 @@
                       <tbody>
                           <tr id="row{{ $team->id }}">
                           <td class="py-1">
-                            {{ $team->team_img }}
                             <a href="{{ asset($team->team_img) }}" target="_block"> <img src="{{ asset($team->team_img) }}" alt="image"/> </a>
                           </td>
                           @if ($team->facebook == null)
