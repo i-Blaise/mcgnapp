@@ -112,12 +112,11 @@ class AdminHeaderController extends Controller
             'header' => 'required|image'
         ]);
         $imageName = time().'.'.$request->header->extension();
-        // dd($imageName);
+        dd($request->page);
 
         switch ($request->page) {
             case "About Page":
                 $about = AboutUsPage::find(1);
-                dd($about);
                 $about->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $about->save();
                 break;
