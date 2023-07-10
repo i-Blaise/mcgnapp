@@ -117,37 +117,37 @@ class AdminHeaderController extends Controller
         switch ($request->page) {
             case "About Page":
                 $about = AboutUsPage::find(1);
-                $about->header_img = 'admin_assets/images/uploads/headerImg/'.$imageName;
+                $about->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $about->save();
                 break;
             case "Causes Page":
                 $causes = CausesPage::find(1);
-                $causes->header_img = 'admin_assets/images/uploads/headerImg/'.$imageName;
+                $causes->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $causes->save();
                 break;
             case "Event Page":
                 $event = EventsPage::find(1);
-                $event->header_img = 'admin_assets/images/uploads/headerImg/'.$imageName;
+                $event->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $event->save();
                 break;
             case "Blog Page":
                 $blog = BlogPage::find(1);
-                $blog->header_img = 'admin_assets/images/uploads/headerImg/'.$imageName;
+                $blog->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $blog->save();
                 break;
                 case "Gallery Page":
                     $gallery = GalleryPage::find(1);
-                    $gallery->header_img = 'admin_assets/images/uploads/headerImg/'.$imageName;
+                    $gallery->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                     $gallery->save();
                     break;
             case "Contact Page":
                 $contact = ContactPage::find(1);
-                $contact->header_img = 'admin_assets/images/uploads/headerImg/'.$imageName;
+                $contact->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $contact->save();
                 break;
         }
          
-        $request->header->move(public_path('admin_assets/images/uploads/headerImg'), $imageName);
+        $request->header->move(public_path('admin_assets/images/uploads/homeHeaders'), $imageName);
         return redirect()->back()->with('success', 'Header Uploaded Successfully');
     }
 }
