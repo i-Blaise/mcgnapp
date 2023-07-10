@@ -117,9 +117,9 @@ class AdminHeaderController extends Controller
         switch ($request->page) {
             case "About Page":
                 $about = AboutUsPage::find(1);
+                dd($about);
                 $about->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $about->save();
-                dd($imageName);
                 break;
             case "Causes Page":
                 $causes = CausesPage::find(1);
