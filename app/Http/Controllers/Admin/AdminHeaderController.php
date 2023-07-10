@@ -108,9 +108,9 @@ class AdminHeaderController extends Controller
 
     public function updateSinglePageHeader(Request $request){
         // dd($request->header);
-        $request->validate([
-            'header' => 'required|image'
-        ]);
+        // $request->validate([
+        //     'header' => 'required|image'
+        // ]);
         $imageName = time().'.'.$request->header->extension();
         dd($request->page);
 
