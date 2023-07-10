@@ -113,6 +113,7 @@ class AdminHeaderController extends Controller
         // ]);
         // dd($request->header);
         $imageName = time().'.'.$request->header->extension();
+        dd($imageName);
 
         switch ($request->page) {
             case "About Page":
