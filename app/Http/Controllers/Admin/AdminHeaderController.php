@@ -111,8 +111,8 @@ class AdminHeaderController extends Controller
         $request->validate([
             'header' => 'required|image|mimes:png,jpg,jpeg,svg'
         ]);
+        dd($request->header);
         $imageName = time().'.'.$request->header->extension();
-        dd($imageName);
 
         switch ($request->page) {
             case "About Page":
