@@ -112,7 +112,7 @@ class AdminHeaderController extends Controller
         //     'header' => 'required|image|mimes:png,jpg,jpeg,svg'
         // ]);
         // dd($request->header);
-        $imageName = time().'.'.$request->header->extension();
+        $imageName = $request->header . time().'.'.$request->header->extension();
         dd($imageName);
 
         switch ($request->page) {
