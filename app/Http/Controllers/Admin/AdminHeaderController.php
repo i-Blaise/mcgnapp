@@ -119,6 +119,7 @@ class AdminHeaderController extends Controller
                 $about = AboutUsPage::find(1);
                 $about->header_img = 'admin_assets/images/uploads/homeHeaders/'.$imageName;
                 $about->save();
+                dd($imageName);
                 break;
             case "Causes Page":
                 $causes = CausesPage::find(1);
