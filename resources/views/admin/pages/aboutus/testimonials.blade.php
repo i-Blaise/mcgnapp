@@ -107,6 +107,21 @@
                       <label for="exampleInputUsername1">Full Name</label>
                       <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Full Name">
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Company Name</label>
+                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Profession</label>
+                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Profession">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Testimonial</label>
+                      <textarea id='edit' name="mission" style="margin-top: 30px;">
+                        {{ old('testimonial') }}
+                    </textarea>
+                    <p class="form-info">For best result, keep description under 600 characters</p>
+                    </div>
 
                     <button type="submit" name="submit" value="submit" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
