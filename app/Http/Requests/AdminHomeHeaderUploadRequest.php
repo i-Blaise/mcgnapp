@@ -22,7 +22,7 @@ class AdminHomeHeaderUploadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_height=300',
+            'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_height=300,max_height=900,min_width=600',
             'caption' => 'required',
             'description' => 'required|max:600',
             'donation_cause' => 'nullable',
@@ -34,7 +34,7 @@ class AdminHomeHeaderUploadRequest extends FormRequest
     {
         return[
             'video_link.active_url' => 'Youtube link must be an active URL.',
-            // 'slider_img.dimensions' => 'Invalid Image Dimensions. Image should have Min Height of 300, Max height of 900 and Min Width of 600',
+            'slider_img.dimensions' => 'Invalid Image Dimensions. Image should have Min Height of 300, Max height of 900 and Min Width of 600',
             'slider_img.required' => 'Header Image is required.',
             'slider_img.image' => 'Header Image field must be of type image.',
             'slider_img.mimes' => 'Image must be of types: jpg, png, jpeg, svg',
