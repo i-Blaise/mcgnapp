@@ -84,6 +84,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //     });
 
     Route::middleware(['auth'])->group(function () {
+      Route::get('/admin', [AdminHeaderController::class, 'indexPage'])->name('admin.home');
+      
       Route::prefix('admin')->group(function () {
       // Route::view('home', 'admin.pages.home.index')->name('home');
       // HEADER 

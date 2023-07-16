@@ -107,13 +107,13 @@ class AdminHeaderController extends Controller
     }
 
     public function updateSinglePageHeader(Request $request){
-        dd($request->header);
+        // dd($request->header);
         $request->validate([
             'header' => 'required|image|mimes:png,jpg,jpeg,svg'
         ]);
         // dd($request->header);
         $imageName = time().'.'.$request->header->extension();
-        dd($imageName);
+        // dd($imageName);
 
         switch ($request->page) {
             case "About Page":
