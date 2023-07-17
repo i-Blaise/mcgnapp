@@ -86,7 +86,7 @@
                     New Team Member
                   </p>
                   <form 
-                  action="{{ route('aboutus.uploadTeam') }}"
+                  action="{{ route('aboutus.UploadTestimonial') }}"
                   method="POST"
                   enctype="multipart/form-data"
                   class="forms-sample">
@@ -105,19 +105,19 @@
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Full Name</label>
-                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Full Name">
+                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('full_name') }}" placeholder="Full Name">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsername1">Company Name</label>
-                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Company Name">
+                      <input type="text" name="company_name" class="form-control" id="exampleInputUsername1" value="{{ old('company_name') }}" placeholder="Company Name">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsername1">Profession</label>
-                      <input type="text" name="full_name" class="form-control" id="exampleInputUsername1" value="{{ old('fullname') }}" placeholder="Profession">
+                      <input type="text" name="profession" class="form-control" id="exampleInputUsername1" value="{{ old('profession') }}" placeholder="Profession">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsername1">Testimonial</label>
-                      <textarea id='edit' name="mission" style="margin-top: 30px;">
+                      <textarea id='edit' name="testimonial" style="margin-top: 30px;">
                         {{ old('testimonial') }}
                     </textarea>
                     <p class="form-info">For best result, keep description under 600 characters</p>
@@ -159,7 +159,7 @@
                             {{ $testimonial->company }}
                           </td>
                           <td>
-                            <form id="logout-form" action="{{ route('aboutus.deleteTeam') }}" method="POST">
+                            <form id="logout-form" action="{{ route('aboutus.DeleteTestimonial') }}" method="POST">
                               @csrf
                               <input type="text" name="id" value="{{ $testimonial->id }}" hidden>
                               <button type="submit"  class="btn btn-inverse-danger btn-icon">

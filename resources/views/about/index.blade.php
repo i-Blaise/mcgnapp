@@ -92,13 +92,13 @@
 
                             <div class="tab-content">
                                 <div id="tab-content-1" class="container tab-pane active">
-                                    {{ $aboutData->about }}
+                                    {!! $aboutData->about !!}
                                 </div>
                                 <div id="tab-content-2" class="container tab-pane fade">
-                                    {{ $aboutData->mission }}
+                                    {!! $aboutData->mission !!}
                                 </div>
                                 <div id="tab-content-3" class="container tab-pane fade">
-                                    {{ $aboutData->vision }}
+                                    {!! $aboutData->vision !!}
                                 </div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                {{ $testimonialData->body }}
+                                {!! $testimonialData->body !!}
                             </p>
                         </div>
                     </div>

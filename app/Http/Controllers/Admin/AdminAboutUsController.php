@@ -109,6 +109,32 @@ class AdminAboutUsController extends Controller
         ]);
     }
 
+
+    public function uploadTestimonial(Request $request){
+        // dd($request);
+        $request->validate([
+            'image' => 'required|image'
+        ]);
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('admin_assets/images/uploads/testimonials'), $imageName);
+
+        Testimonial::create([
+            'img' => 'admin_assets/images/uploads/testimonials/'.$imageName,
+            'name' => $request->full_name,
+            'company' => $request->company_name,
+            'profession' => $request->profession,
+            'body' => $request->testimonial
+        ]);
+
+        return redirect()->back()->with('success', 'New Testimonial Uploaded Successfully');
+    }
+
+
+    function deleteTestimonial(Request $request){
+        Testimonial::where('id', $request->id)->delete();
+        return redirect()->back()->with('success', 'Testimonial Deleted');
+     }
+
     /**
      * Show the form for creating a new resource.
      */

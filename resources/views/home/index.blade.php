@@ -549,7 +549,7 @@
                     @foreach ($testimonial as $testimonialData)
                     <div class="testimonial-item">
                         <div class="testimonial-profile">
-                            <img src="{{ $testimonialData->img }}" alt="Image">
+                            <img src="{{ $testimonialData->img }}" alt="image">
                             <div class="testimonial-name">
                                 <h3>{{ $testimonialData->name }}</h3>
                                 <p>{{ $testimonialData->profession }} - {{ $testimonialData->company }}</p>
@@ -557,7 +557,7 @@
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                {{ $testimonialData->body }}
+                                {!! $testimonialData->body !!}
                             </p>
                         </div>
                     </div>

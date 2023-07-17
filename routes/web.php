@@ -110,6 +110,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
 
       Route::get('/aboutus-testimonials', [AdminAboutUsController::class, 'testimonialPage'])->name('aboutus.testimonial');
+      Route::post('/aboutus-upload-testimonial', [AdminAboutUsController::class, 'uploadTestimonial'])->name('aboutus.UploadTestimonial');
+      Route::post('/aboutus-delete-testimonial', [AdminAboutUsController::class, 'deleteTestimonial'])->name('aboutus.DeleteTestimonial');
   });
 });
 
