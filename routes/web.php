@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAboutUsController;
+use App\Http\Controllers\Admin\AdminCausesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
@@ -112,6 +113,11 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
       Route::get('/aboutus-testimonials', [AdminAboutUsController::class, 'testimonialPage'])->name('aboutus.testimonial');
       Route::post('/aboutus-upload-testimonial', [AdminAboutUsController::class, 'uploadTestimonial'])->name('aboutus.UploadTestimonial');
       Route::post('/aboutus-delete-testimonial', [AdminAboutUsController::class, 'deleteTestimonial'])->name('aboutus.DeleteTestimonial');
+
+
+      // CAUSES 
+      Route::get('/add-cause', [AdminCausesController::class, 'addCause'])->name('causes.addCause');
+
   });
 });
 
