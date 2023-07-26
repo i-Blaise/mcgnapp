@@ -10,4 +10,12 @@ class Causes extends Model
     use HasFactory;
 
     public $table = 'causes';
+    protected $fillable = [
+        'main_img',
+        'caption',
+        'goal',
+        'money_raised',
+        'excerpt',
+        'body'
+    ];
 }

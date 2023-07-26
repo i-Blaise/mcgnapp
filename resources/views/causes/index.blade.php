@@ -76,7 +76,7 @@
                     <div class="col-lg-4">
                     <div class="causes-item">
                         <div class="causes-img">
-                            <img src="{{ $causeData->main_img }}" alt="Image">
+                            <img src="{{ asset($causeData->main_img) }}" alt="Image">
                         </div>
                         <div class="causes-progress">
                             <div class="progress">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="causes-text">
                             <h3>{{ $causeData->caption }}</h3>
-                            <p>{{ $causeData->excerpt }}</p>
+                            <p>{!! $causeData->excerpt !!}</p>
                         </div>
                         <div class="causes-btn">
                             <a href="{{ route('causes.single', ['id' => $causeData->id]) }}" class="btn btn-custom">Learn More</a>

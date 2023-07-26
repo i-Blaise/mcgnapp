@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Causes;
 use Illuminate\Http\Request;
 
 class AdminCausesController extends Controller
@@ -15,51 +16,39 @@ class AdminCausesController extends Controller
         return view('admin.pages.causes.add-cause');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function createCause(Request $request)
     {
-        //
+        // dd($request);
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('admin_assets/images/uploads/causes'), $imageName);
+
+
+        Causes::create([
+            'main_img' => 'admin_assets/images/uploads/causes/'.$imageName,
+            'caption' => $request->caption,
+            'goal' => $request->goal,
+            'money_raised' => $request->money_raised,
+            'excerpt' => $request->excerpt,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->back()->with('success', 'Cause Created Successfully');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+
+    public function causeList()
     {
-        //
+        $causes = Causes::orderBy('id', 'desc')->get();
+        return view('admin.pages.causes.cause-list',[
+            'causeData' => $causes
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function updatePage($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $causes = Causes::pluck('main_img')->where('id', $id)->get();
+        return view('admin.pages.causes.cause-list',[
+            'causeData' => $causes
+        ]);
     }
 }

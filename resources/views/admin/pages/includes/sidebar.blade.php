@@ -59,7 +59,7 @@
             <div class="collapse" id="causes">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('causes.addCause') }}">Create New Cause</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Causes List</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('causes.list') }}">Causes List</a></li>
               </ul>
             </div>
           </li>

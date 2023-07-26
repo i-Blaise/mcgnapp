@@ -69,7 +69,7 @@
             @endforeach
             @else
             @foreach ($causes as $causesData ) 
-            <div class="donate" data-parallax="scroll" data-image-src="{{ $causesData->main_img }}">
+            <div class="donate" data-parallax="scroll" data-image-src="{{ asset($causesData->main_img) }}">
             @endforeach
             @endif
                 <div class="row align-items-center">
@@ -83,7 +83,7 @@
                             </div>
                             <div class="donate-text">
                                 <p>
-                                    {{ $donatenowdata->body }}
+                                    {!! $donatenowdata->body !!}
                                 </p>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                             </div>
                             <div class="donate-text">
                                 <p>
-                                    {{ $causesData->excerpt }}
+                                    {!! $causesData->excerpt !!}
                                 </p>
                             </div>
                         </div>

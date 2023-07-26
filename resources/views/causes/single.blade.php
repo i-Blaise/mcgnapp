@@ -42,7 +42,7 @@
         margin-bottom: 45px;
         padding: 210px 0 90px 0;
         text-align: center;
-        background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/page-header.jp);
+        background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url({{ asset($header->header_img) }});
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="single-content">
-                            <img src="{{ $causes->main_img }}" />
+                            <img src="{{ asset($causes->main_img) }}" />
 
                             <h2>{{ $causes->caption }}</h2>
 
@@ -103,7 +103,7 @@
                                     <!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
                                     <!-- partial -->  
                                                             
-                            {{ $causes->body }}
+                            {!! $causes->body !!}
                         </div>
                         <div class="single-tags">
                             <a href="">National</a>

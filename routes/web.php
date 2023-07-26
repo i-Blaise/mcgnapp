@@ -117,6 +117,11 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
       // CAUSES 
       Route::get('/add-cause', [AdminCausesController::class, 'addCause'])->name('causes.addCause');
+      Route::post('/create-cause', [AdminCausesController::class, 'createCause'])->name('causes.createCause');
+
+
+      Route::get('/cause-list', [AdminCausesController::class, 'causeList'])->name('causes.list');
+      Route::get('/cause-update-page/{id}', [AdminCausesController::class, 'updatePage'])->name('causes.updatePage');
 
   });
 });
