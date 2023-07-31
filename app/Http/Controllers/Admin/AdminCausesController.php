@@ -46,9 +46,32 @@ class AdminCausesController extends Controller
 
     public function updatePage($id)
     {
-        $causes = Causes::pluck('main_img')->where('id', $id)->get();
-        return view('admin.pages.causes.cause-list',[
+        // dd($id);
+        $causes = Causes::where('id', $id)->get();
+        return view('admin.pages.causes.cause-update-page',[
             'causeData' => $causes
         ]);
+    }
+
+    public function editCause(Request $request)
+    {
+        if($request->image){
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('admin_assets/images/uploads/causes'), $imageName);
+        }
+
+        $cause = Causes::find($request->id);
+
+        if(isset($imageName)){
+            $cause->main_img = 'admin_assets/images/uploads/causes/'.$imageName;
+        }
+        $cause->caption = $request->caption;
+        $cause->goal = $request->goal;
+        $cause->money_raised = $request->money_raised;
+        $cause->excerpt = $request->excerpt;
+        $cause->body = $request->body;
+        $cause->save();
+
+        return redirect()->back()->with('success', 'Cause Editted Successfully');
     }
 }

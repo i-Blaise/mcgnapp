@@ -77,6 +77,47 @@
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
+            @foreach ($causeData as $data )
+            <div class="row">
+                <div class="col-md-8 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <a href="{{ route('causes.list') }}"> 
+                       <button style="margin-bottom:5%;" class="btn btn-primary mr-2"><i class="icon-arrow-left"></i> Back</button>
+                      </a>
+                      <h4 class="card-title">Update {{ request('page') }}</h4>
+                      <form 
+                      action="{{ route('causes.edit') }}"
+                      method="POST"
+                      enctype="multipart/form-data"
+                      class="forms-sample">
+                      @csrf
+                      <div class="form-group">
+                        <label>File upload</label>
+                        <input type="file" name="image" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                          <input type="text" name="header" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
+                          <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                          </span>
+                        </div>
+                      <p class="form-info">For best result, image height should be 810px.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body image-container">
+                      <h4 class="card-title">Cause Image</h4>
+                      <a href="{{ asset($data->main_img) }}" target="_block">
+                      <img src="{{ asset($data->main_img) }}" alt="{{ $data->caption }}">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
@@ -85,27 +126,9 @@
                   <p class="card-description">
                     Create Cause
                   </p>
-                  <form 
-                  action="{{ route('causes.createCause') }}"
-                  method="POST"
-                  enctype="multipart/form-data"
-                  class="forms-sample">
-                  @csrf
-                    <div class="form-group">
-                      <label>Image</label>
-                      <input type="file" name="image" class="file-upload-default" value="">
-                      <div class="input-group col-xs-12">
-                        <input type="text" name="image" class="form-control file-upload-info" disabled value="" placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                      </div>
-                    <p class="form-info">For best result, image height should be 400px </p>
-                    </div>
-
                     <div class="form-group">
                       <label for="exampleInputUsername1">Cause Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="{{ old('full_name') }}" placeholder="Full Name">
+                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="{{ $data->caption }}" placeholder="Full Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputUsername1">Goal</label>
@@ -113,7 +136,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text bg-primary text-white">GH₵</span>
                           </div>
-                          <input type="text" class="form-control" name="goal" aria-label="Amount (to the nearest dollar)">
+                          <input type="text" class="form-control" name="goal" value="{{ $data->goal }}" aria-label="Amount (to the nearest dollar)">
                         </div>
                     </div>
                     <div class="form-group">
@@ -122,23 +145,25 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text bg-primary text-white">GH₵</span>
                           </div>
-                          <input type="text" class="form-control" name="money_raised" aria-label="Amount (to the nearest dollar)">
+                          <input type="text" class="form-control" name="money_raised" value="{{ $data->money_raised }}" aria-label="Amount (to the nearest dollar)">
                         </div>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsername1">Excerpt</label>
                       <p class="form-info">Excerpt should be at most 30 words or 200 characters</p>
                       <textarea name="excerpt" class="form-control" id="edit">
-                        {{ old('excerpt') }}
+                        {{ $data->excerpt }}
                       </textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputUsername1">Cause Body</label>
                       <textarea id='edit' name="body" style="margin-top: 30px;">
-                        {{ old('body') }}
+                        {{ $data->body }}
                     </textarea>
                     <p class="form-info">For best result, keep description under 600 characters</p>
                     </div>
+
+                    <input type="hidden" name="id" value="{{ $data->id }}" hidden>
 
                     <button type="submit" name="submit" value="submit" class="btn btn-primary mr-2">Submit</button>
                     <button type="reset" class="btn btn-light">Cancel</button>
@@ -149,6 +174,7 @@
 
 
           </div>
+          @endforeach
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->

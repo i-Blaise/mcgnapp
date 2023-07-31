@@ -75,17 +75,17 @@
                         <tr>
                           <td class="py-1">
                            {{-- {{ dd($data[0]['id']) }} --}}
-                           {{ $data['caption'] }}
+                           {{ $data['id'] }}
                           </td>
                           <td>
                             <a href="{{ asset($data['main_img']) }}" target="_block"> <img src="{{ asset($data['main_img']) }}" alt="image"/> </a>
                           </td>
                           <td>
-                            {{-- <a href="{{ route('singleHeaderUpdatePage', ['id' => $data['id']]) }}" > 
+                            <a href="{{ route('causes.updatePage', ['id' => $data['id']]) }}" > 
                             <button type="button" class="btn btn-inverse-danger btn-icon">
                             <i class="icon-upload"></i>
                             </button>
-                            </a> --}}
+                            </a>
                           </td>
                         </tr>
                         @endforeach

@@ -122,6 +122,7 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 
       Route::get('/cause-list', [AdminCausesController::class, 'causeList'])->name('causes.list');
       Route::get('/cause-update-page/{id}', [AdminCausesController::class, 'updatePage'])->name('causes.updatePage');
+      Route::post('/cause-edit-single-cause', [AdminCausesController::class, 'editCause'])->name('causes.edit');
 
   });
 });
