@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('registeration_ref_code', function (Blueprint $table) {
-            $table->id();
-            $table->string('ref_code');
-            $table->timestamps();
+        Schema::table('causes', function (Blueprint $table) {
+            $table->string('excerpt', 1000)->change();
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('register_ref');
+        Schema::table('causes', function (Blueprint $table) {
+            $table->string('excerpt', 500)->change();
+        });
     }
 };
