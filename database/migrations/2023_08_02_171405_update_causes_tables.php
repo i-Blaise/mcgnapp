@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('causes', function (Blueprint $table) {
-            $table->string('excerpt', 1000)->change();
+            $table->string('main_img', 500)->change();
+            $table->string('caption', 500)->change();
+            $table->text('excerpt', 6000)->change();
+            $table->text('body', 10000)->change();
         });
     }
 
@@ -22,7 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('causes', function (Blueprint $table) {
-            $table->string('excerpt', 500)->change();
+            $table->string('main_img', 255)->change();
+            $table->string('caption', 20)->change();
+            $table->string('excerpt', 1000)->change();
+            $table->string('body', 6000)->change();
         });
     }
 };

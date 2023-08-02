@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UploadCausesRequest;
 use App\Models\Causes;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class AdminCausesController extends Controller
         return view('admin.pages.causes.add-cause');
     }
 
-    public function createCause(Request $request)
+    public function createCause(UploadCausesRequest $request)
     {
         // dd($request);
         $imageName = time().'.'.$request->image->extension();
@@ -53,7 +54,7 @@ class AdminCausesController extends Controller
         ]);
     }
 
-    public function editCause(Request $request)
+    public function editCause(UploadCausesRequest $request)
     {
         if($request->image){
             $imageName = time().'.'.$request->image->extension();

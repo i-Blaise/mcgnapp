@@ -105,7 +105,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Cause Caption</label>
-                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="{{ old('full_name') }}" placeholder="Full Name">
+                      <input type="text" name="caption" class="form-control" id="exampleInputUsername1" value="{{ old('caption') }}" placeholder="Full Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputUsername1">Goal</label>
@@ -113,7 +113,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text bg-primary text-white">GH₵</span>
                           </div>
-                          <input type="text" class="form-control" name="goal" aria-label="Amount (to the nearest dollar)">
+                          <input type="text" class="form-control" name="goal" aria-label="Amount (to the nearest dollar)" value="{{ old('goal') }}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -122,7 +122,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text bg-primary text-white">GH₵</span>
                           </div>
-                          <input type="text" class="form-control" name="money_raised" aria-label="Amount (to the nearest dollar)">
+                          <input type="text" class="form-control" name="money_raised" aria-label="Amount (to the nearest dollar)" value="{{ old('money_raised') }}">
                         </div>
                     </div>
                     <div class="form-group">
