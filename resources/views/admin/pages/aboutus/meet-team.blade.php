@@ -181,46 +181,24 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
+                          <th>Name</th>
                           <th>Image</th>
-                          <th>Facebook</th>
-                          <th>LinkedIn</th>
-                          <th>Instagram</th>
-                          <th>Twitter</th>
+                          <th>Job Title</th>
                           <th>Delete</th>
                         </tr>
                       </thead>
                       @foreach ($teams as $team)
                       <tbody>
                           <tr id="row{{ $team->id }}">
+                            <td class="py-1">
+                              <b> {{ $team->name }} </b>
+                            </td>
                           <td class="py-1">
                             <a href="{{ asset($team->team_img) }}" target="_block"> <img src="{{ asset($team->team_img) }}" alt="image"/> </a>
                           </td>
-                          @if ($team->facebook == null)
-                            <td class="text-danger"><i class="mdi mdi-close"></i></td>
-                            @else
-                            <td class="text-success"><i class="mdi mdi-check"></i></td>
-                          @endif
-
-                          @if ($team->linkedin == null)
-                          <td class="text-danger"><i class="mdi mdi-close"></i></td>
-                          @else
-                          <td class="text-success"><i class="mdi mdi-check"></i></td>
-                          @endif
-
-                          @if ($team->instagram == null)
-                          <td class="text-danger"><i class="mdi mdi-close"></i></td>
-                          @else
-                          <td class="text-success"><i class="mdi mdi-check"></i></td>
-                          @endif
-
-                          @if ($team->twitter == null)
-                          <td class="text-danger"><i class="mdi mdi-close"></i></td>
-                          @else
-                          <td class="text-success"><i class="mdi mdi-check"></i></td>
-                          @endif
-                          
-
-
+                          <td class="py-1">
+                            <b> {{ $team->position }} </b>
+                          </td>
                           <td>
                             <form id="logout-form" action="{{ route('aboutus.deleteTeam') }}" method="POST">
                               @csrf

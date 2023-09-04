@@ -66,22 +66,22 @@
           <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">
               <i class="icon-file menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Gallery</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Blog</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/tables/basic-table.html">
               <i class="icon-command menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Contact</span>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="pages/icons/feather-icons.html">
               <i class="icon-help menu-icon"></i>
               <span class="menu-title">Icons</span>
@@ -108,6 +108,6 @@
               <i class="icon-book menu-icon"></i>
               <span class="menu-title">Documentation</span>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </nav>
