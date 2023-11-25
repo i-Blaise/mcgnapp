@@ -63,7 +63,7 @@
                         {{-- <a href="{{ route('about') }}" class="nav-item nav-link" id="about">About</a> --}}
                         <a href="{{ route('causes') }}" class="nav-item nav-link" id="causes">Causes</a>
                         <a href="{{ route('eventsPage') }}" class="nav-item nav-link" id="events">Events</a>
-                        <a href="{{ route('blog') }}" class="nav-item nav-link" id="blog">Blog</a>
+                        {{-- <a href="{{ route('blog') }}" class="nav-item nav-link" id="blog">Blog</a> --}}
                         <a href="{{ route('galleryPage') }}" class="nav-item nav-link" id="gallery">Gallery</a>
                         {{-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>

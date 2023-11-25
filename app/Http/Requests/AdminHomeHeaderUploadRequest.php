@@ -22,7 +22,8 @@ class AdminHomeHeaderUploadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_height=300,max_height=900,min_width=600',
+            // 'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg|dimensions:min_height=300,max_height=900,min_width=600',
+            'slider_img' => 'required|image|mimes:png,jpg,jpeg,svg',
             'caption' => 'required',
             'description' => 'required|max:600',
             'donation_cause' => 'nullable',
