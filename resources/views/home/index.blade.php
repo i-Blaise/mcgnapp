@@ -218,7 +218,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Social Care</h3>
-                                <p>Offering social care is our pledge to nurture a sense of community and belonging, providing crucial support to individuals facing isolation or hardship, and fostering a society where no one is left behind.</p>
+                                <p>Offering social care is our pledge to nurture a sense of community and belonging, providing crucial support to individuals facing isolation or hardship, and fostering a society where no one is left behind!!</p>
                             </div>
                         </div>
                     </div>
