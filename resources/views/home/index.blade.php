@@ -163,7 +163,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Healthy Food</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <p>Ensuring access to nutritious meals for underprivileged kids is crucial for a charity organization as it not only addresses immediate hunger but also fosters overall well-being, enabling them to thrive academically and physically.</p>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Pure Water</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <p>We ensure access to clean water because it's the cornerstone of health, hygiene, and a brighter future for communities in need.</p>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Health Care</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <p>Delivering healthcare is at the core of our mission, ensuring that everyone, regardless of circumstance, has the right to a healthy and fulfilling life.</p>
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Primary Education</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <p>We champion education as the key to breaking the cycle of poverty, empowering individuals with knowledge and skills to build a brighter and more sustainable future.</p>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Residence Facilities</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <p>Providing shelter is our commitment to restoring dignity and security, offering a lifeline to those facing homelessness and ensuring a stable foundation for individuals and families in need.</p>
                             </div>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                             </div>
                             <div class="service-text">
                                 <h3>Social Care</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <p>Offering social care is our pledge to nurture a sense of community and belonging, providing crucial support to individuals facing isolation or hardship, and fostering a society where no one is left behind.</p>
                             </div>
                         </div>
                     </div>
