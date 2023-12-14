@@ -245,7 +245,7 @@
                         <div class="facts-item">
                             <i class="flaticon-charity"></i>
                             <div class="facts-text">
-                                <h3 class="facts-plus" data-toggle="counter-up">400</h3>
+                                <h3 class="facts-plus" data-toggle="counter-up">100</h3>
                                 <p>Volunteers</p>
                             </div>
                         </div>
@@ -254,8 +254,8 @@
                         <div class="facts-item">
                             <i class="flaticon-kindness"></i>
                             <div class="facts-text">
-                                <h3 class="facts-dollar" data-toggle="counter-up">10000</h3>
-                                <p>Our Goal</p>
+                                <h3 class="facts-plus" data-toggle="counter-up">80</h3>
+                                <p>Communities Served</p>
                             </div>
                         </div>
                     </div>
@@ -263,7 +263,7 @@
                         <div class="facts-item">
                             <i class="flaticon-donation"></i>
                             <div class="facts-text">
-                                <h3 class="facts-dollar" data-toggle="counter-up">5000</h3>
+                                <h3 class="facts-dollar" data-toggle="counter-up">10,000</h3>
                                 <p>Raised</p>
                             </div>
                         </div>

@@ -1139,6 +1139,7 @@ a:focus {
 .team .team-img {
     position: relative;
     overflow: hidden;
+    height: 300px;
 }
 
 .team .team-img img {
