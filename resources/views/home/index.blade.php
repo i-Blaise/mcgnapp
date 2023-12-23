@@ -620,7 +620,7 @@
 
 
         <!-- Blog Start -->
-        <div class="blog">
+        {{-- <div class="blog">
             <div class="container">
                 <div class="section-header text-center">
                     <p>Our Blog</p>
@@ -648,7 +648,7 @@
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Blog End -->
 
 

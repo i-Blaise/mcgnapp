@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\AboutUs;
 use App\Models\AboutUsPage;
 use App\Models\Blog;
@@ -513,15 +514,25 @@ class HomeDataController extends Controller
     {
         $causesSingle = Causes::find($id);
         $causesHeader = CausesPage::find(1);
+        $recentCauses = Causes::where('id', '!=', $id)->orderBy('created_at', 'desc')->take(5)->get();
+        $authorDetails = User::select('image', 'name', 'about')->find($causesSingle->author_id);
+
 
             $percentage = $causesSingle->money_raised/$causesSingle->goal * 100;
             $causesSingle->percentage = round($percentage, 0);
 
         return view('causes.single', [
             'causes' => $causesSingle,
-            'header' => $causesHeader
+            'header' => $causesHeader,
+            'recents' => $recentCauses,
+            'author' => $authorDetails
         ]);
     }
+
+    // public function recentPostsCauses()
+    // {
+    //     $recentCauses = Causes::orderBy('created_at', 'desc')->get(5);
+    // }
 
 
 

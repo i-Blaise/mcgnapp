@@ -38,15 +38,15 @@
         <div class="page-header">
             <style>
                 .page-header {
-        position: relative;
-        margin-bottom: 45px;
-        padding: 210px 0 90px 0;
-        text-align: center;
-        background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url({{ asset($header->header_img) }});
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+                    position: relative;
+                    margin-bottom: 45px;
+                    padding: 210px 0 90px 0;
+                    text-align: center;
+                    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url({{ asset($header->header_img) }});
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
                            }
                 </style>
             <div class="container">
@@ -116,12 +116,16 @@
                         </div>
                         <div class="single-bio">
                             <div class="single-bio-img">
-                                <img src="img/user.jpg" />
+                                @if($author->image)
+                                <img src="{{ $author->image }}" />
+                                @else
+                                <img src="{{ asset('img/default-user-icon.png') }}" />
+                                @endif
                             </div>
                             <div class="single-bio-text">
-                                <h3>Author Name</h3>
+                                <h3>{{ $author->name }}</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst.
+                                    {{ $author->about }}
                                 </p>
                             </div>
                         </div>
@@ -275,19 +279,20 @@
                             <div class="sidebar-widget">
                                 <h2 class="widget-title">Recent Post</h2>
                                 <div class="recent-post">
+                                    @foreach ($recents as $recentsData)
                                     <div class="post-item">
                                         <div class="post-img">
-                                            <img src="img/post-1.jpg" />
+                                            <img src="{{ $recentsData->main_img }}" />
                                         </div>
                                         <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <a href="">{{ $recentsData->caption }}</a>
                                             <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
+                                                <p>By<a href="">{{ $recentsData->author_name }}</a></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="post-item">
+                                    @endforeach
+                                    <!-- <div class="post-item">
                                         <div class="post-img">
                                             <img src="img/post-2.jpg" />
                                         </div>
@@ -334,7 +339,7 @@
                                                 <p>In<a href="">Web Design</a></p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
