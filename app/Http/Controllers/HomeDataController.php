@@ -17,6 +17,8 @@ use App\Models\Enquiries;
 use App\Models\Event;
 use App\Models\EventsPage;
 use App\Models\GalleryPage;
+use App\Models\Gallery;
+use App\Models\GalleryCategory;
 use App\Models\Home;
 use App\Models\NewsletterSubs;
 use App\Models\Team;
@@ -28,6 +30,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+
+use function PHPUnit\Framework\isNull;
 
 class HomeDataController extends Controller
 {
@@ -481,13 +485,62 @@ class HomeDataController extends Controller
 
 
     // GALLERY PAGE 
-    public function galleryPage()
+    function splitMyArray(array $input_array, int $size, $preserve_keys = null): array
+{
+    $nr = (int)ceil(count($input_array) / $size);
+
+    if ($nr > 0) {
+        return array_chunk($input_array, $nr, $preserve_keys);
+    }
+
+    return $input_array;
+}
+
+
+    public function galleryPage($category_id = null)
     {
         // $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
         $galleryHeader = GalleryPage::find(1);
+        $galleryCategories = GalleryCategory::all();
+        // $category_id = $request->input('category_id');
+        // if(!isNull($category_id)){
+        //     dd($category_id);
+        // }
+        if(isset($category_id))
+        {
+            $images = Gallery::where('category_id', '=', $category_id)->get();
+            $allImages = [];
+            foreach($images as $image){
+                $tempData['id'] = $image->id;
+                $tempData['image'] = $image->image;
+                $tempData['category'] = $image->category;
+                array_push($allImages, $tempData);
+            }
+            array_unshift($allImages, "phoney");
+            unset($allImages[0]);
+            $split = $this->splitMyArray($allImages, 3);
+            // dd($split);
+        }else
+        {
+        $images = Gallery::all();
+        $allImages = [];
+        foreach($images as $image){
+            $tempData['id'] = $image->id;
+            $tempData['image'] = $image->image;
+            $tempData['category'] = $image->category;
+            array_push($allImages, $tempData);
+        }
+        array_unshift($allImages, "phoney");
+        unset($allImages[0]);
+        $split = $this->splitMyArray($allImages, 3);
+        }
+        // dd($galleryHeader);
+        
 
         return view('gallery.index', [
-            'header' => $galleryHeader
+            'header' => $galleryHeader,
+            'images' => $split,
+            'categories' => $galleryCategories,
         ]);
     }
 

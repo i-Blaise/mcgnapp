@@ -14,6 +14,7 @@ use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\VolunteerPage;
 use App\Models\Volunteers;
+use App\Models\Gallery;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,7 +36,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(ContactPage::class); 
 
         // Causes::factory(11)->create();
-        Blog::factory(4)->create();
+        Gallery::factory(9)->create();
         // Team::factory(6)->create();
         // Testimonial::factory(8)->create();
         // Volunteers::factory(10)->create();

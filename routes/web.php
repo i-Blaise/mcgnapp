@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeDataController;
 use App\Http\Controllers\Admin\AdminHeaderController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\MailController;
+use App\Models\Gallery;
 use App\Models\Admin;
 use App\Models\Blog;
 use App\Models\Causes;
@@ -48,7 +49,7 @@ Route::get('/donatePage/{id?}', [HomeDataController::class, 'donatePage'])->name
 Route::get('/eventsPage/{is_over?}', [HomeDataController::class, 'eventsPage'])->name('eventsPage');
 Route::get('/volunteerEvent/{id?}', [HomeDataController::class, 'volunteerEvent'])->name('volunteerEvent');
 Route::get('/contact', [HomeDataController::class, 'contactPage'])->name('contactPage');
-Route::get('/gallery', [HomeDataController::class, 'galleryPage'])->name('galleryPage');
+Route::get('/gallery/{category_id?}', [HomeDataController::class, 'galleryPage'])->name('galleryPage');
 Route::get('/donate-latest-cause', [HomeDataController::class, 'donateLatestCause'])->name('donate-latest-cause');
 Route::get('/latest-blog', [HomeDataController::class, 'latestBlog'])->name('latest-blog');
 Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription'])->name('newsletter-subs');
@@ -136,8 +137,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //   // view('donate.index')
 // })->name('donate-latest-cause');
 
-Route::get('/delete-team', function () {
-    Team::truncate();
+Route::get('/delete-gallery', function () {
+    Gallery::truncate();
     return 'done';
 
     // return Carbon::now();

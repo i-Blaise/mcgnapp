@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutUsPage extends Model
+class Gallery extends Model
 {
     use HasFactory;
 
-    public $table = 'aboutpage';
-    
+    public $table = 'gallery';
+
     protected $fillable = [
-        'header_img'
+        'image',
+        'category',
     ];
 }

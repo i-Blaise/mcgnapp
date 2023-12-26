@@ -16,6 +16,10 @@
   		cursor: pointer;
   		margin-right: 20px;
   	}
+	.active_category{
+		text-decoration: underline !important;
+    	font-weight: 700 !important;
+	}
   	.spacer{
   		height: 20px;
   	}
