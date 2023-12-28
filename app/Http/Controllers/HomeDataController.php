@@ -498,14 +498,9 @@ class HomeDataController extends Controller
 
 
     public function galleryPage($category_id = null)
-    {
-        // $blogs = Blog::orderBy('created_at', 'desc')->paginate(6);
+    { 
+        $validCategories = Gallery::select('category_id', 'category')->distinct()->get();
         $galleryHeader = GalleryPage::find(1);
-        $galleryCategories = GalleryCategory::all();
-        // $category_id = $request->input('category_id');
-        // if(!isNull($category_id)){
-        //     dd($category_id);
-        // }
         if(isset($category_id))
         {
             $images = Gallery::where('category_id', '=', $category_id)->get();
@@ -540,7 +535,7 @@ class HomeDataController extends Controller
         return view('gallery.index', [
             'header' => $galleryHeader,
             'images' => $split,
-            'categories' => $galleryCategories,
+            'categories' => $validCategories,
         ]);
     }
 

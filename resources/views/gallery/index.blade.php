@@ -65,19 +65,20 @@
         <!-- Page Header End -->
         
         
-        <!-- Contact Start -->
+        <!-- Gallery Start -->
         <div class="container-gallery">
             <div class="columns is-multiline">
                 <div class="column is-full" id="gallery_control">
-                    <a href="{{  route('galleryPage')}}"><span class="{{ request('category_id') == null? 'active_category' : '' }} gallery_control_option">All</span></a>
-                    {{-- <span class="gallery_control_option ">Animals</span> --}}
+                    <a href="{{  route('galleryPage')}}"><span class="{{ request('category_id') == null ? 'active_category' : '' }} gallery_control_option">All</span></a>
 
                     @foreach ($categories as $category)
                     <a href="{{  route('galleryPage', ['category_id' => $category->category_id])  }}"><span class="{{ request('category_id') !== null && request('category_id') ==  $category->category_id ? 'active_category' : '' }} gallery_control_option">{{ ucwords($category->category) }}</span></a>
                     @endforeach
-                    {{-- <span class="gallery_control_option">People</span>
-                    <span class="gallery_control_option">Animals</span>
-                    <span class="gallery_control_option">Home</span> --}}
+
+
+
+                    {{-- FOR DROPDOWN FILTERS --}}
+                    
                     {{-- <span class="gallery_control_option" id="orientation">Orientation</span>
                     <div id="orientation_option_wrapper">
                         <p class="orientation_option" id="any"><span class="check">&#10003;</span><span class="orientation_title" >Any Orientation</span></p>
@@ -87,29 +88,35 @@
                         <p class="orientation_option" id="portrait"><span class="check">&#10003;</span><span class="orientation_title">Portrait</span></p>
                         
                     </div> --}}
+
+
+
+
                 </div>
                 <div class="column is-one-third">
                     <div class="gallery_wrapper">
                         @foreach ($images[0] as $column1)
                         {{-- {{ dd($column1) }} --}}
-                        <img src="{{ $column1['image'] }}" class="animate__animated animate__bounceIn {{ $column1['category'] }}">
+                        <img src="../../admin_assets/images/uploads/galleryImages/{{ $column1['image'] }}" class="animate__animated animate__bounceIn {{ $column1['category'] }}">
                         @endforeach
                     </div>
                 </div>
                 <div class="column is-one-third">
                     <div class="gallery_wrapper">
                         @foreach ($images[1] as $column2)
-                        <img src="{{ $column2['image'] }}" class="animate__animated animate__bounceIn {{ $column2['category'] }}">
+                        <img src="../../admin_assets/images/uploads/galleryImages/{{ $column2['image'] }}" class="animate__animated animate__bounceIn {{ $column2['category'] }}">
                         @endforeach
                     </div>	
                 </div>
+                @if (isset($images[2]))
                 <div class="column is-one-third">
                     <div class="gallery_wrapper">
                         @foreach ($images[2] as $column3)
-                        <img src="{{ $column3['image'] }}" class="animate__animated animate__bounceIn {{ $column3['category'] }}">
+                        <img src="../../admin_assets/images/uploads/galleryImages/{{ $column3['image'] }}" class="animate__animated animate__bounceIn {{ $column3['category'] }}">
                         @endforeach
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <!-- Contact End -->

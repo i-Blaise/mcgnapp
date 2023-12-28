@@ -11,8 +11,8 @@ class GalleryCategory extends Model
 
     public $table = 'gallerycategory';
 
-    // protected $fillable = [
-    //     'category',
-    //     'category_id',
-    // ];
+    protected $fillable = [
+        'category',
+        'category_id',
+    ];
 }

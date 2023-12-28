@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAboutUsController;
 use App\Http\Controllers\Admin\AdminCausesController;
+use App\Http\Controllers\Admin\AdminGalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeDataController;
@@ -124,6 +125,15 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
       Route::get('/cause-list', [AdminCausesController::class, 'causeList'])->name('causes.list');
       Route::get('/cause-update-page/{id}', [AdminCausesController::class, 'updatePage'])->name('causes.updatePage');
       Route::post('/cause-edit-single-cause', [AdminCausesController::class, 'editCause'])->name('causes.edit');
+
+
+      // GALLERY 
+      Route::get('/gallery-category', [AdminGalleryController::class, 'galleryCategoriesPage'])->name('gallery.category');
+      Route::post('/add-category', [AdminGalleryController::class, 'addImageCategory'])->name('add.category');
+      Route::get('/edit-category-page/{category_id}', [AdminGalleryController::class, 'editImageCategoryPage'])->name('edit.gallery.page');
+      Route::post('/upload-image', [AdminGalleryController::class, 'uploadImage'])->name('upload.gallery.image');
+      Route::post('/delete-image', [AdminGalleryController::class, 'deleteImage'])->name('delete.image');
+      Route::get('/delete-category/{category_id}', [AdminGalleryController::class, 'deleteImageCategory'])->name('delete.category');
 
   });
 });

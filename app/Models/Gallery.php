@@ -14,5 +14,10 @@ class Gallery extends Model
     protected $fillable = [
         'image',
         'category',
+        'category_id'
     ];
+
+    // protected $casts = [
+    //     'image' => 'array', // Assuming 'images' is stored as JSON in the database
+    // ];
 }
