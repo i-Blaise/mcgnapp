@@ -112,7 +112,7 @@
                         </div>
                         <div class="single-bio">
                             <div class="single-bio-img">
-                                @if($author->image)
+                                @if(isset($author->image))
                                 <img src="{{ $author->image }}" />
                                 @else
                                 <img src="{{ asset('img/default-user-icon.png') }}" />
