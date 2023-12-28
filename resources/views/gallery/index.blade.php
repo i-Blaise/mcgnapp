@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}"/>
         <meta charset="utf-8">
         <title>MCGN - Gallery</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -9,7 +9,7 @@
         <meta content="Free Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ asset('img/favicon.ico') }}" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">

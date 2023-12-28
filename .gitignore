@@ -18,3 +18,4 @@ yarn-error.log
 /.vscode
 /public/admin_assets/images/uploads
 /resources/admin_assets/images/uploads
+/storage/logs/laravel.log
