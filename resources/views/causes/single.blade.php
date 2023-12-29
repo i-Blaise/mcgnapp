@@ -134,7 +134,7 @@
                                         <img src="{{ $relatedPost->main_img }}" />
                                     </div>
                                     <div class="post-text">
-                                        <a href="">{{ $relatedPost->caption }}</a>
+                                        <a href="{{ route('causes.single', ['id' => $relatedPost->id])  }}">{{ $relatedPost->caption }}</a>
                                         <div class="post-meta">
                                             <p>By<a href="">{{ $relatedPost->author_name }}</a></p>
                                             {{-- <p>In<a href="">Web Design</a></p> --}}
@@ -247,7 +247,7 @@
                                             <img src="{{ $recentsData->main_img }}" />
                                         </div>
                                         <div class="post-text">
-                                            <a href="">{{ $recentsData->caption }}</a>
+                                            <a href="{{ route('causes.single', ['id' => $recentsData->id])  }}">{{ $recentsData->caption }}</a>
                                             <div class="post-meta">
                                                 <p>By<a href="">{{ $recentsData->author_name }}</a></p>
                                             </div>

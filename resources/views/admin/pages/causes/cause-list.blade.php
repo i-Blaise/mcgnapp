@@ -59,10 +59,13 @@
                       <thead>
                         <tr>
                           <th>
-                            Page
+                            Page ID
                           </th>
                           <th>
                             Header Image
+                          </th>
+                          <th>
+                            Author
                           </th>
                           <th>
                             Update
@@ -79,7 +82,10 @@
                           </td>
                           <td>
                             <a href="{{ asset($data['main_img']) }}" target="_block"> <img src="{{ asset($data['main_img']) }}" alt="image"/> </a>
-                          </td>
+                          </td>                          
+                          <td>
+                            {{ $data['author_name'] }}
+                           </td>
                           <td>
                             <a href="{{ route('causes.updatePage', ['id' => $data['id']]) }}" > 
                             <button type="button" class="btn btn-inverse-danger btn-icon">
