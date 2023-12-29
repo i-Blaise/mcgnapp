@@ -529,7 +529,6 @@ class HomeDataController extends Controller
         unset($allImages[0]);
         $split = $this->splitMyArray($allImages, 3);
         }
-        // dd($galleryHeader);
         
 
         return view('gallery.index', [
@@ -564,6 +563,7 @@ class HomeDataController extends Controller
         $causesHeader = CausesPage::find(1);
         $recentCauses = Causes::where('id', '!=', $id)->orderBy('created_at', 'desc')->take(5)->get();
         $authorDetails = User::select('image', 'name', 'about')->find($causesSingle->author_id);
+        $relatedPosts = Causes::where('author_id', $causesSingle->author_id)->take(3)->get();
 
 
             $percentage = $causesSingle->money_raised/$causesSingle->goal * 100;
@@ -573,16 +573,10 @@ class HomeDataController extends Controller
             'causes' => $causesSingle,
             'header' => $causesHeader,
             'recents' => $recentCauses,
-            'author' => $authorDetails
+            'author' => $authorDetails,
+            'relatedPosts' => $relatedPosts
         ]);
     }
-
-    // public function recentPostsCauses()
-    // {
-    //     $recentCauses = Causes::orderBy('created_at', 'desc')->get(5);
-    // }
-
-
 
 
 

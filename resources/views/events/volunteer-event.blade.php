@@ -68,8 +68,9 @@
             <p>Join this Events</p>
             <h2>Join this Event by subscribing to volunteer!</h2>
         </div>
-
-        <div class="volunteer" data-parallax="scroll" data-image-src="https://images.ctfassets.net/rbl6nw8n2c6i/Kk3CG6S2ZWG4j59UQcZ00/9a9ab6aa03db55db7034cc3a63dccee9/Article_image_04__5_.png">
+        @foreach ($eventData as $events)
+        <div class="volunteer" data-parallax="scroll" data-image-src="{{ $events->main_img }}">
+        @endforeach
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5">

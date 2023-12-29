@@ -101,7 +101,7 @@
                                                             
                             {!! $causes->body !!}
                         </div>
-                        <div class="single-tags">
+                        {{--<div class="single-tags">
                             <a href="">National</a>
                             <a href="">International</a>
                             <a href="">Economics</a>
@@ -109,7 +109,7 @@
                             <a href="">Lifestyle</a>
                             <a href="">Technology</a>
                             <a href="">Trades</a>
-                        </div>
+                        </div> --}}
                         <div class="single-bio">
                             <div class="single-bio-img">
                                 @if(isset($author->image))
@@ -128,54 +128,20 @@
                         <div class="single-related">
                             <h2>Related Post</h2>
                             <div class="owl-carousel related-slider">
+                                @foreach ($relatedPosts as $relatedPost)
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="img/post-1.jpg" />
+                                        <img src="{{ $relatedPost->main_img }}" />
                                     </div>
                                     <div class="post-text">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                        <a href="">{{ $relatedPost->caption }}</a>
                                         <div class="post-meta">
-                                            <p>By<a href="">Admin</a></p>
-                                            <p>In<a href="">Web Design</a></p>
+                                            <p>By<a href="">{{ $relatedPost->author_name }}</a></p>
+                                            {{-- <p>In<a href="">Web Design</a></p> --}}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="post-item">
-                                    <div class="post-img">
-                                        <img src="img/post-2.jpg" />
-                                    </div>
-                                    <div class="post-text">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        <div class="post-meta">
-                                            <p>By<a href="">Admin</a></p>
-                                            <p>In<a href="">Web Design</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post-item">
-                                    <div class="post-img">
-                                        <img src="img/post-3.jpg" />
-                                    </div>
-                                    <div class="post-text">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        <div class="post-meta">
-                                            <p>By<a href="">Admin</a></p>
-                                            <p>In<a href="">Web Design</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post-item">
-                                    <div class="post-img">
-                                        <img src="img/post-4.jpg" />
-                                    </div>
-                                    <div class="post-text">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        <div class="post-meta">
-                                            <p>By<a href="">Admin</a></p>
-                                            <p>In<a href="">Web Design</a></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
 
