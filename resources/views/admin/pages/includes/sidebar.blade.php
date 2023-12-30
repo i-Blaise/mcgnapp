@@ -64,19 +64,13 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <i class="icon-file menu-icon"></i>
-              <span class="menu-title"><a class="nav-link" href="{{ route('gallery.category') }}">Gallery</a></span>
+            <a class="nav-link" href="{{ route('gallery.category') }}">
+              <i class="icon-image menu-icon"></i>
+              <span class="menu-title">Gallery</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Blog</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="#">
               <i class="icon-command menu-icon"></i>
               <span class="menu-title">Contact</span>
             </a>
