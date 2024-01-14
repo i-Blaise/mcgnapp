@@ -109,7 +109,7 @@ class AdminHeaderController extends Controller
     public function updateSinglePageHeader(Request $request){
         // dd($request->header);
         $request->validate([
-            'header' => 'required|image|mimes:png,jpg,jpeg,svg'
+            'header' => 'required|image'
         ]);
         // dd($request->header);
         $imageName = time().'.'.$request->header->extension();
