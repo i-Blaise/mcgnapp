@@ -34,7 +34,7 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style.css?v=1.0" rel="stylesheet">
     </head>
 
 
