@@ -36,6 +36,7 @@ use Carbon\Carbon;
 // });
 // Route::get('/', HomeController::class);
 // Route::resource('/', HomeDataController::class);
+// Route::get('#donate', [HomeDataController::class, 'donateSection'])->name('donate.section');
 Route::get('/', [HomeDataController::class, 'index'])->name('home');
 // Route::get('/home', [HomeDataController::class, 'home']);
 Route::get('/blog/{id}', [HomeDataController::class, 'blogSingle'])->name('blog.single'); 

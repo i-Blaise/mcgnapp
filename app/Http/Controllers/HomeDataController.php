@@ -45,13 +45,11 @@ class HomeDataController extends Controller
 
     public function index()
     {
-        // $homeData = DB::table('home')->get();
 
         $homeData = Home::orderBy('id', 'desc')->get();
         $aboutData = AboutUs::where('id', 1)->get();
         $causesData = Causes::orderBy('money_raised', 'desc')->take(4)->get();
         $donateNowData = DonateNow::where('id', 1)->get();
-        // $eventData = Event::orderBy('date', 'desc')->take(2)->get();
         $eventData = Event::whereDate('date', '>=', Carbon::now())->orderBy('date', 'desc')->take(2)->get();
         $teamData = Team::take(4)->get();
         $testimonialData = Testimonial::get();
@@ -96,6 +94,10 @@ class HomeDataController extends Controller
             'contactform' => $contactData
         ]);
     }
+
+    // public function donateSection(){
+    //     return url('https://www.mcgnapp.test/#donate-form');
+    // }
 
 
     public function changeMonthToWord($month)

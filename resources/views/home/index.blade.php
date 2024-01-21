@@ -229,7 +229,7 @@
         
         
         <!-- Facts Start -->
-        <div class="facts" data-parallax="scroll" data-image-src="img/facts.jpg">
+        <div class="facts" data-parallax="scroll" data-image-src="img/facts4.webp">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -306,7 +306,7 @@
                             <h3>{{ $cause->caption }}</h3>
                             <p>{{ $cause->excerpt }}</p>
                         </div>
-                        <div class="causes-btn">
+                        <div id="donate-form" class="causes-btn">
                             <a href="{{ route('causes.single', ['id' => $cause->id]) }}" class="btn btn-custom">Learn More</a>
                             <a href="{{ route('donatePage', ['id' => $cause->id]) }}" class="btn btn-custom">Donate Now</a>
                         </div>
