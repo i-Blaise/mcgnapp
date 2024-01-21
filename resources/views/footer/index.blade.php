@@ -79,7 +79,7 @@
                 <p>&copy; <a href="#">Massive Cheerful Giving Network</a>, All Right Reserved.</p>
             </div>
             <div class="col-md-6">
-                <p>Developed By <a href="http://cv.sonzie.tech/">Blaise S. Mennia</a></p>
+                <p>Developed By <a href="http://cv.sonzie.tech/" target="_blank">Blaise S. Mennia</a></p>
             </div>
         </div>
     </div>
