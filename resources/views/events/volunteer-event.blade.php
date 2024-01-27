@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {{-- FOR GOOGLE AD SENSE  --}}
+        <meta name="google-adsense-account" content="ca-pub-8400169039838776">
+        
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <meta charset="utf-8">
         <title>MCGN - Event</title>
@@ -37,9 +40,6 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-               
-        {{-- FOR GOOGLE AD SENSE  --}}
-        <meta name="google-adsense-account" content="ca-pub-8400169039838776">
     </head>
 
     <body onload="activeTab()">
