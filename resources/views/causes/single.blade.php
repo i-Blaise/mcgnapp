@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {{-- FOR GOOGLE AD SENSE  --}}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8400169039838776"
-     crossorigin="anonymous"></script>
 
         <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}"/>
         <meta charset="utf-8">
@@ -31,6 +28,11 @@
 
         <!-- Template Stylesheet -->
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+
+        {{-- FOR GOOGLE AD SENSE  --}}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8400169039838776"
+        crossorigin="anonymous"></script>
     </head>
 
     <body onload="activeTab()">
