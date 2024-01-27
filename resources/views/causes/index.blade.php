@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {{-- FOR GOOGLE AD SENSE  --}}
-        <meta name="google-adsense-account" content="ca-pub-8400169039838776">
 
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <meta charset="utf-8">
