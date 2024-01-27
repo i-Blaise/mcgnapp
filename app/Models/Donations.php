@@ -14,6 +14,15 @@ class Donations extends Model
 
 
     protected $fillable = [
-        'name', 'phone_num', 'email', 'amount', 'cause_name'
+        'name',
+        'phone_num', 
+        'email', 
+        'amount', 
+        'cause_name', 
+        'api_message',
+        'code',
+        'paylinkId',
+        'paylinkUrl',
+        'expiresAt',
     ];
 }

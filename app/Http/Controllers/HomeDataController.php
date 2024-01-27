@@ -354,12 +354,28 @@ class HomeDataController extends Controller
             'cause_name' => 'string'
         ]);
 
+        $payment_status = $this->paymentProcess($request);
+
+            switch ($payment_status->code) {
+                case 201:
+                   return redirect($payment_status->data->paylinkUrl);
+                break;
+                default:
+                    dd($payment_status->message);
+            }
+ 
         Donations::create([
             'name' => $request->name,
             'phone_num' => $request->momo_number,
             'email' => $request->email,
             'amount' => $request->amount,
-            'cause_name' => $request->cause_name
+            'cause_name' => $request->cause_name,
+            'api_message' => $payment_status->message,
+            'code' => $payment_status->code,
+            'paylinkId' => $payment_status->data->paylinkId,
+            'clientReference' => $payment_status->data->clientReference,
+            'paylinkUrl' => $payment_status->data->paylinkUrl,
+            // 'expiresAt' => $payment_status->data->expiresAt
         ]);
 
         $mailData = $request->all();
@@ -371,6 +387,48 @@ class HomeDataController extends Controller
 
         return back()->with('success', 'Your Request Was Sent Successfully');
 
+    }
+
+    function paymentProcess($data)
+    {
+        // dd($data->amount);
+        $mobileNumber = $data->momo_number;
+        $curl = curl_init();
+        // intval($data->amount)
+        $payload = array(
+        "amount" => 1,
+        "title" => "Charity Giving",
+        "description" => "Charity Giving",
+        "clientReference" => "Charity Giving",
+        "callbackUrl" => "https://staging.massivecheerfulgivingnetwork.org/#donate-form",
+        "cancellationUrl" => "https://staging.massivecheerfulgivingnetwork.org/#cancelled-error",
+        "returnUrl" => "https://staging.massivecheerfulgivingnetwork.org/#donate-form",
+        "logo" => "https://staging.massivecheerfulgivingnetwork.org/img/logo.jpeg"
+        );
+
+        curl_setopt_array($curl, [
+        CURLOPT_HTTPHEADER => [
+            "Content-Type: application/json",
+            "Authorization: Basic " . base64_encode("zcstylza:mjsijkru")
+        ],
+        CURLOPT_POSTFIELDS => json_encode($payload),
+        CURLOPT_URL => "https://devp-reqsendmoney-230622-api.hubtel.com/request-money/" . $mobileNumber,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        ]);
+
+        $response = curl_exec($curl);
+        $error = curl_error($curl);
+
+        $response = json_decode($response);
+
+        curl_close($curl);
+
+        if ($error) {
+        echo "cURL Error #:" . $error;
+        } else {
+        return $response;
+        }
     }
 
 
