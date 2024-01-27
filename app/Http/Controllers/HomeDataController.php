@@ -400,10 +400,10 @@ class HomeDataController extends Controller
         "title" => "Charity Giving",
         "description" => "Charity Giving",
         "clientReference" => "Charity Giving",
-        "callbackUrl" => "https://staging.massivecheerfulgivingnetwork.org/#donate-form",
-        "cancellationUrl" => "https://staging.massivecheerfulgivingnetwork.org/#cancelled-error",
-        "returnUrl" => "https://staging.massivecheerfulgivingnetwork.org/#donate-form",
-        "logo" => "https://staging.massivecheerfulgivingnetwork.org/img/logo.jpeg"
+        "callbackUrl" => "https://massivecheerfulgivingnetwork.org/#donate-form",
+        "cancellationUrl" => "https://massivecheerfulgivingnetwork.org/#cancelled-error",
+        "returnUrl" => "https://massivecheerfulgivingnetwork.org/#donate-form",
+        "logo" => "https://massivecheerfulgivingnetwork.org/img/logo.jpeg"
         );
 
         curl_setopt_array($curl, [
