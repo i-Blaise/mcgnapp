@@ -38,6 +38,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
                
+        {{-- FOR GOOGLE AD SENSE  --}}
+        <meta name="google-adsense-account" content="ca-pub-8400169039838776">
     </head>
 
     <body onload="activeTab()">

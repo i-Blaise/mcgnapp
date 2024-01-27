@@ -23,6 +23,9 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        {{-- FOR GOOGLE AD SENSE  --}}
+        <meta name="google-adsense-account" content="ca-pub-8400169039838776">
     </head>
 
     <body onload="activeTab()">
