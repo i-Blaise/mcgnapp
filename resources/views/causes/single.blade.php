@@ -137,7 +137,7 @@
                                 @foreach ($relatedPosts as $relatedPost)
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="{{ asset($causeData->main_img) }}" />
+                                        <img src="{{ asset($relatedPost->main_img) }}" />
                                     </div>
                                     <div class="post-text">
                                         <a href="{{ route('causes.single', ['id' => $relatedPost->id])  }}">{{ $relatedPost->caption }}</a>
