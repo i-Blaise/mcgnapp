@@ -17,6 +17,7 @@ class Causes extends Model
         'money_raised',
         'excerpt',
         'body',
-        'author_name'
+        'author_name',
+        'author_id'
     ];
 }

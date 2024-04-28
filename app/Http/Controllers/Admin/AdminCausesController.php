@@ -32,6 +32,7 @@ class AdminCausesController extends Controller
             'excerpt' => $request->excerpt,
             'body' => $request->body,
             'author_name' => 'Blaise Mennia',
+            'author_id' => 1
         ]);
 
         return redirect()->back()->with('success', 'Cause Created Successfully');
