@@ -31,7 +31,7 @@ class AdminCausesController extends Controller
             'money_raised' => $request->money_raised,
             'excerpt' => $request->excerpt,
             'body' => $request->body,
-            'author_name' => 'Blaise Mennia'
+            'author_name' => 'Blaise Mennia',
         ]);
 
         return redirect()->back()->with('success', 'Cause Created Successfully');
