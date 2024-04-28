@@ -304,7 +304,7 @@
                         </div>
                         <div class="causes-text">
                             <h3>{{ $cause->caption }}</h3>
-                            <p>{{ $cause->excerpt }}</p>
+                            <p>{!! $cause->excerpt!!}</p>
                         </div>
                         <div id="donate-form" class="causes-btn">
                             <a href="{{ route('causes.single', ['id' => $cause->id]) }}" class="btn btn-custom">Learn More</a>
