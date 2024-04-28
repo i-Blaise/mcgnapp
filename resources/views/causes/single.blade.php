@@ -84,17 +84,17 @@
                             <br>
                                     <!-- partial:index.partial.html -->
                                     <div id=countdown-wrap>
-                                    <div id="goal">$5,000</div>
+                                    <div id="goal">${{ $causes->goal }}</div>
                                     <div id="glass">
-                                    <div id="progress">
+                                    <div id="progress" style="width: {{ $causes->percentage }}% !important;">
                                     </div>
                                     </div>
                                     <div class="goal-stat">
-                                    <span class="goal-number">32.8%</span>
+                                    <span class="goal-number">{{ $causes->percentage }}%</span>
                                     <span class="goal-label">Funded</span>
                                     </div>
                                     <div class="goal-stat">
-                                    <span class="goal-number">$1,640</span>
+                                    <span class="goal-number">${{ $causes->money_raised }}</span>
                                     <span class="goal-label">Raised</span>
                                     </div>
                                     <div class="goal-stat">
