@@ -98,7 +98,7 @@
                                     <span class="goal-label">Raised</span>
                                     </div>
                                     <div class="goal-stat">
-                                    <span class="goal-number"><div id="countdown"></div></span>
+                                    <span class="goal-number days-to-go"><div id="countdown"></div></span>
                                     <span class="goal-label days-to-go">Days to Go</span>
                                     </div> 
                                     </div>
