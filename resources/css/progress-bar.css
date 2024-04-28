@@ -49,6 +49,12 @@
   
   .goal-number, .goal-label {
 	display: block;
+
+  }
+  @media only screen and (max-width : 700px) {
+	.days-to-go {
+		display: none !important;
+	  }
   }
   
   .goal-number {

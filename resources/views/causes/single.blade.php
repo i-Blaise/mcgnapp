@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="goal-stat">
                                     <span class="goal-number"><div id="countdown"></div></span>
-                                    <span class="goal-label">Days to Go</span>
+                                    <span class="goal-label days-to-go">Days to Go</span>
                                     </div> 
                                     </div>
                                     <!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
