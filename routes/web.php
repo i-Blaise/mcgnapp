@@ -148,8 +148,8 @@ Route::post('/newsletter', [HomeDataController::class, 'newsLetterSubscription']
 //   // view('donate.index')
 // })->name('donate-latest-cause');
 
-Route::get('/delete-gallery', function () {
-    Gallery::truncate();
+Route::get('/delete-causes', function () {
+  Causes::truncate();
     return 'done';
 
     // return Carbon::now();
