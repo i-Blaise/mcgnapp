@@ -275,7 +275,7 @@
         
         
         <!-- Causes Start -->
-        <div class="causes">
+        {{-- <div class="causes">
             <div class="container">
                 <div class="section-header text-center">
                     <p>Popular Causes</p>
@@ -315,7 +315,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Causes End -->
         
         
